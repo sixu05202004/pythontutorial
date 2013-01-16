@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2. 使用Python解释器 &mdash; python 2.7 tutorial 2.7 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="python 2.7 tutorial 2.7 documentation" href="index.html" />
+    <link rel="next" title="3. Python??Ҫ????" href="introduction.html" />
+    <link rel="prev" title="1. 开胃菜" href="appetite.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="introduction.html" title="3. Python??Ҫ????"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="appetite.html" title="1. 开胃菜"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">python 2.7 tutorial 2.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="python">
+<span id="tut-using"></span><h1>2. 使用Python解释器<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tut-invoking">
+<span id="id1"></span><h2>2.1. 调用解释器<a class="headerlink" href="#tut-invoking" title="Permalink to this headline">¶</a></h2>
+<p>通常 Python 的解释器被安装在目标机器的 <tt class="file docutils literal"><span class="pre">/usr/local/bin/python</span></tt>
+目录下；把 <tt class="file docutils literal"><span class="pre">/usr/local/bin</span></tt>
+目录放进你的 Unix Shell 的搜索路径里，确保它可以通过输入:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">python</span>
+</pre></div>
+</div>
+<p>来启动。因为安装路径是可选的，所以也有可能安装在其它位置，你可以与安装 Python 的用户或系统管理员联系。（例如， <tt class="file docutils literal"><span class="pre">/usr/local/python</span></tt> 就是一个很常见的选择。）</p>
+<p>在 Windows机器上，Python 通常安装在 <tt class="file docutils literal"><span class="pre">C:\Python27</span></tt> 当然，我们在运行安装程序的时候可以改变它。需要把这个目录加入到我们的 Path 中的话，可以像下面这样在 DOS 窗中输入命令行:</p>
+<blockquote>
+<div>set path=%path%;C:python27</div></blockquote>
+<p>输入一个文件结束符 (在Unix上 <tt class="kbd docutils literal"><span class="pre">Control-D</span></tt>, 在
+Windows上 <tt class="kbd docutils literal"><span class="pre">Control-Z</span></tt>)解释器会以 0 值退出。如果这没有起作用，你可以输入以下命令退出:
+<tt class="docutils literal"><span class="pre">quit()</span></tt>。</p>
+<p>解释器的行编辑功能并不很复杂。装在 Unix 上的解释器可能会有 GNU readline 库支持，这样就可以额外得到精巧的交互编辑和历史记录功能。可能检查命令行编辑器支持能力。最方便的方式是在主提示符下输入 Control-P。 如果有嘟嘟声（计算机扬声器），说明你可以使用命令行编辑功能； 从附录中 <a class="reference internal" href="interactive.html#tut-interacting"><em>Interactive Input Editing and History Substitution</em></a> 可以查到快捷键的介绍。如果什么声音也没有，或者显示 <tt class="docutils literal"><span class="pre">^P</span></tt> ,
+说明命令行编辑功能不可用，你只有用退格键删掉输入的命令了。</p>
+<p>解释器的操作有些像 Unix Shell：使用终端设备做为标准输入来调用它时，解释器交互的解读和执行命令，通过文件名参数或以文件做为标准输入设备时，它从文件中解读并执行 <em>脚本</em>。</p>
+<p>启动解释器的第二个方法是 <tt class="docutils literal"><span class="pre">python</span> <span class="pre">-c</span> <span class="pre">command</span> <span class="pre">[arg]</span> <span class="pre">...</span></tt>,
+这种方法可以在 <em>命令行</em> 中直接执行语句， 等同于Shell的
+<em class="xref std std-option">-c</em> 选项。 因为Python语句通常会包括空格之类的特殊字符，所以最好把整个 <em>命令</em> 用单引号包起来。</p>
+<p>有些 Python 模块也可以当作脚本使用。它们可以用
+<tt class="docutils literal"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">module</span> <span class="pre">[arg]</span> <span class="pre">...</span></tt> 调用， 这样就会像你在命令行中给出其完整名字一样运行 <em>模块</em> 源文件。</p>
+<p>使用脚本文件时，经常会运行脚本然后进入交互模式。这也可以通过在脚本之前加上 <em class="xref std std-option">-i</em> 参数来实现</p>
+<div class="section" id="tut-argpassing">
+<span id="id2"></span><h3>2.1.1. 参数传递<a class="headerlink" href="#tut-argpassing" title="Permalink to this headline">¶</a></h3>
+<p>调用解释器时，脚本名和附加参数传入一个名为 <tt class="docutils literal"><span class="pre">sys.argv</span></tt> 的字符串列表。你能够获取这个列表通过执行 <tt class="docutils literal"><span class="pre">import</span>
+<span class="pre">sys</span></tt>，列表的长度大于等于1；没有给定脚本和参数时，它至少也有一个元素： <tt class="docutils literal"><span class="pre">sys.argv[0]</span></tt> 此时为空字符串。脚本名指定为 <tt class="docutils literal"><span class="pre">'-'</span></tt> （表示标准输入）时， <tt class="docutils literal"><span class="pre">sys.argv[0]</span></tt> 被设定为 <tt class="docutils literal"><span class="pre">'-'</span></tt> ，使用 <em class="xref std std-option">-c</em> <em>指令</em> 时， <tt class="docutils literal"><span class="pre">sys.argv[0]</span></tt> 被设定为 <tt class="docutils literal"><span class="pre">'-c'</span></tt> 。 使用 <em class="xref std std-option">-m</em> <em>模块</em> 参数时， <tt class="docutils literal"><span class="pre">sys.agv[0]</span></tt> 被设定为指定模块的全名。<em class="xref std std-option">-c</em> <em>指令</em> 或者 <em class="xref std std-option">-m</em> <em>模块</em> 之后的参数不会被 Python 解释器的选项处理机制所截获，而是留在 <tt class="docutils literal"><span class="pre">sys.argv</span></tt> 中，供脚本命令操作。</p>
+</div>
+<div class="section" id="tut-interactive">
+<span id="id3"></span><h3>2.1.2. 交互模式<a class="headerlink" href="#tut-interactive" title="Permalink to this headline">¶</a></h3>
+<p>从 tty 读取命令时，我们称解释器工作于 <em>交互模式</em> 。这种模式下它根据 主提示符 来执行，主提示符通常标识为三个大于号 (<tt class="docutils literal"><span class="pre">&gt;&gt;&gt;</span></tt>)；继续的部分被称为 <em>从属提示符</em> ，由三个点标识 (<tt class="docutils literal"><span class="pre">...</span></tt>) 。在第一行之前，解释器打印欢迎信息、版本号和授权提示:</p>
+<div class="highlight-python"><pre>python
+Python 2.7 (#1, Feb 28 2010, 00:02:06)
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;</pre>
+</div>
+<p>输入多行结构时需要从属提示符了，例如，下面这个 <tt class="xref std std-keyword docutils literal"><span class="pre">if</span></tt> 语句:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">the_world_is_flat</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">the_world_is_flat</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="s">&quot;Be careful not to fall off!&quot;</span>
+<span class="gp">...</span>
+<span class="go">Be careful not to fall off!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tut-interp">
+<span id="id4"></span><h2>2.2. 解释器及其环境<a class="headerlink" href="#tut-interp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tut-error">
+<span id="id5"></span><h3>2.2.1. 错误处理<a class="headerlink" href="#tut-error" title="Permalink to this headline">¶</a></h3>
+<p>有错误发生时，解释器打印一个错误信息和栈跟踪器。交互模式下，它返回主提示符，如果从文件输入执行，它在打印栈跟踪器后以非零状态退出。（异常可以由 <tt class="xref std std-keyword docutils literal"><span class="pre">try</span></tt> 语句中的 <tt class="xref std std-keyword docutils literal"><span class="pre">except</span></tt> 子句来控制，这样就不会出现上文中的错误信息）有一些非常致命的错误会导致非零状态下退出，这由通常由内部矛盾和内存溢出造成。所有的错误信息都写入标准错误流；命令中执行的普通输出写入标准输出。</p>
+<p>在主提示符或附属提示符输入中断符（通常是Control-C 或者 DEL）就会取消当前输入，回到主命令行。 <a class="footnote-reference" href="#id11" id="id6">[1]</a> 执行命令时输入一个中断符会抛出一个 <tt class="xref py py-exc docutils literal"><span class="pre">KeyboardInterrupt</span></tt> 异常，它可以被 <tt class="xref std std-keyword docutils literal"><span class="pre">try</span></tt> 句截获。</p>
+</div>
+<div class="section" id="tut-scripts">
+<span id="id7"></span><h3>2.2.2. 执行 Python 脚本<a class="headerlink" href="#tut-scripts" title="Permalink to this headline">¶</a></h3>
+<p>BSD类的 Unix系统中，Python 脚本可以像 Shell 脚本那样直接执行。只要在脚本文件开头写一行命令，指定文件和模式</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+</pre></div>
+</div>
+<p>(要确认 Python 解释器在用户的 <span class="target" id="index-0"></span><tt class="xref std std-envvar docutils literal"><span class="pre">PATH</span></tt> 中) <tt class="docutils literal"><span class="pre">#!</span></tt>  必须是文件的前两个字符，在某些平台上，第一行必须以 Unix 风格的行结束符（ <tt class="docutils literal"><span class="pre">'n'</span></tt> ）结束，不能用 Windows （ <tt class="docutils literal"><span class="pre">'rn'</span></tt> ） 的结束符。注意， <tt class="docutils literal"><span class="pre">'#'</span></tt> 是Python中是行注释的起始符。
+脚本可以通过 <strong class="program">chmod</strong> 命令指定执行模式和权限</p>
+<div class="highlight-python"><pre>$ chmod +x myscript.py</pre>
+</div>
+<p>Windows 系统上没有“执行模式”。 Python 安装程序自动将 <tt class="docutils literal"><span class="pre">.py</span></tt> 文件关联到 <tt class="docutils literal"><span class="pre">python.exe</span></tt> ，所以在 Python 文件图标上双击，它就会作为脚本执行。同样 <tt class="docutils literal"><span class="pre">.pyw</span></tt>  也作了这样的关联，通常它执行时不会显示控制台窗口。</p>
+</div>
+<div class="section" id="tut-source-encoding">
+<span id="id8"></span><h3>2.2.3. 源程序编码<a class="headerlink" href="#tut-source-encoding" title="Permalink to this headline">¶</a></h3>
+<p>Python 的源文件可以通过编码使用 ASCII 以外的字符集。最好的做法是在 <tt class="docutils literal"><span class="pre">#!</span></tt>  行后面用一个特殊的注释行来定义字符集</p>
+<div class="highlight-python"><pre># -*- coding: encoding -*-</pre>
+</div>
+<p>根据这个声明，Python 会尝试将文件中的字符编码转为 <em>encoding</em>  编码。并且，它尽可能的将指定的编码直接写成 Unicode 文本。在 Python 库参考手册 中 <tt class="xref py py-mod docutils literal"><span class="pre">codecs</span></tt>  部份可以找到可用的编码列表（推荐使用 utf-8 处理中文－－译者注）。</p>
+<p>例如，可以用 ISO-8859-15 编码可以用来编写包含欧元符号的 Unicode 文本，其编码值为 164。这个脚本会输出 8364 （欧元符号的 Unicode 对应编码） 然后退出:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># -*- coding: iso-8859-15 -*-</span>
+
+<span class="n">currency</span> <span class="o">=</span> <span class="s">u&quot;€&quot;</span>
+<span class="k">print</span> <span class="nb">ord</span><span class="p">(</span><span class="n">currency</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>如果你的文件编辑器可以将文件保存为 <tt class="docutils literal"><span class="pre">UTF-8</span> <span class="pre">格式</span></tt>，并且可以保存 UTF-8 <em>字节序标记</em> （即 BOM - Byte Order Mark），你可以用这个来代替编码声明。IDLE可以通过设定 <tt class="docutils literal"><span class="pre">Options/General/Default</span> <span class="pre">Source</span> <span class="pre">Encoding/UTF-8</span></tt> 来支持它。需要注意的是旧版 Python 不支持这个标记（Python 2.2或更早的版本），也同样不去理解由操作系统调用脚本使用的 <tt class="docutils literal"><span class="pre">#!</span></tt> 行（仅限于 Unix系统）。</p>
+<p>使用 UTF-8 内码（无论是用标记还是编码声明），我们可以在字符串和注释中使用世界上的大部分语言。标识符中不能使用非 ASCII 字符集。为了正确显示所有的字符，你一定要在编辑器中将文件保存为 UTF-8 格式，而且要使用支持文件中所有字符的字体。</p>
+</div>
+<div class="section" id="tut-startup">
+<span id="id9"></span><h3>2.2.4. 交互式环境的启动文件<a class="headerlink" href="#tut-startup" title="Permalink to this headline">¶</a></h3>
+<p>使用 Python 解释器的时候，我们可能需要在每次解释器启动时执行一些命令。你可以在一个文件中包含你想要执行的命令，设定一个名为 <span class="target" id="index-1"></span><tt class="xref std std-envvar docutils literal"><span class="pre">PYTHONSTARTUP</span></tt> 的环境变量来指定这个文件。这类似于 Unix shell的 <tt class="file docutils literal"><span class="pre">.profile</span></tt> 文件。</p>
+<p>这个文件在交互会话期是只读的，当 Python 从脚本中解读文件或以终端 <tt class="file docutils literal"><span class="pre">/dev/tty</span></tt> 做为外部命令源时则不会如此（尽管它们的行为很像是处在交互会话期。）它与解释器执行的命令处在同一个命名空间，所以由它定义或引用的一切可以在解释器中不受限制的使用。你也可以在这个文件中改变 <tt class="docutils literal"><span class="pre">sys.ps1</span></tt> 和 <tt class="docutils literal"><span class="pre">sys.ps2</span></tt>  指令。</p>
+<p>如果你想要在当前目录中执行附加的启动文件，可以在全局启动文件中加入类似以下的代码： <tt class="docutils literal"><span class="pre">if</span> <span class="pre">os.path.isfile('.pythonrc.py'):</span> <span class="pre">execfile('.pythonrc.py')</span></tt>  。如果你想要在某个脚本中使用启动文件，必须要在脚本中写入这样的语句:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;PYTHONSTARTUP&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">filename</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="nb">execfile</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tut-customize">
+<span id="id10"></span><h3>2.2.5. 本地化模块<a class="headerlink" href="#tut-customize" title="Permalink to this headline">¶</a></h3>
+<p>Python提供了两个钩子（方法）来本地化: <tt class="xref py py-mod docutils literal"><span class="pre">sitecustomize</span></tt> 和
+<tt class="xref py py-mod docutils literal"><span class="pre">usercustomize</span></tt>.  为了见识它们, 你首先需要找到你的site-packages的目录.  启动python执行下面的代码:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">site</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">getusersitepackages</span><span class="p">()</span>
+<span class="go">&#39;/home/user/.local/lib/python3.2/site-packages&#39;</span>
+</pre></div>
+</div>
+<p>现在你可以在site-packages的目录下创建 <tt class="file docutils literal"><span class="pre">usercustomize.py</span></tt> 文件，内容就悉听尊便了。
+这个文件将会影响python的每次调用，除非启动的时候加入 <em class="xref std std-option">-s</em> 选项禁止自动导入。</p>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">sitecustomize</span></tt> 的工作方式一样, 但是是由电脑的管理账户创建以及在 <tt class="xref py py-mod docutils literal"><span class="pre">usercustomize</span></tt> 之前导入。 具体可以参见 <tt class="xref py py-mod docutils literal"><span class="pre">site</span></tt> 。</p>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[1]</a></td><td>A problem with the GNU Readline package may prevent this.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2. 使用Python解释器</a><ul>
+<li><a class="reference internal" href="#tut-invoking">2.1. 调用解释器</a><ul>
+<li><a class="reference internal" href="#tut-argpassing">2.1.1. 参数传递</a></li>
+<li><a class="reference internal" href="#tut-interactive">2.1.2. 交互模式</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tut-interp">2.2. 解释器及其环境</a><ul>
+<li><a class="reference internal" href="#tut-error">2.2.1. 错误处理</a></li>
+<li><a class="reference internal" href="#tut-scripts">2.2.2. 执行 Python 脚本</a></li>
+<li><a class="reference internal" href="#tut-source-encoding">2.2.3. 源程序编码</a></li>
+<li><a class="reference internal" href="#tut-startup">2.2.4. 交互式环境的启动文件</a></li>
+<li><a class="reference internal" href="#tut-customize">2.2.5. 本地化模块</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="appetite.html"
+                        title="previous chapter">1. 开胃菜</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="next chapter">3. Python??Ҫ????</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/interpreter.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="introduction.html" title="3. Python??Ҫ????"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="appetite.html" title="1. 开胃菜"
+             >previous</a> |</li>
+        <li><a href="index.html">python 2.7 tutorial 2.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, D.D.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
