@@ -18,10 +18,10 @@ Python是一门简单易学且功能强大的编程语言。 它拥有高效的�
 如果需要了解相关标准库或对象的详细介绍，请查阅 `Python参考文档 <http://docs.python.org/2/library/index.html>`_ 。 `Python参考手册 <http://docs.python.org/2/library/index.html>`_ 提供了更多语言相关的正式说明。 如果想要使用C或C++编写扩展，请查阅 `Python解释器扩展和集成章节 <http://docs.python.org/2/extending/index.html#extending-index>`_ 和 `C API参考手册 <http://docs.python.org/2/c-api/index.html#c-api-index>`_ 。 当然也可阅读一些深入介绍Python知识的图书。
 
 本手册不会尝试涵盖Python的全部知识和每个特性，甚至不会涵盖所有常用的特性。 相反的，它介绍了Python中许多最引人瞩目的特性，并且会给你一个关于语言特色和风格的认识。 读完之后，你将能够阅读和编写Python模块或程序，并为以后使用 
-`Python参考手册 <http://docs.python.org/2/library/index.html>`_继续学习诸多Python模块库做好准备。
+`Python参考手册 <http://docs.python.org/2/library/index.html>`_ 继续学习诸多Python模块库做好准备。
 
 
- `词汇表 <http://docs.python.org/2/glossary.html#glossary>`_ 也值得浏览一下。
+`词汇表 <http://docs.python.org/2/glossary.html#glossary>`_ 也值得浏览一下。
 
 .. toctree::
    :numbered:

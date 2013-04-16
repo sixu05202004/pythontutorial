@@ -28,7 +28,7 @@
    ...
    More
 
-可能会有零到多个 :keyword:`elif` 部分，:keyword:`else` 是可选的。关键字 ':keyword:`elif`' 是 “else if” 的缩写，这个可以有效避免过深的缩进。 :keyword:`if` ... :keyword:`elif` ... :keyword:`elif` ... 序列用于替代其它语言中的 ``switch`` 或 ``case`` 语句。
+可能会有零到多个 :keyword:`elif` 部分，:keyword:`else` 是可选的。关键字 ':keyword:`elif`' 是 'else if' 的缩写，这个可以有效避免过深的缩进。 :keyword:`if` ... :keyword:`elif` ... :keyword:`elif` ... 序列用于替代其它语言中的 ``switch`` 或 ``case`` 语句。
 
 
 .. _tut-for:

@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>3. Python概要介绍 &mdash; python 2.7 tutorial 2.7 documentation</title>
+    <title>3. Python概要介绍 &mdash; python tutorial 2.7 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="python 2.7 tutorial 2.7 documentation" href="index.html" />
+    <link rel="top" title="python tutorial 2.7 documentation" href="index.html" />
     <link rel="next" title="4. 深入流程控制" href="controlflow.html" />
     <link rel="prev" title="2. 使用Python解释器" href="interpreter.html" /> 
   </head>
@@ -42,7 +42,7 @@
         <li class="right" >
           <a href="interpreter.html" title="2. 使用Python解释器"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">python 2.7 tutorial 2.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -54,7 +54,7 @@
   <div class="section" id="python">
 <span id="tut-informal"></span><h1>3. Python概要介绍<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
 <p>下面的例子中，输入和输出分别由大于号和句号提示符（ <tt class="docutils literal"><span class="pre">&gt;&gt;&gt;</span></tt> 和 <tt class="docutils literal"><span class="pre">...</span></tt> ）标注：如果想重现这些例子，就要在解释器的提示符后，输入（提示符后面的）那些不包含提示符的代码行。需要注意的是在练习中遇到的从属提示符表示你需要在最后多输入一个空行，解释器才能知道这是一个多行命令的结束。</p>
-<p>本手册中的很多示例——包括那些带有交互提示符的——都含有注释。Python 中的注释以 <tt class="docutils literal"><span class="pre">#</span></tt> 字符起始，直至实际的行尾（译注——这里原作者用了 physical line 以表示实际的换行而非编辑器的自动换行）。注释可以从行首开始，也可以在空白或代码之后，但是不出现在字符串中。文本字符串中的 <tt class="docutils literal"><span class="pre">#</span></tt> 字符仅仅表示 <tt class="docutils literal"><span class="pre">#</span></tt> 。代码中的注释不会被 Python 解释，录入示例的时候可以忽略它们。</p>
+<p>本手册中的很多示例——包括那些带有交互提示符的——都含有注释。Python 中的注释以 <tt class="docutils literal"><span class="pre">#</span></tt> 字符起始，直至实际的行尾。注释可以从行首开始，也可以在空白或代码之后，但是不出现在字符串中。文本字符串中的 <tt class="docutils literal"><span class="pre">#</span></tt> 字符仅仅表示 <tt class="docutils literal"><span class="pre">#</span></tt> 。代码中的注释不会被 Python 解释，录入示例的时候可以忽略它们。</p>
 <p>如下示例:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># this is the first comment</span>
 <span class="n">SPAM</span> <span class="o">=</span> <span class="mi">1</span>                 <span class="c"># and this is the second comment</span>
@@ -231,10 +231,8 @@ several lines of text much as you would do in C.
 <span class="go">&#39;&lt;HelpAHelpAHelpAHelpAHelpA&gt;&#39;</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>相邻的两个字符串文本自动连接在一起，前面那行代码也可以写为 <tt class="docutils literal"><span class="pre">word</span> <span class="pre">='Help'</span> <span class="pre">'A'</span></tt></dt>
-<dd><p class="first">;它只用于两个字符串文本，不能用于字符串表达式。:</p>
-<div class="last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;str&#39;</span> <span class="s">&#39;ing&#39;</span>                   <span class="c">#  &lt;-  This is ok</span>
+<p>相邻的两个字符串文本自动连接在一起，前面那行代码也可以写为 <tt class="docutils literal"><span class="pre">word</span> <span class="pre">='Help'</span> <span class="pre">'A'</span></tt> ;它只用于两个字符串文本，不能用于字符串表达式。:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;str&#39;</span> <span class="s">&#39;ing&#39;</span>                   <span class="c">#  &lt;-  This is ok</span>
 <span class="go">&#39;string&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;str&#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">+</span> <span class="s">&#39;ing&#39;</span>   <span class="c">#  &lt;-  This is ok</span>
 <span class="go">&#39;string&#39;</span>
@@ -245,8 +243,6 @@ several lines of text much as you would do in C.
 <span class="go">SyntaxError: invalid syntax</span>
 </pre></div>
 </div>
-</dd>
-</dl>
 <p>字符串也可以被截取（检索）。类似于 C ，字符串的第一个字符索引为 0 。没有独立的字符类型，字符就是长度为 1 的字符串。类似 Icon ，可以用 <em>切片标注</em> 法截取字符串：由两个索引分割的复本。:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 <span class="go">&#39;A&#39;</span>
@@ -281,14 +277,17 @@ several lines of text much as you would do in C.
 <span class="go">&#39;SplatA&#39;</span>
 </pre></div>
 </div>
-<p>切片操作有个有用的不变性： <tt class="docutils literal"><span class="pre">s[:i]</span> <span class="pre">+</span> <span class="pre">s[i:]</span></tt> 等于 <tt class="docutils literal"><span class="pre">s</span></tt>。</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+<dl class="docutils">
+<dt>切片操作有个有用的不变性： <tt class="docutils literal"><span class="pre">s[:i]</span> <span class="pre">+</span> <span class="pre">s[i:]</span></tt> 等于 <tt class="docutils literal"><span class="pre">s</span></tt>。</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
 <span class="go">&#39;HelpA&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
 <span class="go">&#39;HelpA&#39;</span>
 </pre></div>
 </div>
-<p>退化的切割检索很优雅：上限过大，会替换为文本长度，上界小于下界则返回空字符串。:</p>
+</dd>
+</dl>
+<p>退化的切割检索很优雅：上限过大，会替换为文本长度，上界小于下界则返回空字符串。</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">100</span><span class="p">]</span>
 <span class="go">&#39;elpA&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="mi">10</span><span class="p">:]</span>
@@ -297,7 +296,7 @@ several lines of text much as you would do in C.
 <span class="go">&#39;&#39;</span>
 </pre></div>
 </div>
-<p>索引可以是负数，此时从右端开始计量。例如:</p>
+<p>索引可以是负数，此时从右端开始计量。例如</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>     <span class="c"># The last character</span>
 <span class="go">&#39;A&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>     <span class="c"># The last-but-one character</span>
@@ -496,7 +495,7 @@ several lines of text much as you would do in C.
 </li>
 <li><p class="first">条件（这里是 <tt class="docutils literal"><span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">10</span></tt> ）为 true 时， <tt class="xref std std-keyword docutils literal"><span class="pre">while</span></tt> 循环执行。在 Python 中，类似于 C ，任何非零整数都是 true；0 是 false 条件也可以是字符串或列表，实际上可以是任何序列；所有长度不为零的是 true ，空序列是 false。示例中的测试是一个简单的比较。标准比较操作符与 C 相同： <tt class="docutils literal"><span class="pre">&lt;</span></tt> （小于）， <tt class="docutils literal"><span class="pre">&gt;</span></tt> （大于）， <tt class="docutils literal"><span class="pre">==</span></tt> （等于）， <tt class="docutils literal"><span class="pre">&lt;=</span></tt> （小于等于）， <tt class="docutils literal"><span class="pre">&gt;=</span></tt> （大于等于）和 <tt class="docutils literal"><span class="pre">!=</span></tt> （不等于）。</p>
 </li>
-<li><p class="first">循环 <em>体</em> 是 <em>缩进</em> 的：缩进是 Python 是 Python 组织語句的方法。 Python (还) 不提供集成的行编辑功能，所以你要为每一个缩进行输入 TAB 或空格。实践中建议你找个文本编辑来录入复杂的 Python 程序，大多数文本编辑器提供自动缩进。交互式录入复合语句时，必须在最后输入一个空行来标识结束（因为解释器没办法猜测你输入的哪一行是最后一行），需要 注意的是同一个语句块中的语句块必须缩进同样数量的空白。</p>
+<li><p class="first"><em>循环体</em> 是 <em>缩进</em> 的：缩进是 Python 是 Python 组织語句的方法。 Python (还) 不提供集成的行编辑功能，所以你要为每一个缩进行输入 TAB 或空格。实践中建议你找个文本编辑来录入复杂的 Python 程序，大多数文本编辑器提供自动缩进。交互式录入复合语句时，必须在最后输入一个空行来标识结束（因为解释器没办法猜测你输入的哪一行是最后一行），需要 注意的是同一个语句块中的语句块必须缩进同样数量的空白。</p>
 </li>
 <li><p class="first">关键字 <tt class="xref std std-keyword docutils literal"><span class="pre">print</span></tt> 语句输出给定表达式的值。它控制多个表达式和字符串输出为你想要字符串（就像我们在前面计算器的例子中那样）。字符串打印时不用引号包围，每两个子项之间插入空间，所以你可以把格式弄得很漂亮，像这样</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="mi">256</span><span class="o">*</span><span class="mi">256</span>
@@ -563,6 +562,21 @@ several lines of text much as you would do in C.
     Enter search terms or a module, class or function name.
     </p>
 </div>
+
+<div id="google">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3421553373953599";
+/* 首页侧边 */
+google_ad_slot = "3551838308";
+google_ad_width = 200;
+google_ad_height = 200;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
@@ -580,12 +594,14 @@ several lines of text much as you would do in C.
         <li class="right" >
           <a href="interpreter.html" title="2. 使用Python解释器"
              >previous</a> |</li>
-        <li><a href="index.html">python 2.7 tutorial 2.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2013, D.D.
+        &copy; Copyright Translate by march.liu, Reorganize byD.D 2013.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
-    </div>
+
+<script src="http://s21.cnzz.com/stat.php?id=4985497&web_id=4985497&show=pic1" language="JavaScript"></script>    
+</div>
   </body>
 </html>

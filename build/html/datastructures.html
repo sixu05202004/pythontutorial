@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>5. 数据结构 &mdash; python 2.7 tutorial 2.7 documentation</title>
+    <title>5. 数据结构 &mdash; python tutorial 2.7 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="python 2.7 tutorial 2.7 documentation" href="index.html" />
-    <link rel="next" title="6. Modules" href="modules.html" />
+    <link rel="top" title="python tutorial 2.7 documentation" href="index.html" />
+    <link rel="next" title="6. 模块" href="modules.html" />
     <link rel="prev" title="4. 深入流程控制" href="controlflow.html" /> 
   </head>
   <body>
@@ -37,12 +37,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="modules.html" title="6. Modules"
+          <a href="modules.html" title="6. 模块"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="controlflow.html" title="4. 深入流程控制"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">python 2.7 tutorial 2.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -72,54 +72,46 @@
 <dl class="method">
 <dt>
 <tt class="descclassname">list.</tt><tt class="descname">insert</tt><big>(</big><em>i</em>, <em>x</em><big>)</big></dt>
-<dd><p>Insert an item at a given position.  The first argument is the index of the
-element before which to insert, so <tt class="docutils literal"><span class="pre">a.insert(0,</span> <span class="pre">x)</span></tt> inserts at the front of
-the list, and <tt class="docutils literal"><span class="pre">a.insert(len(a),</span> <span class="pre">x)</span></tt> is equivalent to <tt class="docutils literal"><span class="pre">a.append(x)</span></tt>.</p>
+<dd><p>在指定位置插入一个元素。第一个参数是准备插入到其前面的那个元素的索引，例如 <tt class="docutils literal"><span class="pre">a.insert(0,</span> <span class="pre">x)</span></tt> 会插入到整个链表之前，而 <tt class="docutils literal"><span class="pre">a.insert(len(a),</span> <span class="pre">x)</span></tt> 相当于 <tt class="docutils literal"><span class="pre">a.append(x)</span></tt> 。</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
 <tt class="descclassname">list.</tt><tt class="descname">remove</tt><big>(</big><em>x</em><big>)</big></dt>
-<dd><p>Remove the first item from the list whose value is <em>x</em>. It is an error if there
-is no such item.</p>
+<dd><p>删除链表中值为 <em>x</em> 的第一个元素。如果没有这样的元素，就会返回一个错误。</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
 <tt class="descclassname">list.</tt><tt class="descname">pop</tt><big>(</big><span class="optional">[</span><em>i</em><span class="optional">]</span><big>)</big></dt>
-<dd><p>Remove the item at the given position in the list, and return it.  If no index
-is specified, <tt class="docutils literal"><span class="pre">a.pop()</span></tt> removes and returns the last item in the list.  (The
-square brackets around the <em>i</em> in the method signature denote that the parameter
-is optional, not that you should type square brackets at that position.  You
-will see this notation frequently in the Python Library Reference.)</p>
+<dd><p>从链表的指定位置删除元素，并将其返回。如果没有指定索引， <tt class="docutils literal"><span class="pre">a.pop()</span></tt> 返回最后一个元素。元素随即从链表中被删除。（方法中 <em>i</em> 两边的方括号表示这个参数是可选的，而不是要求你输入一对方括号，你会经常在Python 库参考手册中遇到这样的标记。）</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
 <tt class="descclassname">list.</tt><tt class="descname">index</tt><big>(</big><em>x</em><big>)</big></dt>
-<dd><p>Return the index in the list of the first item whose value is <em>x</em>. It is an
-error if there is no such item.</p>
+<dd><p>返回链表中第一个值为 <em>x</em> 的元素的索引。如果没有匹配的元素就会返回一个错误。</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
 <tt class="descclassname">list.</tt><tt class="descname">count</tt><big>(</big><em>x</em><big>)</big></dt>
-<dd><p>Return the number of times <em>x</em> appears in the list.</p>
+<dd><p>返回 <em>x</em> 在链表中出现的次数。</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
 <tt class="descclassname">list.</tt><tt class="descname">sort</tt><big>(</big><big>)</big></dt>
-<dd><p>Sort the items of the list, in place.</p>
+<dd><p>对链表中的元素就地进行排序。</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
 <tt class="descclassname">list.</tt><tt class="descname">reverse</tt><big>(</big><big>)</big></dt>
-<dd><p>Reverse the elements of the list, in place.</p>
+<dd><p>就地倒排链表中的元素。</p>
 </dd></dl>
 
-<p>An example that uses most of the list methods:</p>
+<p>下面这个示例演示了链表的大部分方法</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mf">66.25</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1234.5</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">a</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">333</span><span class="p">),</span> <span class="n">a</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mf">66.25</span><span class="p">),</span> <span class="n">a</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
 <span class="go">2 1 0</span>
@@ -140,12 +132,9 @@ error if there is no such item.</p>
 <span class="go">[-1, 1, 66.25, 333, 333, 1234.5]</span>
 </pre></div>
 </div>
-<div class="section" id="using-lists-as-stacks">
-<span id="tut-lists-as-stacks"></span><h3>5.1.1. Using Lists as Stacks<a class="headerlink" href="#using-lists-as-stacks" title="Permalink to this headline">¶</a></h3>
-<p>The list methods make it very easy to use a list as a stack, where the last
-element added is the first element retrieved (&#8220;last-in, first-out&#8221;).  To add an
-item to the top of the stack, use <tt class="xref py py-meth docutils literal"><span class="pre">append()</span></tt>.  To retrieve an item from the
-top of the stack, use <tt class="xref py py-meth docutils literal"><span class="pre">pop()</span></tt> without an explicit index.  For example:</p>
+<div class="section" id="tut-lists-as-stacks">
+<span id="id3"></span><h3>5.1.1. 把链表当作堆栈使用<a class="headerlink" href="#tut-lists-as-stacks" title="Permalink to this headline">¶</a></h3>
+<p>链表方法使得链表可以很方便的做为一个堆栈来使用，堆栈作为特定的数据结构，最先进入的元素最后一个被释放（后进先出）。用 <tt class="xref py py-meth docutils literal"><span class="pre">append()</span></tt> 方法可以把一个元素添加到堆栈顶。用不指定索引的 <tt class="xref py py-meth docutils literal"><span class="pre">pop()</span></tt> 方法可以把一个元素从堆栈顶释放出来。例如</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
@@ -164,15 +153,10 @@ top of the stack, use <tt class="xref py py-meth docutils literal"><span class="
 </pre></div>
 </div>
 </div>
-<div class="section" id="using-lists-as-queues">
-<span id="tut-lists-as-queues"></span><h3>5.1.2. Using Lists as Queues<a class="headerlink" href="#using-lists-as-queues" title="Permalink to this headline">¶</a></h3>
-<p>It is also possible to use a list as a queue, where the first element added is
-the first element retrieved (&#8220;first-in, first-out&#8221;); however, lists are not
-efficient for this purpose.  While appends and pops from the end of list are
-fast, doing inserts or pops from the beginning of a list is slow (because all
-of the other elements have to be shifted by one).</p>
-<p>To implement a queue, use <tt class="xref py py-class docutils literal"><span class="pre">collections.deque</span></tt> which was designed to
-have fast appends and pops from both ends.  For example:</p>
+<div class="section" id="tut-lists-as-queues">
+<span id="id4"></span><h3>5.1.2. 把链表当作队列使用<a class="headerlink" href="#tut-lists-as-queues" title="Permalink to this headline">¶</a></h3>
+<p>你也可以把链表当做队列使用，队列作为特定的数据结构，最先进入的元素最先释放（先进先出）。不过，列表这样用效率不高。相对来说从列表末尾添加和弹出很快；在头部插入和弹出很慢（因为，为了一个元素，要移动整个列表中的所有元素）。</p>
+<p>要实现队列，使用 <tt class="xref py py-class docutils literal"><span class="pre">collections.deque</span></tt> ，它为在首尾两端快速插入和删除而设计。例如</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="s">&quot;Eric&quot;</span><span class="p">,</span> <span class="s">&quot;John&quot;</span><span class="p">,</span> <span class="s">&quot;Michael&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;Terry&quot;</span><span class="p">)</span>           <span class="c"># Terry arrives</span>
@@ -186,34 +170,24 @@ have fast appends and pops from both ends.  For example:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="functional-programming-tools">
-<span id="tut-functional"></span><h3>5.1.3. Functional Programming Tools<a class="headerlink" href="#functional-programming-tools" title="Permalink to this headline">¶</a></h3>
-<p>There are three built-in functions that are very useful when used with lists:
-<tt class="xref py py-func docutils literal"><span class="pre">filter()</span></tt>, <tt class="xref py py-func docutils literal"><span class="pre">map()</span></tt>, and <tt class="xref py py-func docutils literal"><span class="pre">reduce()</span></tt>.</p>
-<p><tt class="docutils literal"><span class="pre">filter(function,</span> <span class="pre">sequence)</span></tt> returns a sequence consisting of those items from
-the sequence for which <tt class="docutils literal"><span class="pre">function(item)</span></tt> is true. If <em>sequence</em> is a
-<tt class="xref py py-class docutils literal"><span class="pre">string</span></tt> or <tt class="xref py py-class docutils literal"><span class="pre">tuple</span></tt>, the result will be of the same type;
-otherwise, it is always a <tt class="xref py py-class docutils literal"><span class="pre">list</span></tt>. For example, to compute a sequence of
-numbers not divisible by 2 and 3:</p>
+<div class="section" id="tut-functional">
+<span id="id5"></span><h3>5.1.3. 函数式编程工具<a class="headerlink" href="#tut-functional" title="Permalink to this headline">¶</a></h3>
+<p>对于链表来讲，有三个内置函数非常有用： <tt class="xref py py-func docutils literal"><span class="pre">filter()</span></tt>, <tt class="xref py py-func docutils literal"><span class="pre">map()</span></tt>, 和 <tt class="xref py py-func docutils literal"><span class="pre">reduce()</span></tt> 。</p>
+<p><tt class="docutils literal"><span class="pre">filter(function,</span> <span class="pre">sequence)</span></tt> 返回一个sequence（序列），包括了给定序列中所有调用 <tt class="docutils literal"><span class="pre">function(item)</span></tt> 后返回值为true的元素。（如果可能的话，会返回相同的类型）。如果该 <em>序列</em> （sequence） 是一个 <tt class="xref py py-class docutils literal"><span class="pre">string</span></tt> （字符串）或者 <tt class="xref py py-class docutils literal"><span class="pre">tuple</span></tt> （元组），返回值必定是同一类型，否则，它总是 <tt class="xref py py-class docutils literal"><span class="pre">list</span></tt> 。例如，以下程序可以计算部分素数</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">!=</span> <span class="mi">0</span>
 <span class="gp">...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">filter</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
 <span class="go">[5, 7, 11, 13, 17, 19, 23]</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">map(function,</span> <span class="pre">sequence)</span></tt> calls <tt class="docutils literal"><span class="pre">function(item)</span></tt> for each of the sequence&#8217;s
-items and returns a list of the return values.  For example, to compute some
-cubes:</p>
+<p><tt class="docutils literal"><span class="pre">map(function,</span> <span class="pre">sequence)</span></tt> 为每一个元素依次调用 <tt class="docutils literal"><span class="pre">function(item)</span></tt>  并将返回值组成一个链表返回。例如，以下程序计算立方</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span>
 <span class="gp">...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">map</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
 <span class="go">[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]</span>
 </pre></div>
 </div>
-<p>More than one sequence may be passed; the function must then have as many
-arguments as there are sequences and is called with the corresponding item from
-each sequence (or <tt class="docutils literal"><span class="pre">None</span></tt> if some sequence is shorter than another).  For
-example:</p>
+<p>可以传入多个序列，函数也必须要有对应数量的参数，执行时会依次用各序列上对应的元素来调用函数（如果某些序列比其它的短，就用 <tt class="docutils literal"><span class="pre">None</span></tt> 来代替）。如果把 <tt class="docutils literal"><span class="pre">None</span></tt> 做为一个函数传入，则直接返回参数做为替代。例如</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
 <span class="gp">...</span>
@@ -221,22 +195,15 @@ example:</p>
 <span class="go">[0, 2, 4, 6, 8, 10, 12, 14]</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">reduce(function,</span> <span class="pre">sequence)</span></tt> returns a single value constructed by calling the
-binary function <em>function</em> on the first two items of the sequence, then on the
-result and the next item, and so on.  For example, to compute the sum of the
-numbers 1 through 10:</p>
+<p><tt class="docutils literal"><span class="pre">reduce(func,</span> <span class="pre">sequence)</span></tt> 返回一个单值，它是这样构造的：首先以序列的前两个元素调用函数 <em>function</em> ，再以返回值和第三个参数调用，依次执行下去。例如，以下程序计算 1 到 10 的整数之和</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
 <span class="gp">...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">reduce</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
 <span class="go">55</span>
 </pre></div>
 </div>
-<p>If there&#8217;s only one item in the sequence, its value is returned; if the sequence
-is empty, an exception is raised.</p>
-<p>A third argument can be passed to indicate the starting value.  In this case the
-starting value is returned for an empty sequence, and the function is first
-applied to the starting value and the first sequence item, then to the result
-and the next item, and so on.  For example,</p>
+<p>如果序列中只有一个元素，就返回它，如果序列是空的，就抛出一个异常。</p>
+<p>可以传入第三个参数做为初始值。如果序列是空的，就返回初始值，否则函数会先接收初始值和序列的第一个元素，然后是返回值和下一个元素，依此类推。例如</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -247,19 +214,14 @@ and the next item, and so on.  For example,</p>
 <span class="go">0</span>
 </pre></div>
 </div>
-<p>Don&#8217;t use this example&#8217;s definition of <tt class="xref py py-func docutils literal"><span class="pre">sum()</span></tt>: since summing numbers is
-such a common need, a built-in function <tt class="docutils literal"><span class="pre">sum(sequence)</span></tt> is already provided,
-and works exactly like this.</p>
+<p>不要像示例中这样定义 <tt class="xref py py-func docutils literal"><span class="pre">sum()</span></tt> ：因为合计数值是一个通用的需求，早已有内置的 <tt class="docutils literal"><span class="pre">sum(sequence)</span></tt> 函数，非常好用。</p>
 <p class="versionadded">
 <span class="versionmodified">New in version 2.3.</span></p>
 </div>
-<div class="section" id="list-comprehensions">
-<h3>5.1.4. List Comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">¶</a></h3>
-<p>List comprehensions provide a concise way to create lists.
-Common applications are to make new lists where each element is the result of
-some operations applied to each member of another sequence or iterable, or to
-create a subsequence of those elements that satisfy a certain condition.</p>
-<p>For example, assume we want to create a list of squares, like:</p>
+<div class="section" id="id6">
+<h3>5.1.4. 列表推导式<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>列表推导式为从序列中创建列表提供了一个简单的方法。 普通的应用程式通过将一些操作应用于序列的每个成员并通过返回的元素创建列表，或者通过满足特定条件的元素创建子序列。</p>
+<p>例如, 假设我们创建一个squares列表, 可以像下面方式</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
@@ -268,23 +230,20 @@ create a subsequence of those elements that satisfy a certain condition.</p>
 <span class="go">[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span>
 </pre></div>
 </div>
-<p>We can obtain the same result with:</p>
+<p>我们同样能够达到目的采用下面的方式</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 </pre></div>
 </div>
-<p>This is also equivalent to <tt class="docutils literal"><span class="pre">squares</span> <span class="pre">=</span> <span class="pre">map(lambda</span> <span class="pre">x:</span> <span class="pre">x**2,</span> <span class="pre">range(10))</span></tt>,
-but it&#8217;s more concise and readable.</p>
-<p>A list comprehension consists of brackets containing an expression followed
-by a <tt class="xref std std-keyword docutils literal"><span class="pre">for</span></tt> clause, then zero or more <tt class="xref std std-keyword docutils literal"><span class="pre">for</span></tt> or <tt class="xref std std-keyword docutils literal"><span class="pre">if</span></tt>
-clauses.  The result will be a new list resulting from evaluating the expression
-in the context of the <tt class="xref std std-keyword docutils literal"><span class="pre">for</span></tt> and <tt class="xref std std-keyword docutils literal"><span class="pre">if</span></tt> clauses which follow it.
-For example, this listcomp combines the elements of two lists if they are not
-equal:</p>
+<p>这也相当于 <tt class="docutils literal"><span class="pre">squares</span> <span class="pre">=</span> <span class="pre">map(lambda</span> <span class="pre">x:</span> <span class="pre">x**2,</span> <span class="pre">range(10))</span></tt>,
+但是上面的方式显得简洁以及具有可读性.</p>
+<p>列表推导式由包含一个表达式的括号组成，表达式后面跟随一个 <tt class="xref std std-keyword docutils literal"><span class="pre">for</span></tt> 子句，之后可以有零或多个 <tt class="xref std std-keyword docutils literal"><span class="pre">for</span></tt> 或 <tt class="xref std std-keyword docutils literal"><span class="pre">if</span></tt> 子句。 结果是一个列表，由表达式依据其后面的 <tt class="xref std std-keyword docutils literal"><span class="pre">for</span></tt> 和 <tt class="xref std std-keyword docutils literal"><span class="pre">if</span></tt> 子句上下文计算而来的结果构成。</p>
+<p>例如，如下的列表推导式结合两个列表的元素，如果元素之间不</p>
+<p>相等的话</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">]</span>
 <span class="go">[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]</span>
 </pre></div>
 </div>
-<p>and it&#8217;s equivalent to:</p>
+<p>等同于 :</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">combs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
 <span class="gp">... </span>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]:</span>
@@ -295,10 +254,8 @@ equal:</p>
 <span class="go">[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]</span>
 </pre></div>
 </div>
-<p>Note how the order of the <tt class="xref std std-keyword docutils literal"><span class="pre">for</span></tt> and <tt class="xref std std-keyword docutils literal"><span class="pre">if</span></tt> statements is the
-same in both these snippets.</p>
-<p>If the expression is a tuple (e.g. the <tt class="docutils literal"><span class="pre">(x,</span> <span class="pre">y)</span></tt> in the previous example),
-it must be parenthesized.</p>
+<p>值得注意的是在上面两个方法中的 <tt class="xref std std-keyword docutils literal"><span class="pre">for</span></tt> 和 <tt class="xref std std-keyword docutils literal"><span class="pre">if</span></tt> 语句的顺序。</p>
+<p>如果想要得到一个元组，必须要加上括号</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">vec</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c"># create a new list with the values doubled</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vec</span><span class="p">]</span>
@@ -328,18 +285,16 @@ it must be parenthesized.</p>
 <span class="go">[1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
 </pre></div>
 </div>
-<p>List comprehensions can contain complex expressions and nested functions:</p>
+<p>列表推导式可使用复杂的表达式和嵌套函数</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
 <span class="go">[&#39;3.1&#39;, &#39;3.14&#39;, &#39;3.142&#39;, &#39;3.1416&#39;, &#39;3.14159&#39;]</span>
 </pre></div>
 </div>
-<div class="section" id="nested-list-comprehensions">
-<h4>5.1.4.1. Nested List Comprehensions<a class="headerlink" href="#nested-list-comprehensions" title="Permalink to this headline">¶</a></h4>
-<p>The initial expression in a list comprehension can be any arbitrary expression,
-including another list comprehension.</p>
-<p>Consider the following example of a 3x4 matrix implemented as a list of
-3 lists of length 4:</p>
+<div class="section" id="id7">
+<h4>5.1.4.1. 嵌套的列表推导式<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>列表推导式可以嵌套。</p>
+<p>考虑以下的 3x4 矩阵， 一个列表中包含三个长度为4的列表</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">matrix</span> <span class="o">=</span> <span class="p">[</span>
 <span class="gp">... </span>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
 <span class="gp">... </span>    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
@@ -347,14 +302,12 @@ including another list comprehension.</p>
 <span class="gp">... </span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The following list comprehension will transpose rows and columns:</p>
+<p>现在，如果你想交换行和列，可以用列表推导式</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">[[</span><span class="n">row</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
 <span class="go">[[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]</span>
 </pre></div>
 </div>
-<p>As we saw in the previous section, the nested listcomp is evaluated in
-the context of the <tt class="xref std std-keyword docutils literal"><span class="pre">for</span></tt> that follows it, so this example is
-equivalent to:</p>
+<p>像前面看到的，嵌套的列表推导式是对 <tt class="xref std std-keyword docutils literal"><span class="pre">for</span></tt> 后面的内容进行求值，所以上例就等价于</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">transposed</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">transposed</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">])</span>
@@ -363,7 +316,7 @@ equivalent to:</p>
 <span class="go">[[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]</span>
 </pre></div>
 </div>
-<p>which, in turn, is the same as:</p>
+<p>反过来说，如下也是一样的</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">transposed</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="c"># the following 3 lines implement the nested listcomp</span>
@@ -376,23 +329,18 @@ equivalent to:</p>
 <span class="go">[[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]</span>
 </pre></div>
 </div>
-<p>In the real world, you should prefer built-in functions to complex flow statements.
-The <tt class="xref py py-func docutils literal"><span class="pre">zip()</span></tt> function would do a great job for this use case:</p>
+<p>在实际中，你应该更喜欢使用内置函数组成复杂流程语句。 对此种情况 <tt class="xref py py-func docutils literal"><span class="pre">zip()</span></tt> 函数将会做的更好</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">matrix</span><span class="p">)</span>
 <span class="go">[(1, 5, 9), (2, 6, 10), (3, 7, 11), (4, 8, 12)]</span>
 </pre></div>
 </div>
-<p>See <a class="reference internal" href="controlflow.html#tut-unpacking-arguments"><em>参数列表的分拆</em></a> for details on the asterisk in this line.</p>
+<p>更多关于本行中使用的星号（*）的说明，参考 <a class="reference internal" href="controlflow.html#tut-unpacking-arguments"><em>参数列表的分拆</em></a> 。</p>
 </div>
 </div>
 </div>
-<div class="section" id="the-del-statement">
-<span id="tut-del"></span><h2>5.2. The <tt class="xref std std-keyword docutils literal"><span class="pre">del</span></tt> statement<a class="headerlink" href="#the-del-statement" title="Permalink to this headline">¶</a></h2>
-<p>There is a way to remove an item from a list given its index instead of its
-value: the <tt class="xref std std-keyword docutils literal"><span class="pre">del</span></tt> statement.  This differs from the <tt class="xref py py-meth docutils literal"><span class="pre">pop()</span></tt> method
-which returns a value.  The <tt class="xref std std-keyword docutils literal"><span class="pre">del</span></tt> statement can also be used to remove
-slices from a list or clear the entire list (which we did earlier by assignment
-of an empty list to the slice).  For example:</p>
+<div class="section" id="del">
+<span id="tut-del"></span><h2>5.2. <tt class="xref std std-keyword docutils literal"><span class="pre">del</span></tt> 语句<a class="headerlink" href="#del" title="Permalink to this headline">¶</a></h2>
+<p>有个方法可以从列表中按给定的索引而不是值来删除一个子项： <tt class="xref std std-keyword docutils literal"><span class="pre">del</span></tt> 语句。它不同于有返回值的 <tt class="xref py py-meth docutils literal"><span class="pre">pop()</span></tt> 方法。语句 <tt class="xref std std-keyword docutils literal"><span class="pre">del</span></tt>  还可以从列表中删除切片或清空整个列表（我们以前介绍过一个方法是将空列表赋值给列表的切片）。例如</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">66.25</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="mf">1234.5</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
@@ -405,21 +353,16 @@ of an empty list to the slice).  For example:</p>
 <span class="go">[]</span>
 </pre></div>
 </div>
-<p><tt class="xref std std-keyword docutils literal"><span class="pre">del</span></tt> can also be used to delete entire variables:</p>
+<p><tt class="xref std std-keyword docutils literal"><span class="pre">del</span></tt> 也可以删除整个变量</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">a</span>
 </pre></div>
 </div>
-<p>Referencing the name <tt class="docutils literal"><span class="pre">a</span></tt> hereafter is an error (at least until another value
-is assigned to it).  We&#8217;ll find other uses for <tt class="xref std std-keyword docutils literal"><span class="pre">del</span></tt> later.</p>
+<p>此后再引用命名 <tt class="docutils literal"><span class="pre">a</span></tt> 会引发错误（直到另一个值赋给它为止）。我们在后面的内容中可以看到 <tt class="xref std std-keyword docutils literal"><span class="pre">del</span></tt> 的其它用法。</p>
 </div>
-<div class="section" id="tuples-and-sequences">
-<span id="tut-tuples"></span><h2>5.3. Tuples and Sequences<a class="headerlink" href="#tuples-and-sequences" title="Permalink to this headline">¶</a></h2>
-<p>We saw that lists and strings have many common properties, such as indexing and
-slicing operations.  They are two examples of <em>sequence</em> data types (see
-<em class="xref std std-ref">typesseq</em>).  Since Python is an evolving language, other sequence data
-types may be added.  There is also another standard sequence data type: the
-<em>tuple</em>.</p>
-<p>A tuple consists of a number of values separated by commas, for instance:</p>
+<div class="section" id="tut-tuples">
+<span id="id8"></span><h2>5.3. 元组和序列<a class="headerlink" href="#tut-tuples" title="Permalink to this headline">¶</a></h2>
+<p>我们知道链表和字符串有很多通用的属性，例如索引和切割操作。它们是 序列 类型（参见 <em class="xref std std-ref">typesseq</em> ）中的两种。因为Python是一个在不停进化的语言，也可能会加入其它的序列类型，这里介绍另一种标准序列类型： <em>元组</em> 。</p>
+<p>一个元组由数个逗号分隔的值组成，例如</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="mi">12345</span><span class="p">,</span> <span class="mi">54321</span><span class="p">,</span> <span class="s">&#39;hello!&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">12345</span>
@@ -431,20 +374,9 @@ types may be added.  There is also another standard sequence data type: the
 <span class="go">((12345, 54321, &#39;hello!&#39;), (1, 2, 3, 4, 5))</span>
 </pre></div>
 </div>
-<p>As you see, on output tuples are always enclosed in parentheses, so that nested
-tuples are interpreted correctly; they may be input with or without surrounding
-parentheses, although often parentheses are necessary anyway (if the tuple is
-part of a larger expression).</p>
-<p>Tuples have many uses.  For example: (x, y) coordinate pairs, employee records
-from a database, etc.  Tuples, like strings, are immutable: it is not possible
-to assign to the individual items of a tuple (you can simulate much of the same
-effect with slicing and concatenation, though).  It is also possible to create
-tuples which contain mutable objects, such as lists.</p>
-<p>A special problem is the construction of tuples containing 0 or 1 items: the
-syntax has some extra quirks to accommodate these.  Empty tuples are constructed
-by an empty pair of parentheses; a tuple with one item is constructed by
-following a value with a comma (it is not sufficient to enclose a single value
-in parentheses). Ugly, but effective.  For example:</p>
+<p>如你所见，元组在输出时总是有括号的，以便于正确表达嵌套结构。在输入时可以有或没有括号，不过经常括号都是必须的（如果元组是一个更大的表达式的一部分）。</p>
+<p>元组有很多用途。例如 (x, y) 坐标对，数据库中的员工记录等等。元组就像字符串，不可改变：不能给元组的一个独立的元素赋值（尽管你可以通过联接和切割来模拟）。还可以创建包含可变对象的元组，例如链表。</p>
+<p>一个特殊的问题是构造包含零个或一个元素的元组：为了适应这种情况，语法上有一些额外的改变。一对空的括号可以创建空元组；要创建一个单元素元组可以在值后面跟一个逗号（在括号中放入一个单值不够明确）。丑陋，但是有效。例如</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">empty</span> <span class="o">=</span> <span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">singleton</span> <span class="o">=</span> <span class="s">&#39;hello&#39;</span><span class="p">,</span>    <span class="c"># &lt;-- note trailing comma</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">empty</span><span class="p">)</span>
@@ -455,25 +387,16 @@ in parentheses). Ugly, but effective.  For example:</p>
 <span class="go">(&#39;hello&#39;,)</span>
 </pre></div>
 </div>
-<p>The statement <tt class="docutils literal"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">12345,</span> <span class="pre">54321,</span> <span class="pre">'hello!'</span></tt> is an example of <em>tuple packing</em>:
-the values <tt class="docutils literal"><span class="pre">12345</span></tt>, <tt class="docutils literal"><span class="pre">54321</span></tt> and <tt class="docutils literal"><span class="pre">'hello!'</span></tt> are packed together in a tuple.
-The reverse operation is also possible:</p>
+<p>语句 <tt class="docutils literal"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">12345,</span> <span class="pre">54321,</span> <span class="pre">'hello!'</span></tt> 是 <em>元组封装</em> （tuple packing）的一个例子：值 <tt class="docutils literal"><span class="pre">12345</span></tt> ， <tt class="docutils literal"><span class="pre">54321</span></tt> 和 <tt class="docutils literal"><span class="pre">'hello!'</span></tt> 被封装进元组。其逆操作可能是这样</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">t</span>
 </pre></div>
 </div>
-<p>This is called, appropriately enough, <em>sequence unpacking</em> and works for any
-sequence on the right-hand side.  Sequence unpacking requires the list of
-variables on the left to have the same number of elements as the length of the
-sequence.  Note that multiple assignment is really just a combination of tuple
-packing and sequence unpacking.</p>
+<p>这个调用等号右边可以是任何线性序列，称之为 <em>序列拆封</em> 非常恰当。序列拆封要求左侧的变量数目与序列的元素个数相同。要注意的是可变参数（multiple assignment ）其实只是元组封装和序列拆封的一个结合。</p>
 </div>
-<div class="section" id="sets">
-<span id="tut-sets"></span><h2>5.4. Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h2>
-<p>Python also includes a data type for <em>sets</em>.  A set is an unordered collection
-with no duplicate elements.  Basic uses include membership testing and
-eliminating duplicate entries.  Set objects also support mathematical operations
-like union, intersection, difference, and symmetric difference.</p>
-<p>Here is a brief demonstration:</p>
+<div class="section" id="tut-sets">
+<span id="id9"></span><h2>5.4. 集合<a class="headerlink" href="#tut-sets" title="Permalink to this headline">¶</a></h2>
+<p>Python 还包含了一个数据类型—— <em>set</em> （集合） 。集合是一个无序不重复元素的集。基本功能包括关系测试和消除重复元素。集合对象还支持 union（联合），intersection（交），difference（差）和sysmmetric difference（对称差集）等数学运算。</p>
+<p>以下是一个简单的演示</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">basket</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;apple&#39;</span><span class="p">,</span> <span class="s">&#39;orange&#39;</span><span class="p">,</span> <span class="s">&#39;apple&#39;</span><span class="p">,</span> <span class="s">&#39;pear&#39;</span><span class="p">,</span> <span class="s">&#39;orange&#39;</span><span class="p">,</span> <span class="s">&#39;banana&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fruit</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">basket</span><span class="p">)</span>               <span class="c"># create a set without duplicates</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fruit</span>
@@ -500,33 +423,13 @@ like union, intersection, difference, and symmetric difference.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="dictionaries">
-<span id="tut-dictionaries"></span><h2>5.5. Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h2>
-<p>Another useful data type built into Python is the <em>dictionary</em> (see
-<em class="xref std std-ref">typesmapping</em>). Dictionaries are sometimes found in other languages as
-&#8220;associative memories&#8221; or &#8220;associative arrays&#8221;.  Unlike sequences, which are
-indexed by a range of numbers, dictionaries are indexed by <em>keys</em>, which can be
-any immutable type; strings and numbers can always be keys.  Tuples can be used
-as keys if they contain only strings, numbers, or tuples; if a tuple contains
-any mutable object either directly or indirectly, it cannot be used as a key.
-You can&#8217;t use lists as keys, since lists can be modified in place using index
-assignments, slice assignments, or methods like <tt class="xref py py-meth docutils literal"><span class="pre">append()</span></tt> and
-<tt class="xref py py-meth docutils literal"><span class="pre">extend()</span></tt>.</p>
-<p>It is best to think of a dictionary as an unordered set of <em>key: value</em> pairs,
-with the requirement that the keys are unique (within one dictionary). A pair of
-braces creates an empty dictionary: <tt class="docutils literal"><span class="pre">{}</span></tt>. Placing a comma-separated list of
-key:value pairs within the braces adds initial key:value pairs to the
-dictionary; this is also the way dictionaries are written on output.</p>
-<p>The main operations on a dictionary are storing a value with some key and
-extracting the value given the key.  It is also possible to delete a key:value
-pair with <tt class="docutils literal"><span class="pre">del</span></tt>. If you store using a key that is already in use, the old
-value associated with that key is forgotten.  It is an error to extract a value
-using a non-existent key.</p>
-<p>The <tt class="xref py py-meth docutils literal"><span class="pre">keys()</span></tt> method of a dictionary object returns a list of all the keys
-used in the dictionary, in arbitrary order (if you want it sorted, just apply
-the <tt class="xref py py-func docutils literal"><span class="pre">sorted()</span></tt> function to it).  To check whether a single key is in the
-dictionary, use the <tt class="xref std std-keyword docutils literal"><span class="pre">in</span></tt> keyword.</p>
-<p>Here is a small example using a dictionary:</p>
+<div class="section" id="tut-dictionaries">
+<span id="id10"></span><h2>5.5. 字典<a class="headerlink" href="#tut-dictionaries" title="Permalink to this headline">¶</a></h2>
+<p>另一个非常有用的 Python 内建数据类型是 <em>字典</em> （参见 <em class="xref std std-ref">typesmapping</em> ）。字典在某些语言中可能称为 联合内存 （ associative memories ）或 联合数组 （ associative arrays ）。序列是以连续的整数为索引，与此不同的是，字典以 <em>关键字</em> 为索引，关键字可以是任意不可变类型，通常用字符串或数值。如果元组中只包含字符串和数字，它可以做为关键字，如果它直接或间接的包含了可变对象，就不能当做关键字。不能用链表做关键字，因为链表可以用索引、切割或者 <tt class="xref py py-meth docutils literal"><span class="pre">append()</span></tt> 和 <tt class="xref py py-meth docutils literal"><span class="pre">extend()</span></tt> 等方法改变。</p>
+<p>理解字典的最佳方式是把它看做无序的键： <em>值对</em> （key:value pairs）集合，键必须是互不相同的（在同一个字典之内）。一对大括号创建一个空的字典： <tt class="docutils literal"><span class="pre">{}</span></tt> 。初始化链表时，在大括号内放置一组逗号分隔的键：值对，这也是字典输出的方式。</p>
+<p>字典的主要操作是依据键来存储和析取值。也可以用 <tt class="docutils literal"><span class="pre">del</span></tt> 来删除键：值对（key:value）。如果你用一个已经存在的关键字存储值，以前为该关键字分配的值就会被遗忘。试图从一个不存在的键中取值会导致错误。</p>
+<p>字典的 <tt class="xref py py-meth docutils literal"><span class="pre">keys()</span></tt>  方法返回由所有关键字组成的链表，该链表的顺序不定（如果你需要它有序，只能调用关键字链表的 <tt class="xref py py-func docutils literal"><span class="pre">sorted()</span></tt> 方法）。可以用 <tt class="xref std std-keyword docutils literal"><span class="pre">in</span></tt> 关键字检查字典中是否存在某一关键字。</p>
+<p>这里有个字典用法的小例子</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tel</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;jack&#39;</span><span class="p">:</span> <span class="mi">4098</span><span class="p">,</span> <span class="s">&#39;sape&#39;</span><span class="p">:</span> <span class="mi">4139</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tel</span><span class="p">[</span><span class="s">&#39;guido&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4127</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tel</span>
@@ -543,29 +446,23 @@ dictionary, use the <tt class="xref std std-keyword docutils literal"><span clas
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>The <tt class="xref py py-func docutils literal"><span class="pre">dict()</span></tt> constructor builds dictionaries directly from lists of
-key-value pairs stored as tuples.  When the pairs form a pattern, list
-comprehensions can compactly specify the key-value list.</p>
+<p>链表中存储关键字-值对元组的话，<tt class="xref py py-func docutils literal"><span class="pre">dict()</span></tt> 可以从中直接构造字典。键-值对来自某个特定模式时，可以用链表推导式简单的生成关键字-值链表。:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">([(</span><span class="s">&#39;sape&#39;</span><span class="p">,</span> <span class="mi">4139</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;guido&#39;</span><span class="p">,</span> <span class="mi">4127</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;jack&#39;</span><span class="p">,</span> <span class="mi">4098</span><span class="p">)])</span>
 <span class="go">{&#39;sape&#39;: 4139, &#39;jack&#39;: 4098, &#39;guido&#39;: 4127}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">([(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)])</span>     <span class="c"># use a list comprehension</span>
 <span class="go">{2: 4, 4: 16, 6: 36}</span>
 </pre></div>
 </div>
-<p>Later in the tutorial, we will learn about Generator Expressions which are even
-better suited for the task of supplying key-values pairs to the <tt class="xref py py-func docutils literal"><span class="pre">dict()</span></tt>
-constructor.</p>
-<p>When the keys are simple strings, it is sometimes easier to specify pairs using
-keyword arguments:</p>
+<p>在入门指南后面的内容中，我们将会学习更适于为 <tt class="xref py py-func docutils literal"><span class="pre">dict()</span></tt> 构造器生成键值对的生成器表达式。</p>
+<p>使用简单字符串作为关键字的话，通常用关键字参数更简单</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">(</span><span class="n">sape</span><span class="o">=</span><span class="mi">4139</span><span class="p">,</span> <span class="n">guido</span><span class="o">=</span><span class="mi">4127</span><span class="p">,</span> <span class="n">jack</span><span class="o">=</span><span class="mi">4098</span><span class="p">)</span>
 <span class="go">{&#39;sape&#39;: 4139, &#39;jack&#39;: 4098, &#39;guido&#39;: 4127}</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="looping-techniques">
-<span id="tut-loopidioms"></span><h2>5.6. Looping Techniques<a class="headerlink" href="#looping-techniques" title="Permalink to this headline">¶</a></h2>
-<p>When looping through dictionaries, the key and corresponding value can be
-retrieved at the same time using the <tt class="xref py py-meth docutils literal"><span class="pre">iteritems()</span></tt> method.</p>
+<div class="section" id="tut-loopidioms">
+<span id="id11"></span><h2>5.6. 循环技巧<a class="headerlink" href="#tut-loopidioms" title="Permalink to this headline">¶</a></h2>
+<p>在字典中循环时，关键字和对应的值可以使用 <tt class="xref py py-meth docutils literal"><span class="pre">iteritems()</span></tt> 方法同时解读出来。:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">knights</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;gallahad&#39;</span><span class="p">:</span> <span class="s">&#39;the pure&#39;</span><span class="p">,</span> <span class="s">&#39;robin&#39;</span><span class="p">:</span> <span class="s">&#39;the brave&#39;</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">knights</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
 <span class="gp">... </span>    <span class="k">print</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
@@ -574,8 +471,7 @@ retrieved at the same time using the <tt class="xref py py-meth docutils literal
 <span class="go">robin the brave</span>
 </pre></div>
 </div>
-<p>When looping through a sequence, the position index and corresponding value can
-be retrieved at the same time using the <tt class="xref py py-func docutils literal"><span class="pre">enumerate()</span></tt> function.</p>
+<p>在序列中循环时，索引位置和对应值可以使用 <tt class="xref py py-func docutils literal"><span class="pre">enumerate()</span></tt> 函数同时得到。:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s">&#39;tic&#39;</span><span class="p">,</span> <span class="s">&#39;tac&#39;</span><span class="p">,</span> <span class="s">&#39;toe&#39;</span><span class="p">]):</span>
 <span class="gp">... </span>    <span class="k">print</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span>
 <span class="gp">...</span>
@@ -584,8 +480,7 @@ be retrieved at the same time using the <tt class="xref py py-func docutils lite
 <span class="go">2 toe</span>
 </pre></div>
 </div>
-<p>To loop over two or more sequences at the same time, the entries can be paired
-with the <tt class="xref py py-func docutils literal"><span class="pre">zip()</span></tt> function.</p>
+<p>同时循环两个或更多的序列，可以使用 <tt class="xref py py-func docutils literal"><span class="pre">zip()</span></tt> 整体打包。:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">questions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;quest&#39;</span><span class="p">,</span> <span class="s">&#39;favorite color&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">answers</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;lancelot&#39;</span><span class="p">,</span> <span class="s">&#39;the holy grail&#39;</span><span class="p">,</span> <span class="s">&#39;blue&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">q</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">questions</span><span class="p">,</span> <span class="n">answers</span><span class="p">):</span>
@@ -596,8 +491,7 @@ with the <tt class="xref py py-func docutils literal"><span class="pre">zip()</s
 <span class="go">What is your favorite color?  It is blue.</span>
 </pre></div>
 </div>
-<p>To loop over a sequence in reverse, first specify the sequence in a forward
-direction and then call the <tt class="xref py py-func docutils literal"><span class="pre">reversed()</span></tt> function.</p>
+<p>需要逆向循环序列的话，先正向定位序列，然后调用 <tt class="xref py py-func docutils literal"><span class="pre">reversed()</span></tt> 函数。</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)):</span>
 <span class="gp">... </span>    <span class="k">print</span> <span class="n">i</span>
 <span class="gp">...</span>
@@ -608,8 +502,7 @@ direction and then call the <tt class="xref py py-func docutils literal"><span c
 <span class="go">1</span>
 </pre></div>
 </div>
-<p>To loop over a sequence in sorted order, use the <tt class="xref py py-func docutils literal"><span class="pre">sorted()</span></tt> function which
-returns a new sorted list while leaving the source unaltered.</p>
+<p>要按排序后的顺序循环序列的话，使用 <tt class="xref py py-func docutils literal"><span class="pre">sorted()</span></tt>  函数，它不改动原序列，而是生成一个新的已排序的序列。:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">basket</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;apple&#39;</span><span class="p">,</span> <span class="s">&#39;orange&#39;</span><span class="p">,</span> <span class="s">&#39;apple&#39;</span><span class="p">,</span> <span class="s">&#39;pear&#39;</span><span class="p">,</span> <span class="s">&#39;orange&#39;</span><span class="p">,</span> <span class="s">&#39;banana&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">basket</span><span class="p">)):</span>
 <span class="gp">... </span>    <span class="k">print</span> <span class="n">f</span>
@@ -621,55 +514,25 @@ returns a new sorted list while leaving the source unaltered.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="more-on-conditions">
-<span id="tut-conditions"></span><h2>5.7. More on Conditions<a class="headerlink" href="#more-on-conditions" title="Permalink to this headline">¶</a></h2>
-<p>The conditions used in <tt class="docutils literal"><span class="pre">while</span></tt> and <tt class="docutils literal"><span class="pre">if</span></tt> statements can contain any
-operators, not just comparisons.</p>
-<p>The comparison operators <tt class="docutils literal"><span class="pre">in</span></tt> and <tt class="docutils literal"><span class="pre">not</span> <span class="pre">in</span></tt> check whether a value occurs
-(does not occur) in a sequence.  The operators <tt class="docutils literal"><span class="pre">is</span></tt> and <tt class="docutils literal"><span class="pre">is</span> <span class="pre">not</span></tt> compare
-whether two objects are really the same object; this only matters for mutable
-objects like lists.  All comparison operators have the same priority, which is
-lower than that of all numerical operators.</p>
-<p>Comparisons can be chained.  For example, <tt class="docutils literal"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">==</span> <span class="pre">c</span></tt> tests whether <tt class="docutils literal"><span class="pre">a</span></tt> is
-less than <tt class="docutils literal"><span class="pre">b</span></tt> and moreover <tt class="docutils literal"><span class="pre">b</span></tt> equals <tt class="docutils literal"><span class="pre">c</span></tt>.</p>
-<p>Comparisons may be combined using the Boolean operators <tt class="docutils literal"><span class="pre">and</span></tt> and <tt class="docutils literal"><span class="pre">or</span></tt>, and
-the outcome of a comparison (or of any other Boolean expression) may be negated
-with <tt class="docutils literal"><span class="pre">not</span></tt>.  These have lower priorities than comparison operators; between
-them, <tt class="docutils literal"><span class="pre">not</span></tt> has the highest priority and <tt class="docutils literal"><span class="pre">or</span></tt> the lowest, so that <tt class="docutils literal"><span class="pre">A</span> <span class="pre">and</span>
-<span class="pre">not</span> <span class="pre">B</span> <span class="pre">or</span> <span class="pre">C</span></tt> is equivalent to <tt class="docutils literal"><span class="pre">(A</span> <span class="pre">and</span> <span class="pre">(not</span> <span class="pre">B))</span> <span class="pre">or</span> <span class="pre">C</span></tt>. As always, parentheses
-can be used to express the desired composition.</p>
-<p>The Boolean operators <tt class="docutils literal"><span class="pre">and</span></tt> and <tt class="docutils literal"><span class="pre">or</span></tt> are so-called <em>short-circuit</em>
-operators: their arguments are evaluated from left to right, and evaluation
-stops as soon as the outcome is determined.  For example, if <tt class="docutils literal"><span class="pre">A</span></tt> and <tt class="docutils literal"><span class="pre">C</span></tt> are
-true but <tt class="docutils literal"><span class="pre">B</span></tt> is false, <tt class="docutils literal"><span class="pre">A</span> <span class="pre">and</span> <span class="pre">B</span> <span class="pre">and</span> <span class="pre">C</span></tt> does not evaluate the expression
-<tt class="docutils literal"><span class="pre">C</span></tt>.  When used as a general value and not as a Boolean, the return value of a
-short-circuit operator is the last evaluated argument.</p>
-<p>It is possible to assign the result of a comparison or other Boolean expression
-to a variable.  For example,</p>
+<div class="section" id="tut-conditions">
+<span id="id12"></span><h2>5.7. 深入条件控制<a class="headerlink" href="#tut-conditions" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">while</span></tt> 和 <tt class="docutils literal"><span class="pre">if</span></tt> 语句中使用的条件不仅可以使用比较，而且可以包含任意的操作。</p>
+<p>比较操作符 <tt class="docutils literal"><span class="pre">in</span></tt> 和 <tt class="docutils literal"><span class="pre">not</span> <span class="pre">in</span></tt> 审核值是否在一个区间之内。操作符 <tt class="docutils literal"><span class="pre">is</span></tt> 和 <tt class="docutils literal"><span class="pre">is</span> <span class="pre">not</span></tt> 比较两个对象是否相同；这只和诸如链表这样的可变对象有关。所有的比较操作符具有相同的优先级，低于所有的数值操作。</p>
+<p>比较操作可以传递。例如 <tt class="docutils literal"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">==</span> <span class="pre">c</span></tt> 审核是否 <tt class="docutils literal"><span class="pre">a</span></tt> 小于 <tt class="docutils literal"><span class="pre">b</span></tt> 并且 <tt class="docutils literal"><span class="pre">b</span></tt> 等于 <tt class="docutils literal"><span class="pre">c</span></tt> 。</p>
+<p>比较操作可以通过逻辑操作符 <tt class="docutils literal"><span class="pre">and</span></tt> 和 <tt class="docutils literal"><span class="pre">or</span></tt> 组合，比较的结果可以用 <tt class="docutils literal"><span class="pre">not</span></tt> 来取反义。这些操作符的优先级又低于比较操作符，在它们之中，<tt class="docutils literal"><span class="pre">not</span></tt> 具有最高的优先级， <tt class="docutils literal"><span class="pre">or</span></tt> 优先级最低，所以 <tt class="docutils literal"><span class="pre">A</span> <span class="pre">and</span> <span class="pre">not</span> <span class="pre">B</span> <span class="pre">or</span> <span class="pre">C</span></tt> 等于 <tt class="docutils literal"><span class="pre">(A</span> <span class="pre">and</span> <span class="pre">(notB))</span> <span class="pre">or</span> <span class="pre">C</span></tt> 。当然，括号也可以用于比较表达式。</p>
+<p>逻辑操作符 <tt class="docutils literal"><span class="pre">and</span></tt> 和 <tt class="docutils literal"><span class="pre">or</span></tt> 也称作 短路操作符 ：它们的参数从左向右解析，一旦结果可以确定就停止。例如，如果 <tt class="docutils literal"><span class="pre">A</span></tt> 和 <tt class="docutils literal"><span class="pre">C</span></tt> 为真而 <tt class="docutils literal"><span class="pre">B</span></tt> 为假， <tt class="docutils literal"><span class="pre">A</span> <span class="pre">and</span> <span class="pre">B</span> <span class="pre">and</span> <span class="pre">C</span></tt> 不会解析 <tt class="docutils literal"><span class="pre">C</span></tt> 。作用于一个普通的非逻辑值时，短路操作符的返回值通常是最后一个变量。</p>
+<p>可以把比较或其它逻辑表达式的返回值赋给一个变量，例如，</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">string1</span><span class="p">,</span> <span class="n">string2</span><span class="p">,</span> <span class="n">string3</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;Trondheim&#39;</span><span class="p">,</span> <span class="s">&#39;Hammer Dance&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">non_null</span> <span class="o">=</span> <span class="n">string1</span> <span class="ow">or</span> <span class="n">string2</span> <span class="ow">or</span> <span class="n">string3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">non_null</span>
 <span class="go">&#39;Trondheim&#39;</span>
 </pre></div>
 </div>
-<p>Note that in Python, unlike C, assignment cannot occur inside expressions. C
-programmers may grumble about this, but it avoids a common class of problems
-encountered in C programs: typing <tt class="docutils literal"><span class="pre">=</span></tt> in an expression when <tt class="docutils literal"><span class="pre">==</span></tt> was
-intended.</p>
+<p>需要注意的是Python与C不同，在表达式内部不能赋值。C 程序员经常对此抱怨，不过它避免了一类在 C 程序中司空见惯的错误：想要在解析式中使 <tt class="docutils literal"><span class="pre">==</span></tt> 时误用了 <tt class="docutils literal"><span class="pre">=</span></tt> 操作符。</p>
 </div>
-<div class="section" id="comparing-sequences-and-other-types">
-<span id="tut-comparing"></span><h2>5.8. Comparing Sequences and Other Types<a class="headerlink" href="#comparing-sequences-and-other-types" title="Permalink to this headline">¶</a></h2>
-<p>Sequence objects may be compared to other objects with the same sequence type.
-The comparison uses <em>lexicographical</em> ordering: first the first two items are
-compared, and if they differ this determines the outcome of the comparison; if
-they are equal, the next two items are compared, and so on, until either
-sequence is exhausted. If two items to be compared are themselves sequences of
-the same type, the lexicographical comparison is carried out recursively.  If
-all items of two sequences compare equal, the sequences are considered equal.
-If one sequence is an initial sub-sequence of the other, the shorter sequence is
-the smaller (lesser) one.  Lexicographical ordering for strings uses the ASCII
-ordering for individual characters.  Some examples of comparisons between
-sequences of the same type:</p>
+<div class="section" id="tut-comparing">
+<span id="id13"></span><h2>5.8. 比较序列和其它类型<a class="headerlink" href="#tut-comparing" title="Permalink to this headline">¶</a></h2>
+<p>序列对象可以与相同类型的其它对象比较。比较操作按 <em>字典序</em> 进行：首先比较前两个元素，如果不同，就决定了比较的结果；如果相同，就比较后两个元素，依此类推，直到所有序列都完成比较。如果两个元素本身就是同样类 型的序列，就递归字典序比较。如果两个序列的所有子项都相等，就认为序列相等。如果一个序列是另一个序列的初始子序列，较短的一个序列就小于另一个。字符 串的字典序按照单字符的 ASCII 顺序。下面是同类型序列之间比较的一些例子</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>              <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="s">&#39;ABC&#39;</span> <span class="o">&lt;</span> <span class="s">&#39;C&#39;</span> <span class="o">&lt;</span> <span class="s">&#39;Pascal&#39;</span> <span class="o">&lt;</span> <span class="s">&#39;Python&#39;</span>
@@ -679,17 +542,12 @@ sequences of the same type:</p>
 <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;aa&#39;</span><span class="p">,</span> <span class="s">&#39;ab&#39;</span><span class="p">))</span>   <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;abc&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note that comparing objects of different types is legal.  The outcome is
-deterministic but arbitrary: the types are ordered by their name. Thus, a list
-is always smaller than a string, a string is always smaller than a tuple, etc.
-<a class="footnote-reference" href="#id4" id="id3">[1]</a> Mixed numeric types are compared according to their numeric value, so 0
-equals 0.0, etc.</p>
+<p>需要注意的是不同类型的对象比较是合法的。输出结果是确定而非任意的：类型按它们的名字排序。因而，一个链表（list）总是小于一个字符串（string），一个字符串（string）总是小于一个元组（tuple）等等。 <a class="footnote-reference" href="#id15" id="id14">[1]</a> 数值类型比较时会统一它们的数据类型，所以0等于0.0，等等。</p>
 <p class="rubric">Footnotes</p>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
+<table class="docutils footnote" frame="void" id="id15" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td>The rules for comparing objects of different types should not be relied upon;
-they may change in a future version of the language.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id14">[1]</a></td><td>Python 并不承诺不同类型之间进行比较时的明确规则，当前的方式在未来的版本中可能会改变。</td></tr>
 </tbody>
 </table>
 </div>
@@ -705,22 +563,22 @@ they may change in a future version of the language.</td></tr>
   <ul>
 <li><a class="reference internal" href="#">5. 数据结构</a><ul>
 <li><a class="reference internal" href="#tut-morelists">5.1. 深入列表</a><ul>
-<li><a class="reference internal" href="#using-lists-as-stacks">5.1.1. Using Lists as Stacks</a></li>
-<li><a class="reference internal" href="#using-lists-as-queues">5.1.2. Using Lists as Queues</a></li>
-<li><a class="reference internal" href="#functional-programming-tools">5.1.3. Functional Programming Tools</a></li>
-<li><a class="reference internal" href="#list-comprehensions">5.1.4. List Comprehensions</a><ul>
-<li><a class="reference internal" href="#nested-list-comprehensions">5.1.4.1. Nested List Comprehensions</a></li>
+<li><a class="reference internal" href="#tut-lists-as-stacks">5.1.1. 把链表当作堆栈使用</a></li>
+<li><a class="reference internal" href="#tut-lists-as-queues">5.1.2. 把链表当作队列使用</a></li>
+<li><a class="reference internal" href="#tut-functional">5.1.3. 函数式编程工具</a></li>
+<li><a class="reference internal" href="#id6">5.1.4. 列表推导式</a><ul>
+<li><a class="reference internal" href="#id7">5.1.4.1. 嵌套的列表推导式</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#the-del-statement">5.2. The <tt class="docutils literal"><span class="pre">del</span></tt> statement</a></li>
-<li><a class="reference internal" href="#tuples-and-sequences">5.3. Tuples and Sequences</a></li>
-<li><a class="reference internal" href="#sets">5.4. Sets</a></li>
-<li><a class="reference internal" href="#dictionaries">5.5. Dictionaries</a></li>
-<li><a class="reference internal" href="#looping-techniques">5.6. Looping Techniques</a></li>
-<li><a class="reference internal" href="#more-on-conditions">5.7. More on Conditions</a></li>
-<li><a class="reference internal" href="#comparing-sequences-and-other-types">5.8. Comparing Sequences and Other Types</a></li>
+<li><a class="reference internal" href="#del">5.2. <tt class="docutils literal"><span class="pre">del</span></tt> 语句</a></li>
+<li><a class="reference internal" href="#tut-tuples">5.3. 元组和序列</a></li>
+<li><a class="reference internal" href="#tut-sets">5.4. 集合</a></li>
+<li><a class="reference internal" href="#tut-dictionaries">5.5. 字典</a></li>
+<li><a class="reference internal" href="#tut-loopidioms">5.6. 循环技巧</a></li>
+<li><a class="reference internal" href="#tut-conditions">5.7. 深入条件控制</a></li>
+<li><a class="reference internal" href="#tut-comparing">5.8. 比较序列和其它类型</a></li>
 </ul>
 </li>
 </ul>
@@ -730,10 +588,71 @@ they may change in a future version of the language.</td></tr>
                         title="previous chapter">4. 深入流程控制</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="modules.html"
-                        title="next chapter">6. Modules</a></p>
+                        title="next chapter">6. 模块</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/datastructures.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<div id="google">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3421553373953599";
+/* 首页侧边 */
+google_ad_slot = "3551838308";
+google_ad_width = 200;
+google_ad_height = 200;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="modules.html" title="6. 模块"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="controlflow.html" title="4. 深入流程控制"
+             >previous</a> |</li>
+        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright Translate by march.liu, Reorganize byD.D 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9adc7a1c86496c8e2bc61c4f8fc92d30' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</div>
+  </body>
+</html>
+ources/datastructures.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">

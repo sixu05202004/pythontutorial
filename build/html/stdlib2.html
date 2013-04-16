@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>11. Brief Tour of the Standard Library – Part II &mdash; python 2.7 tutorial 2.7 documentation</title>
+    <title>11. 标准库浏览 – Part II &mdash; python tutorial 2.7 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="python 2.7 tutorial 2.7 documentation" href="index.html" />
-    <link rel="next" title="12. What Now?" href="whatnow.html" />
-    <link rel="prev" title="10. Brief Tour of the Standard Library" href="stdlib.html" /> 
+    <link rel="top" title="python tutorial 2.7 documentation" href="index.html" />
+    <link rel="next" title="12. 接下来？" href="whatnow.html" />
+    <link rel="prev" title="10. 标准库概览" href="stdlib.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,12 +37,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="whatnow.html" title="12. What Now?"
+          <a href="whatnow.html" title="12. 接下来？"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="stdlib.html" title="10. Brief Tour of the Standard Library"
+          <a href="stdlib.html" title="10. 标准库概览"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">python 2.7 tutorial 2.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -51,23 +51,18 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="brief-tour-of-the-standard-library-part-ii">
-<span id="tut-brieftourtwo"></span><h1>11. Brief Tour of the Standard Library &#8211; Part II<a class="headerlink" href="#brief-tour-of-the-standard-library-part-ii" title="Permalink to this headline">¶</a></h1>
-<p>This second tour covers more advanced modules that support professional
-programming needs.  These modules rarely occur in small scripts.</p>
-<div class="section" id="output-formatting">
-<span id="tut-output-formatting"></span><h2>11.1. Output Formatting<a class="headerlink" href="#output-formatting" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">repr</span></tt> module provides a version of <tt class="xref py py-func docutils literal"><span class="pre">repr()</span></tt> customized for
-abbreviated displays of large or deeply nested containers:</p>
+  <div class="section" id="part-ii">
+<span id="tut-brieftourtwo"></span><h1>11. 标准库浏览 &#8211; Part II<a class="headerlink" href="#part-ii" title="Permalink to this headline">¶</a></h1>
+<p>第二部分包含了支持专业编程工作所需的更高级的模块，这些模块很少出现在小脚本中。</p>
+<div class="section" id="tut-output-formatting">
+<span id="id1"></span><h2>11.1. 输出格式<a class="headerlink" href="#tut-output-formatting" title="Permalink to this headline">¶</a></h2>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">repr</span></tt> 提供了一个 <tt class="xref py py-func docutils literal"><span class="pre">repr()</span></tt> 的定制版本，以显示大型或深度嵌套的容器</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">repr</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">repr</span><span class="o">.</span><span class="n">repr</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="s">&#39;supercalifragilisticexpialidocious&#39;</span><span class="p">))</span>
 <span class="go">&quot;set([&#39;a&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, ...])&quot;</span>
 </pre></div>
 </div>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">pprint</span></tt> module offers more sophisticated control over printing both
-built-in and user defined objects in a way that is readable by the interpreter.
-When the result is longer than one line, the &#8220;pretty printer&#8221; adds line breaks
-and indentation to more clearly reveal data structure:</p>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">pprint</span></tt> 模块给老手提供了一种解释器可读的方式深入控制内置和用户自定义对象的打印。当输出超过一行的时候，“美化打印（pretty printer）”添加断行和标识符，使得数据结构显示的更清晰</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pprint</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="p">[[[[</span><span class="s">&#39;black&#39;</span><span class="p">,</span> <span class="s">&#39;cyan&#39;</span><span class="p">],</span> <span class="s">&#39;white&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;green&#39;</span><span class="p">,</span> <span class="s">&#39;red&#39;</span><span class="p">]],</span> <span class="p">[[</span><span class="s">&#39;magenta&#39;</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="s">&#39;yellow&#39;</span><span class="p">],</span> <span class="s">&#39;blue&#39;</span><span class="p">]]]</span>
@@ -80,8 +75,7 @@ and indentation to more clearly reveal data structure:</p>
 <span class="go">   &#39;blue&#39;]]]</span>
 </pre></div>
 </div>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">textwrap</span></tt> module formats paragraphs of text to fit a given screen
-width:</p>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">textwrap</span></tt> 模块格式化文本段落以适应设定的屏宽</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">textwrap</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">doc</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;The wrap() method is just like fill() except that it returns</span>
 <span class="gp">... </span><span class="s">a list of strings instead of one big string with newlines to separate</span>
@@ -94,9 +88,7 @@ width:</p>
 <span class="go">to separate the wrapped lines.</span>
 </pre></div>
 </div>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">locale</span></tt> module accesses a database of culture specific data formats.
-The grouping attribute of locale&#8217;s format function provides a direct way of
-formatting numbers with group separators:</p>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">locale</span></tt> 模块按访问预定好的国家信息数据库。locale的格式化函数属性集提供了一个直接方式以分组标示格式化数字</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">locale</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">locale</span><span class="o">.</span><span class="n">setlocale</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">LC_ALL</span><span class="p">,</span> <span class="s">&#39;English_United States.1252&#39;</span><span class="p">)</span>
 <span class="go">&#39;English_United States.1252&#39;</span>
@@ -111,25 +103,16 @@ formatting numbers with group separators:</p>
 </div>
 </div>
 <div class="section" id="templating">
-<span id="tut-templating"></span><h2>11.2. Templating<a class="headerlink" href="#templating" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">string</span></tt> module includes a versatile <tt class="xref py py-class docutils literal"><span class="pre">Template</span></tt> class with a
-simplified syntax suitable for editing by end-users.  This allows users to
-customize their applications without having to alter the application.</p>
-<p>The format uses placeholder names formed by <tt class="docutils literal"><span class="pre">$</span></tt> with valid Python identifiers
-(alphanumeric characters and underscores).  Surrounding the placeholder with
-braces allows it to be followed by more alphanumeric letters with no intervening
-spaces.  Writing <tt class="docutils literal"><span class="pre">$$</span></tt> creates a single escaped <tt class="docutils literal"><span class="pre">$</span></tt>:</p>
+<span id="tut-templating"></span><h2>11.2. Templating模版<a class="headerlink" href="#templating" title="Permalink to this headline">¶</a></h2>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">string</span></tt> 提供了一个灵活多变的模版类 <tt class="xref py py-class docutils literal"><span class="pre">Template</span></tt> ，使用它最终用户可以用简单的进行编辑。这使用户可以在不进行改变的情况下定制他们的应用程序。</p>
+<p>格式使用 <tt class="docutils literal"><span class="pre">$</span></tt> 为开头的 Python 合法标识（数字、字母和下划线）作为占位符。占位符外面的大括号使它可以和其它的字符不加空格混在一起。 <tt class="docutils literal"><span class="pre">$$</span></tt> 创建一个单独的 <tt class="docutils literal"><span class="pre">$</span></tt></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">&#39;${village}folk send $$10 to $cause.&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">village</span><span class="o">=</span><span class="s">&#39;Nottingham&#39;</span><span class="p">,</span> <span class="n">cause</span><span class="o">=</span><span class="s">&#39;the ditch fund&#39;</span><span class="p">)</span>
 <span class="go">&#39;Nottinghamfolk send $10 to the ditch fund.&#39;</span>
 </pre></div>
 </div>
-<p>The <tt class="xref py py-meth docutils literal"><span class="pre">substitute()</span></tt> method raises a <tt class="xref py py-exc docutils literal"><span class="pre">KeyError</span></tt> when a placeholder is not
-supplied in a dictionary or a keyword argument. For mail-merge style
-applications, user supplied data may be incomplete and the
-<tt class="xref py py-meth docutils literal"><span class="pre">safe_substitute()</span></tt> method may be more appropriate &#8212; it will leave
-placeholders unchanged if data is missing:</p>
+<p>字典或者关键字参数中缺少某个占位符的时候 <tt class="xref py py-meth docutils literal"><span class="pre">substitute()</span></tt> 方法抛出 <tt class="xref py py-exc docutils literal"><span class="pre">KeyError</span></tt> 异常。在邮件-合并风格的应用程序中，用户提供的数据可能并不完整，也许用 <tt class="xref py py-meth docutils literal"><span class="pre">safe_substitute()</span></tt> 方法更合适——如果数据不完整，它保留未改动的占位符</p>
 <div class="highlight-python"><pre>&gt;&gt;&gt; t = Template('Return the $item to $owner.')
 &gt;&gt;&gt; d = dict(item='unladen swallow')
 &gt;&gt;&gt; t.substitute(d)
@@ -139,9 +122,7 @@ KeyError: 'owner'
 &gt;&gt;&gt; t.safe_substitute(d)
 'Return the unladen swallow to $owner.'</pre>
 </div>
-<p>Template subclasses can specify a custom delimiter.  For example, a batch
-renaming utility for a photo browser may elect to use percent signs for
-placeholders such as the current date, image sequence number, or file format:</p>
+<p>模板子类可以指定一个定制分隔符。例如，图像浏览器的批量命名工具可能选用百分号作为表示当前日期、图像序列号或文件格式的占位符</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">os.path</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">photofiles</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;img_1074.jpg&#39;</span><span class="p">,</span> <span class="s">&#39;img_1076.jpg&#39;</span><span class="p">,</span> <span class="s">&#39;img_1077.jpg&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">BatchRename</span><span class="p">(</span><span class="n">Template</span><span class="p">):</span>
@@ -161,18 +142,11 @@ placeholders such as the current date, image sequence number, or file format:</p
 <span class="go">img_1077.jpg --&gt; Ashley_2.jpg</span>
 </pre></div>
 </div>
-<p>Another application for templating is separating program logic from the details
-of multiple output formats.  This makes it possible to substitute custom
-templates for XML files, plain text reports, and HTML web reports.</p>
+<p>另一个应用是将多样化的输出格式细节从程序逻辑中分离出来。这使得为 XML 文件，纯文本报表，HTML web 报表定制替换模版成为可能。</p>
 </div>
-<div class="section" id="working-with-binary-data-record-layouts">
-<span id="tut-binary-formats"></span><h2>11.3. Working with Binary Data Record Layouts<a class="headerlink" href="#working-with-binary-data-record-layouts" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">struct</span></tt> module provides <tt class="xref py py-func docutils literal"><span class="pre">pack()</span></tt> and <tt class="xref py py-func docutils literal"><span class="pre">unpack()</span></tt> functions for
-working with variable length binary record formats.  The following example shows
-how to loop through header information in a ZIP file without using the
-<tt class="xref py py-mod docutils literal"><span class="pre">zipfile</span></tt> module.  Pack codes <tt class="docutils literal"><span class="pre">&quot;H&quot;</span></tt> and <tt class="docutils literal"><span class="pre">&quot;I&quot;</span></tt> represent two and four
-byte unsigned numbers respectively.  The <tt class="docutils literal"><span class="pre">&quot;&lt;&quot;</span></tt> indicates that they are
-standard size and in little-endian byte order:</p>
+<div class="section" id="tut-binary-formats">
+<span id="id2"></span><h2>11.3. 使用二进制记录层<a class="headerlink" href="#tut-binary-formats" title="Permalink to this headline">¶</a></h2>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">struct</span></tt> 模块提供 <tt class="xref py py-func docutils literal"><span class="pre">pack()</span></tt> 和 <tt class="xref py py-func docutils literal"><span class="pre">unpack()</span></tt> 函数用于变长二进制记录格式。以下示例显示了如何通过 ZIP 文件的头信息（压缩代码中的 <tt class="docutils literal"><span class="pre">&quot;H&quot;</span></tt> 和 <tt class="docutils literal"><span class="pre">&quot;L&quot;</span></tt> 分别传递二和四字节无符号整数）， <tt class="docutils literal"><span class="pre">&quot;&lt;&quot;</span></tt> 标识了它们以标准尺寸和低地址低字节存储</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">struct</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;myfile.zip&#39;</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -192,14 +166,10 @@ standard size and in little-endian byte order:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="multi-threading">
-<span id="tut-multi-threading"></span><h2>11.4. Multi-threading<a class="headerlink" href="#multi-threading" title="Permalink to this headline">¶</a></h2>
-<p>Threading is a technique for decoupling tasks which are not sequentially
-dependent.  Threads can be used to improve the responsiveness of applications
-that accept user input while other tasks run in the background.  A related use
-case is running I/O in parallel with computations in another thread.</p>
-<p>The following code shows how the high level <tt class="xref py py-mod docutils literal"><span class="pre">threading</span></tt> module can run
-tasks in background while the main program continues to run:</p>
+<div class="section" id="tut-multi-threading">
+<span id="id3"></span><h2>11.4. 多线程<a class="headerlink" href="#tut-multi-threading" title="Permalink to this headline">¶</a></h2>
+<p>线程是一个分离无顺序依赖关系任务的技术。在某些任务运行于后台的时候应用程序会变得迟缓，线程可以提升其速度。一个有关的用途是在 I/O 的同时其它线程可以并行计算。</p>
+<p>下面的代码显示了高级模块 <tt class="xref py py-mod docutils literal"><span class="pre">threading</span></tt> 如何在主程序运行的同时运行任务</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">threading</span><span class="o">,</span> <span class="nn">zipfile</span>
 
 <span class="k">class</span> <span class="nc">AsyncZip</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
@@ -221,21 +191,12 @@ tasks in background while the main program continues to run:</p>
 <span class="k">print</span> <span class="s">&#39;Main program waited until background was done.&#39;</span>
 </pre></div>
 </div>
-<p>The principal challenge of multi-threaded applications is coordinating threads
-that share data or other resources.  To that end, the threading module provides
-a number of synchronization primitives including locks, events, condition
-variables, and semaphores.</p>
-<p>While those tools are powerful, minor design errors can result in problems that
-are difficult to reproduce.  So, the preferred approach to task coordination is
-to concentrate all access to a resource in a single thread and then use the
-<tt class="xref py py-mod docutils literal"><span class="pre">Queue</span></tt> module to feed that thread with requests from other threads.
-Applications using <tt class="xref py py-class docutils literal"><span class="pre">Queue.Queue</span></tt> objects for inter-thread communication
-and coordination are easier to design, more readable, and more reliable.</p>
+<p>多线程应用程序最重要的挑战是在协调线程共享的数据和其它资源。另外，线程模块提供了几个基本的同步方式如锁、事件，条件变量和信号量。</p>
+<p>尽管工具很强大，微小的设计错误也可能造成难以挽回的故障。因此，更好的方法是将所有的资源访问集中到一个独立的线程中，然后使用 <tt class="xref py py-mod docutils literal"><span class="pre">Queue</span></tt> 模块调度该线程相应其它线程的请求。应用程序使用 <tt class="xref py py-class docutils literal"><span class="pre">Queue.Queue</span></tt> 对象可以让内部线程通信和协调更容易设计，更可读，更可靠。</p>
 </div>
-<div class="section" id="logging">
-<span id="tut-logging"></span><h2>11.5. Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">logging</span></tt> module offers a full featured and flexible logging system.
-At its simplest, log messages are sent to a file or to <tt class="docutils literal"><span class="pre">sys.stderr</span></tt>:</p>
+<div class="section" id="tut-logging">
+<span id="id4"></span><h2>11.5. 日志<a class="headerlink" href="#tut-logging" title="Permalink to this headline">¶</a></h2>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">logging</span></tt> 模块提供了完整和灵活的日志系统。它最简单的用法是记录信息并发送到一个文件或 <tt class="docutils literal"><span class="pre">sys.stderr</span></tt></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">logging</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Debugging information&#39;</span><span class="p">)</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&#39;Informational message&#39;</span><span class="p">)</span>
@@ -244,32 +205,19 @@ At its simplest, log messages are sent to a file or to <tt class="docutils liter
 <span class="n">logging</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">&#39;Critical error -- shutting down&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This produces the following output:</p>
+<p>输出如下</p>
 <div class="highlight-python"><pre>WARNING:root:Warning:config file server.conf not found
 ERROR:root:Error occurred
 CRITICAL:root:Critical error -- shutting down</pre>
 </div>
-<p>By default, informational and debugging messages are suppressed and the output
-is sent to standard error.  Other output options include routing messages
-through email, datagrams, sockets, or to an HTTP Server.  New filters can select
-different routing based on message priority: <tt class="xref py py-const docutils literal"><span class="pre">DEBUG</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">INFO</span></tt>,
-<tt class="xref py py-const docutils literal"><span class="pre">WARNING</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">ERROR</span></tt>, and <tt class="xref py py-const docutils literal"><span class="pre">CRITICAL</span></tt>.</p>
-<p>The logging system can be configured directly from Python or can be loaded from
-a user editable configuration file for customized logging without altering the
-application.</p>
+<p>默认情况下捕获信息和调试消息并将输出发送到标准错误流。其它可选的路由信息方式通过email，数据报文，socket或者HTTP Server。基于消息属性，新的过滤器可以选择不同的路由： <tt class="xref py py-const docutils literal"><span class="pre">DEBUG</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">INFO</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">WARNING</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">ERROR</span></tt>, 和 <tt class="xref py py-const docutils literal"><span class="pre">CRITICAL</span></tt> 。</p>
+<p>日志系统可以直接在 Python 代码中定制，也可以不经过应用程序直接在一个用户可编辑的配置文件中加载。</p>
 </div>
-<div class="section" id="weak-references">
-<span id="tut-weak-references"></span><h2>11.6. Weak References<a class="headerlink" href="#weak-references" title="Permalink to this headline">¶</a></h2>
-<p>Python does automatic memory management (reference counting for most objects and
-<em class="xref std std-term">garbage collection</em> to eliminate cycles).  The memory is freed shortly
-after the last reference to it has been eliminated.</p>
-<p>This approach works fine for most applications but occasionally there is a need
-to track objects only as long as they are being used by something else.
-Unfortunately, just tracking them creates a reference that makes them permanent.
-The <tt class="xref py py-mod docutils literal"><span class="pre">weakref</span></tt> module provides tools for tracking objects without creating a
-reference.  When the object is no longer needed, it is automatically removed
-from a weakref table and a callback is triggered for weakref objects.  Typical
-applications include caching objects that are expensive to create:</p>
+<div class="section" id="tut-weak-references">
+<span id="id5"></span><h2>11.6. 弱引用<a class="headerlink" href="#tut-weak-references" title="Permalink to this headline">¶</a></h2>
+<p>Python 自动进行内存管理（对大多数的对象进行引用计数和垃圾回收—— <em class="xref std std-term">garbage collection</em>  ——以循环利用）在最后一个引用消失后，内存会很快释放。</p>
+<p>这个工作方式对大多数应用程序工作良好，但是偶尔会需要跟踪对象来做一些事。不幸的是，仅仅为跟踪它们创建引用也会使其长期存在。 <tt class="xref py py-mod docutils literal"><span class="pre">weakref</span></tt> 模块提供了不用创建引用的跟踪对象工具，一旦对象不再存在，它自动从弱引用表上删除并触发回调。典型的应用包括捕获难以构造的对象</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">weakref</span><span class="o">,</span> <span class="nn">gc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
@@ -295,16 +243,10 @@ applications include caching objects that are expensive to create:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="tools-for-working-with-lists">
-<span id="tut-list-tools"></span><h2>11.7. Tools for Working with Lists<a class="headerlink" href="#tools-for-working-with-lists" title="Permalink to this headline">¶</a></h2>
-<p>Many data structure needs can be met with the built-in list type. However,
-sometimes there is a need for alternative implementations with different
-performance trade-offs.</p>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">array</span></tt> module provides an <tt class="xref py py-class docutils literal"><span class="pre">array()</span></tt> object that is like a list
-that stores only homogeneous data and stores it more compactly.  The following
-example shows an array of numbers stored as two byte unsigned binary numbers
-(typecode <tt class="docutils literal"><span class="pre">&quot;H&quot;</span></tt>) rather than the usual 16 bytes per entry for regular lists of
-Python int objects:</p>
+<div class="section" id="tut-list-tools">
+<span id="id6"></span><h2>11.7. 列表工具<a class="headerlink" href="#tut-list-tools" title="Permalink to this headline">¶</a></h2>
+<p>很多数据结构可能会用到内置列表类型。然而，有时可能需要不同性能代价的实现。</p>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">array</span></tt> 模块提供了一个类似列表的 <tt class="xref py py-class docutils literal"><span class="pre">array()</span></tt> 对象，它仅仅是存储数据，更为紧凑。以下的示例演示了一个存储双字节无符号整数的数组（类型编码 <tt class="docutils literal"><span class="pre">&quot;H&quot;</span></tt> ）而非存储 16 字节 Python 整数对象的普通正规列表</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">array</span> <span class="kn">import</span> <span class="n">array</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s">&#39;H&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">4000</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">22222</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -313,10 +255,7 @@ Python int objects:</p>
 <span class="go">array(&#39;H&#39;, [10, 700])</span>
 </pre></div>
 </div>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">collections</span></tt> module provides a <tt class="xref py py-class docutils literal"><span class="pre">deque()</span></tt> object that is like a
-list with faster appends and pops from the left side but slower lookups in the
-middle. These objects are well suited for implementing queues and breadth first
-tree searches:</p>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">collections</span></tt> 模块提供了类似列表的 <tt class="xref py py-class docutils literal"><span class="pre">deque()</span></tt> 对象，它从左边添加（append）和弹出（pop）更快，但是在内部查询更慢。这些对象更适用于队列实现和广度优先的树搜索</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="s">&quot;task1&quot;</span><span class="p">,</span> <span class="s">&quot;task2&quot;</span><span class="p">,</span> <span class="s">&quot;task3&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;task4&quot;</span><span class="p">)</span>
@@ -332,9 +271,7 @@ tree searches:</p>
 <span class="go">        unsearched.append(m)</span>
 </pre></div>
 </div>
-<p>In addition to alternative list implementations, the library also offers other
-tools such as the <tt class="xref py py-mod docutils literal"><span class="pre">bisect</span></tt> module with functions for manipulating sorted
-lists:</p>
+<p>除了链表的替代实现，该库还提供了 <tt class="xref py py-mod docutils literal"><span class="pre">bisect</span></tt> 这样的模块以操作存储链表</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">bisect</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">scores</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">100</span><span class="p">,</span> <span class="s">&#39;perl&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s">&#39;tcl&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="s">&#39;lua&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="s">&#39;python&#39;</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bisect</span><span class="o">.</span><span class="n">insort</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="s">&#39;ruby&#39;</span><span class="p">))</span>
@@ -342,10 +279,7 @@ lists:</p>
 <span class="go">[(100, &#39;perl&#39;), (200, &#39;tcl&#39;), (300, &#39;ruby&#39;), (400, &#39;lua&#39;), (500, &#39;python&#39;)]</span>
 </pre></div>
 </div>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">heapq</span></tt> module provides functions for implementing heaps based on
-regular lists.  The lowest valued entry is always kept at position zero.  This
-is useful for applications which repeatedly access the smallest element but do
-not want to run a full list sort:</p>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">heapq</span></tt> 提供了基于正规链表的堆实现。最小的值总是保持在0点。这在希望循环访问最小元素但是不想执行完整堆排序的时候非常有用</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">heapify</span><span class="p">,</span> <span class="n">heappop</span><span class="p">,</span> <span class="n">heappush</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">heapify</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>                      <span class="c"># rearrange the list into heap order</span>
@@ -355,23 +289,17 @@ not want to run a full list sort:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="decimal-floating-point-arithmetic">
-<span id="tut-decimal-fp"></span><h2>11.8. Decimal Floating Point Arithmetic<a class="headerlink" href="#decimal-floating-point-arithmetic" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">decimal</span></tt> module offers a <tt class="xref py py-class docutils literal"><span class="pre">Decimal</span></tt> datatype for decimal
-floating point arithmetic.  Compared to the built-in <tt class="xref py py-class docutils literal"><span class="pre">float</span></tt>
-implementation of binary floating point, the class is especially helpful for</p>
+<div class="section" id="tut-decimal-fp">
+<span id="id7"></span><h2>11.8. 十进制浮点数算法<a class="headerlink" href="#tut-decimal-fp" title="Permalink to this headline">¶</a></h2>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">decimal</span></tt> 模块提供了一个 <tt class="xref py py-class docutils literal"><span class="pre">Decimal</span></tt> 数据类型用于浮点数计算。相比内置的二进制浮点数实现 <tt class="xref py py-class docutils literal"><span class="pre">float</span></tt> ，这个类型有助于</p>
 <ul class="simple">
-<li>financial applications and other uses which require exact decimal
-representation,</li>
-<li>control over precision,</li>
-<li>control over rounding to meet legal or regulatory requirements,</li>
-<li>tracking of significant decimal places, or</li>
-<li>applications where the user expects the results to match calculations done by
-hand.</li>
+<li>金融应用和其它需要精确十进制表达的场合，</li>
+<li>控制精度，</li>
+<li>控制舍入以适应法律或者规定要求，</li>
+<li>确保十进制数位精度，或者</li>
+<li>用户希望计算结果与手算相符的场合。</li>
 </ul>
-<p>For example, calculating a 5% tax on a 70 cent phone charge gives different
-results in decimal floating point and binary floating point. The difference
-becomes significant if the results are rounded to the nearest cent:</p>
+<p>例如，计算 70 分电话费的 5% 税计算，十进制浮点数和二进制浮点数计算结果的差别如下。如果在分值上舍入，这个差别就很重要了</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s">&#39;0.70&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="n">Decimal</span><span class="p">(</span><span class="s">&#39;1.05&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
@@ -382,12 +310,8 @@ becomes significant if the results are rounded to the nearest cent:</p>
 <span class="go">0.73</span>
 </pre></div>
 </div>
-<p>The <tt class="xref py py-class docutils literal"><span class="pre">Decimal</span></tt> result keeps a trailing zero, automatically inferring four
-place significance from multiplicands with two place significance.  Decimal
-reproduces mathematics as done by hand and avoids issues that can arise when
-binary floating point cannot exactly represent decimal quantities.</p>
-<p>Exact representation enables the <tt class="xref py py-class docutils literal"><span class="pre">Decimal</span></tt> class to perform modulo
-calculations and equality tests that are unsuitable for binary floating point:</p>
+<p><tt class="xref py py-class docutils literal"><span class="pre">Decimal</span></tt> 的结果总是保有结尾的 0，自动从两位精度延伸到4位。 Decimal 重现了手工的数学运算，这就确保了二进制浮点数无法精确保有的数据精度。</p>
+<p>高精度使 <tt class="xref py py-class docutils literal"><span class="pre">Decimal</span></tt> 可以执行二进制浮点数无法进行的模运算和等值测试</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Decimal</span><span class="p">(</span><span class="s">&#39;1.00&#39;</span><span class="p">)</span> <span class="o">%</span> <span class="n">Decimal</span><span class="p">(</span><span class="s">&#39;.10&#39;</span><span class="p">)</span>
 <span class="go">Decimal(&#39;0.00&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mf">1.00</span> <span class="o">%</span> <span class="mf">0.10</span>
@@ -399,7 +323,7 @@ calculations and equality tests that are unsuitable for binary floating point:</
 <span class="go">False</span>
 </pre></div>
 </div>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">decimal</span></tt> module provides arithmetic with as much precision as needed:</p>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">decimal</span></tt> 提供了必须的高精度算法</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span> <span class="o">=</span> <span class="mi">36</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Decimal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">Decimal</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 <span class="go">Decimal(&#39;0.142857142857142857142857142857142857&#39;)</span>
@@ -416,24 +340,90 @@ calculations and equality tests that are unsuitable for binary floating point:</
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">11. Brief Tour of the Standard Library &#8211; Part II</a><ul>
-<li><a class="reference internal" href="#output-formatting">11.1. Output Formatting</a></li>
-<li><a class="reference internal" href="#templating">11.2. Templating</a></li>
-<li><a class="reference internal" href="#working-with-binary-data-record-layouts">11.3. Working with Binary Data Record Layouts</a></li>
-<li><a class="reference internal" href="#multi-threading">11.4. Multi-threading</a></li>
-<li><a class="reference internal" href="#logging">11.5. Logging</a></li>
-<li><a class="reference internal" href="#weak-references">11.6. Weak References</a></li>
-<li><a class="reference internal" href="#tools-for-working-with-lists">11.7. Tools for Working with Lists</a></li>
-<li><a class="reference internal" href="#decimal-floating-point-arithmetic">11.8. Decimal Floating Point Arithmetic</a></li>
+<li><a class="reference internal" href="#">11. 标准库浏览 &#8211; Part II</a><ul>
+<li><a class="reference internal" href="#tut-output-formatting">11.1. 输出格式</a></li>
+<li><a class="reference internal" href="#templating">11.2. Templating模版</a></li>
+<li><a class="reference internal" href="#tut-binary-formats">11.3. 使用二进制记录层</a></li>
+<li><a class="reference internal" href="#tut-multi-threading">11.4. 多线程</a></li>
+<li><a class="reference internal" href="#tut-logging">11.5. 日志</a></li>
+<li><a class="reference internal" href="#tut-weak-references">11.6. 弱引用</a></li>
+<li><a class="reference internal" href="#tut-list-tools">11.7. 列表工具</a></li>
+<li><a class="reference internal" href="#tut-decimal-fp">11.8. 十进制浮点数算法</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="stdlib.html"
-                        title="previous chapter">10. Brief Tour of the Standard Library</a></p>
+                        title="previous chapter">10. 标准库概览</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="whatnow.html"
+                        title="next chapter">12. 接下来？</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/stdlib2.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+
+<div id="google">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3421553373953599";
+/* 首页侧边 */
+google_ad_slot = "3551838308";
+google_ad_width = 200;
+google_ad_height = 200;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="whatnow.html" title="12. 接下来？"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stdlib.html" title="10. 标准库概览"
+             >previous</a> |</li>
+        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright Translate by march.liu, Reorganize byD.D 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9adc7a1c86496c8e2bc61c4f8fc92d30' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</div>
+  </body>
+</html>
+ess"><a href="whatnow.html"
                         title="next chapter">12. What Now?</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">

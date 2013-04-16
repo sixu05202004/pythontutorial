@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>10. Brief Tour of the Standard Library &mdash; python 2.7 tutorial 2.7 documentation</title>
+    <title>10. 标准库概览 &mdash; python tutorial 2.7 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="python 2.7 tutorial 2.7 documentation" href="index.html" />
-    <link rel="next" title="11. Brief Tour of the Standard Library – Part II" href="stdlib2.html" />
-    <link rel="prev" title="9. Classes" href="classes.html" /> 
+    <link rel="top" title="python tutorial 2.7 documentation" href="index.html" />
+    <link rel="next" title="11. 标准库浏览 – Part II" href="stdlib2.html" />
+    <link rel="prev" title="9. 类" href="classes.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,12 +37,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="stdlib2.html" title="11. Brief Tour of the Standard Library – Part II"
+          <a href="stdlib2.html" title="11. 标准库浏览 – Part II"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="classes.html" title="9. Classes"
+          <a href="classes.html" title="9. 类"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">python 2.7 tutorial 2.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -51,12 +51,11 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="brief-tour-of-the-standard-library">
-<span id="tut-brieftour"></span><h1>10. Brief Tour of the Standard Library<a class="headerlink" href="#brief-tour-of-the-standard-library" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="operating-system-interface">
-<span id="tut-os-interface"></span><h2>10.1. Operating System Interface<a class="headerlink" href="#operating-system-interface" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">os</span></tt> module provides dozens of functions for interacting with the
-operating system:</p>
+  <div class="section" id="tut-brieftour">
+<span id="id1"></span><h1>10. 标准库概览<a class="headerlink" href="#tut-brieftour" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tut-os-interface">
+<span id="id2"></span><h2>10.1. 操作系统接口<a class="headerlink" href="#tut-os-interface" title="Permalink to this headline">¶</a></h2>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">os</span></tt> 模块提供了不少与操作系统相关联的函数</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>      <span class="c"># Return the current working directory</span>
 <span class="go">&#39;C:\\Python26&#39;</span>
@@ -65,11 +64,8 @@ operating system:</p>
 <span class="go">0</span>
 </pre></div>
 </div>
-<p>Be sure to use the <tt class="docutils literal"><span class="pre">import</span> <span class="pre">os</span></tt> style instead of <tt class="docutils literal"><span class="pre">from</span> <span class="pre">os</span> <span class="pre">import</span> <span class="pre">*</span></tt>.  This
-will keep <tt class="xref py py-func docutils literal"><span class="pre">os.open()</span></tt> from shadowing the built-in <tt class="xref py py-func docutils literal"><span class="pre">open()</span></tt> function which
-operates much differently.</p>
-<p id="index-0">The built-in <tt class="xref py py-func docutils literal"><span class="pre">dir()</span></tt> and <tt class="xref py py-func docutils literal"><span class="pre">help()</span></tt> functions are useful as interactive
-aids for working with large modules like <tt class="xref py py-mod docutils literal"><span class="pre">os</span></tt>:</p>
+<p>应该用 <tt class="docutils literal"><span class="pre">import</span> <span class="pre">os</span></tt> 风格而非 <tt class="docutils literal"><span class="pre">from</span> <span class="pre">os</span> <span class="pre">import</span> <span class="pre">*</span></tt> 。这样可以保证随操作系统不同而有所变化的 <tt class="xref py py-func docutils literal"><span class="pre">os.open()</span></tt> 不会覆盖内置函数 <tt class="xref py py-func docutils literal"><span class="pre">open()</span></tt> 。</p>
+<p id="index-0">在使用一些像 os 这样的大型模块时内置的 <tt class="xref py py-func docutils literal"><span class="pre">dir()</span></tt> 和 <tt class="xref py py-func docutils literal"><span class="pre">help()</span></tt> 函数非常有用</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">os</span><span class="p">)</span>
 <span class="go">&lt;returns a list of all module functions&gt;</span>
@@ -77,55 +73,44 @@ aids for working with large modules like <tt class="xref py py-mod docutils lite
 <span class="go">&lt;returns an extensive manual page created from the module&#39;s docstrings&gt;</span>
 </pre></div>
 </div>
-<p>For daily file and directory management tasks, the <tt class="xref py py-mod docutils literal"><span class="pre">shutil</span></tt> module provides
-a higher level interface that is easier to use:</p>
+<p>针对日常的文件和目录管理任务，<tt class="xref py py-mod docutils literal"><span class="pre">shutil</span></tt> 模块提供了一个易于使用的高级接口</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">shutil</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="s">&#39;data.db&#39;</span><span class="p">,</span> <span class="s">&#39;archive.db&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="s">&#39;/build/executables&#39;</span><span class="p">,</span> <span class="s">&#39;installdir&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="file-wildcards">
-<span id="tut-file-wildcards"></span><h2>10.2. File Wildcards<a class="headerlink" href="#file-wildcards" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">glob</span></tt> module provides a function for making file lists from directory
-wildcard searches:</p>
+<div class="section" id="tut-file-wildcards">
+<span id="id3"></span><h2>10.2. 文件通配符<a class="headerlink" href="#tut-file-wildcards" title="Permalink to this headline">¶</a></h2>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">glob</span></tt> 模块提供了一个函数用于从目录通配符搜索中生成文件列表</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">glob</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s">&#39;*.py&#39;</span><span class="p">)</span>
 <span class="go">[&#39;primes.py&#39;, &#39;random.py&#39;, &#39;quote.py&#39;]</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="command-line-arguments">
-<span id="tut-command-line-arguments"></span><h2>10.3. Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this headline">¶</a></h2>
-<p>Common utility scripts often need to process command line arguments. These
-arguments are stored in the <tt class="xref py py-mod docutils literal"><span class="pre">sys</span></tt> module&#8217;s <em>argv</em> attribute as a list.  For
-instance the following output results from running <tt class="docutils literal"><span class="pre">python</span> <span class="pre">demo.py</span> <span class="pre">one</span> <span class="pre">two</span>
-<span class="pre">three</span></tt> at the command line:</p>
+<div class="section" id="tut-command-line-arguments">
+<span id="id4"></span><h2>10.3. 命令行参数<a class="headerlink" href="#tut-command-line-arguments" title="Permalink to this headline">¶</a></h2>
+<p>通用工具脚本经常调用命令行参数。这些命令行参数以链表形式存储于 <tt class="xref py py-mod docutils literal"><span class="pre">sys</span></tt> 模块的 <em>argv</em>  变量。例如在命令行中执行 <tt class="docutils literal"><span class="pre">python</span> <span class="pre">demo.py</span> <span class="pre">one</span> <span class="pre">two</span> <span class="pre">three</span></tt> 后可以得到以下输出结果</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span>
 <span class="go">[&#39;demo.py&#39;, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;]</span>
 </pre></div>
 </div>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">getopt</span></tt> module processes <em>sys.argv</em> using the conventions of the Unix
-<tt class="xref py py-func docutils literal"><span class="pre">getopt()</span></tt> function.  More powerful and flexible command line processing is
-provided by the <tt class="xref py py-mod docutils literal"><span class="pre">argparse</span></tt> module.</p>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">getopt</span></tt> 模块使用 Unix <tt class="xref py py-func docutils literal"><span class="pre">getopt()</span></tt> 函处理 <em>sys.argv</em> 。更多的复杂命令行处理由 <tt class="xref py py-mod docutils literal"><span class="pre">argparse</span></tt> 模块提供。</p>
 </div>
-<div class="section" id="error-output-redirection-and-program-termination">
-<span id="tut-stderr"></span><h2>10.4. Error Output Redirection and Program Termination<a class="headerlink" href="#error-output-redirection-and-program-termination" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">sys</span></tt> module also has attributes for <em>stdin</em>, <em>stdout</em>, and <em>stderr</em>.
-The latter is useful for emitting warnings and error messages to make them
-visible even when <em>stdout</em> has been redirected:</p>
+<div class="section" id="tut-stderr">
+<span id="id5"></span><h2>10.4. 错误输出重定向和程序终止<a class="headerlink" href="#tut-stderr" title="Permalink to this headline">¶</a></h2>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">sys</span></tt> 还有 <em>stdin</em> ， <em>stdout</em> 和 <em>stderr</em> 属性，即使在 <em>stdout</em> 被重定向时，后者也可以用于显示警告和错误信息</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;Warning, log file not found starting a new one</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
 <span class="go">Warning, log file not found starting a new one</span>
 </pre></div>
 </div>
-<p>The most direct way to terminate a script is to use <tt class="docutils literal"><span class="pre">sys.exit()</span></tt>.</p>
+<p>大多脚本的定向终止都使用 <tt class="docutils literal"><span class="pre">sys.exit()</span></tt> 。</p>
 </div>
-<div class="section" id="string-pattern-matching">
-<span id="tut-string-pattern-matching"></span><h2>10.5. String Pattern Matching<a class="headerlink" href="#string-pattern-matching" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">re</span></tt> module provides regular expression tools for advanced string
-processing. For complex matching and manipulation, regular expressions offer
-succinct, optimized solutions:</p>
+<div class="section" id="tut-string-pattern-matching">
+<span id="id6"></span><h2>10.5. 字符串正则匹配<a class="headerlink" href="#tut-string-pattern-matching" title="Permalink to this headline">¶</a></h2>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">re</span></tt> 模块为高级字符串处理提供了正则表达式工具。对于复杂的匹配和处理，正则表达式提供了简洁、优化的解决方案</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">re</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">r&#39;\bf[a-z]*&#39;</span><span class="p">,</span> <span class="s">&#39;which foot or hand fell fastest&#39;</span><span class="p">)</span>
 <span class="go">[&#39;foot&#39;, &#39;fell&#39;, &#39;fastest&#39;]</span>
@@ -133,17 +118,15 @@ succinct, optimized solutions:</p>
 <span class="go">&#39;cat in the hat&#39;</span>
 </pre></div>
 </div>
-<p>When only simple capabilities are needed, string methods are preferred because
-they are easier to read and debug:</p>
+<p>只需简单的操作时，字符串方法最好用，因为它们易读，又容易调试</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;tea for too&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;too&#39;</span><span class="p">,</span> <span class="s">&#39;two&#39;</span><span class="p">)</span>
 <span class="go">&#39;tea for two&#39;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="mathematics">
-<span id="tut-mathematics"></span><h2>10.6. Mathematics<a class="headerlink" href="#mathematics" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">math</span></tt> module gives access to the underlying C library functions for
-floating point math:</p>
+<div class="section" id="tut-mathematics">
+<span id="id7"></span><h2>10.6. 数学<a class="headerlink" href="#tut-mathematics" title="Permalink to this headline">¶</a></h2>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">math</span></tt> 模块为浮点运算提供了对底层C函数库的访问</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">4.0</span><span class="p">)</span>
 <span class="go">0.70710678118654757</span>
@@ -151,7 +134,7 @@ floating point math:</p>
 <span class="go">10.0</span>
 </pre></div>
 </div>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">random</span></tt> module provides tools for making random selections:</p>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">random</span></tt> 提供了生成随机数的工具</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">random</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s">&#39;apple&#39;</span><span class="p">,</span> <span class="s">&#39;pear&#39;</span><span class="p">,</span> <span class="s">&#39;banana&#39;</span><span class="p">])</span>
 <span class="go">&#39;apple&#39;</span>
@@ -164,11 +147,9 @@ floating point math:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="internet-access">
-<span id="tut-internet-access"></span><h2>10.7. Internet Access<a class="headerlink" href="#internet-access" title="Permalink to this headline">¶</a></h2>
-<p>There are a number of modules for accessing the internet and processing internet
-protocols. Two of the simplest are <tt class="xref py py-mod docutils literal"><span class="pre">urllib2</span></tt> for retrieving data from urls
-and <tt class="xref py py-mod docutils literal"><span class="pre">smtplib</span></tt> for sending mail:</p>
+<div class="section" id="tut-internet-access">
+<span id="id8"></span><h2>10.7. 互联网访问<a class="headerlink" href="#tut-internet-access" title="Permalink to this headline">¶</a></h2>
+<p>有几个模块用于访问互联网以及处理网络通信协议。其中最简单的两个是用于处理从urls接收的数据的 <tt class="xref py py-mod docutils literal"><span class="pre">urllib2</span></tt> 以及用于发送电子邮件的 <tt class="xref py py-mod docutils literal"><span class="pre">smtplib</span></tt></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://tycho.usno.navy.mil/cgi-bin/timer.pl&#39;</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">if</span> <span class="s">&#39;EST&#39;</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">or</span> <span class="s">&#39;EDT&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>  <span class="c"># look for Eastern Time</span>
@@ -187,15 +168,11 @@ and <tt class="xref py py-mod docutils literal"><span class="pre">smtplib</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">server</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>(Note that the second example needs a mailserver running on localhost.)</p>
+<p>(注意第二个例子需要在 localhost 运行一个邮件服务器。)</p>
 </div>
-<div class="section" id="dates-and-times">
-<span id="tut-dates-and-times"></span><h2>10.8. Dates and Times<a class="headerlink" href="#dates-and-times" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">datetime</span></tt> module supplies classes for manipulating dates and times in
-both simple and complex ways. While date and time arithmetic is supported, the
-focus of the implementation is on efficient member extraction for output
-formatting and manipulation.  The module also supports objects that are timezone
-aware.</p>
+<div class="section" id="tut-dates-and-times">
+<span id="id9"></span><h2>10.8. 日期和时间<a class="headerlink" href="#tut-dates-and-times" title="Permalink to this headline">¶</a></h2>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">datetime</span></tt> 模块为日期和时间处理同时提供了简单和复杂的方法。支持日期和时间算法的同时，实现的重点放在更有效的处理和格式化输出。该模块还支持时区处理。</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># dates are easily constructed and formatted</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">now</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
@@ -212,11 +189,10 @@ aware.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="data-compression">
-<span id="tut-data-compression"></span><h2>10.9. Data Compression<a class="headerlink" href="#data-compression" title="Permalink to this headline">¶</a></h2>
-<p>Common data archiving and compression formats are directly supported by modules
-including: <tt class="xref py py-mod docutils literal"><span class="pre">zlib</span></tt>, <tt class="xref py py-mod docutils literal"><span class="pre">gzip</span></tt>, <tt class="xref py py-mod docutils literal"><span class="pre">bz2</span></tt>, <tt class="xref py py-mod docutils literal"><span class="pre">zipfile</span></tt> and
-<tt class="xref py py-mod docutils literal"><span class="pre">tarfile</span></tt>.</p>
+<div class="section" id="tut-data-compression">
+<span id="id10"></span><h2>10.9. 数据压缩<a class="headerlink" href="#tut-data-compression" title="Permalink to this headline">¶</a></h2>
+<p>以下模块直接支持通用的数据打包和压缩格式： <tt class="xref py py-mod docutils literal"><span class="pre">zlib</span></tt>, <tt class="xref py py-mod docutils literal"><span class="pre">gzip</span></tt>, <tt class="xref py py-mod docutils literal"><span class="pre">bz2</span></tt>, <tt class="xref py py-mod docutils literal"><span class="pre">zipfile</span></tt> 以及
+<tt class="xref py py-mod docutils literal"><span class="pre">tarfile</span></tt>。</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">zlib</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s">&#39;witch which has which witches wrist watch&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -231,14 +207,10 @@ including: <tt class="xref py py-mod docutils literal"><span class="pre">zlib</s
 </pre></div>
 </div>
 </div>
-<div class="section" id="performance-measurement">
-<span id="tut-performance-measurement"></span><h2>10.10. Performance Measurement<a class="headerlink" href="#performance-measurement" title="Permalink to this headline">¶</a></h2>
-<p>Some Python users develop a deep interest in knowing the relative performance of
-different approaches to the same problem. Python provides a measurement tool
-that answers those questions immediately.</p>
-<p>For example, it may be tempting to use the tuple packing and unpacking feature
-instead of the traditional approach to swapping arguments. The <tt class="xref py py-mod docutils literal"><span class="pre">timeit</span></tt>
-module quickly demonstrates a modest performance advantage:</p>
+<div class="section" id="tut-performance-measurement">
+<span id="id11"></span><h2>10.10. 性能度量<a class="headerlink" href="#tut-performance-measurement" title="Permalink to this headline">¶</a></h2>
+<p>有些用户对了解解决同一问题的不同方法之间的性能差异很感兴趣。Python 提供了一个度量工具，为这些问题提供了直接答案。</p>
+<p>例如，使用元组封装和拆封来交换元素看起来要比使用传统的方法要诱人的多。 <tt class="xref py py-mod docutils literal"><span class="pre">timeit</span></tt>  证明了后者更快一些</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">Timer</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Timer</span><span class="p">(</span><span class="s">&#39;t=a; a=b; b=t&#39;</span><span class="p">,</span> <span class="s">&#39;a=1; b=2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
 <span class="go">0.57535828626024577</span>
@@ -246,21 +218,12 @@ module quickly demonstrates a modest performance advantage:</p>
 <span class="go">0.54962537085770791</span>
 </pre></div>
 </div>
-<p>In contrast to <tt class="xref py py-mod docutils literal"><span class="pre">timeit</span></tt>&#8216;s fine level of granularity, the <tt class="xref py py-mod docutils literal"><span class="pre">profile</span></tt> and
-<tt class="xref py py-mod docutils literal"><span class="pre">pstats</span></tt> modules provide tools for identifying time critical sections in
-larger blocks of code.</p>
+<p>相对于 <tt class="xref py py-mod docutils literal"><span class="pre">timeit</span></tt> 的细粒度，<tt class="xref py py-mod docutils literal"><span class="pre">profile</span></tt> 和 <tt class="xref py py-mod docutils literal"><span class="pre">pstats</span></tt>  模块提供了针对更大代码块的时间度量工具。</p>
 </div>
-<div class="section" id="quality-control">
-<span id="tut-quality-control"></span><h2>10.11. Quality Control<a class="headerlink" href="#quality-control" title="Permalink to this headline">¶</a></h2>
-<p>One approach for developing high quality software is to write tests for each
-function as it is developed and to run those tests frequently during the
-development process.</p>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">doctest</span></tt> module provides a tool for scanning a module and validating
-tests embedded in a program&#8217;s docstrings.  Test construction is as simple as
-cutting-and-pasting a typical call along with its results into the docstring.
-This improves the documentation by providing the user with an example and it
-allows the doctest module to make sure the code remains true to the
-documentation:</p>
+<div class="section" id="tut-quality-control">
+<span id="id12"></span><h2>10.11. 质量控制<a class="headerlink" href="#tut-quality-control" title="Permalink to this headline">¶</a></h2>
+<p>开发高质量软件的方法之一是为每一个函数开发测试代码，并且在开发过程中经常进行测试。</p>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">doctest</span></tt> 模块提供了一个工具，扫描模块并根据程序中内嵌的文档字符串执行测试。测试构造如同简单的将它的输出结果剪切并粘贴到文档字符串中。通过用户提供的例子，它发展了文档，允许doctest模块确认代码的结果是否与文档一致</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Computes the arithmetic mean of a list of numbers.</span>
 
@@ -273,9 +236,7 @@ documentation:</p>
 <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>   <span class="c"># automatically validate the embedded tests</span>
 </pre></div>
 </div>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">unittest</span></tt> module is not as effortless as the <tt class="xref py py-mod docutils literal"><span class="pre">doctest</span></tt> module,
-but it allows a more comprehensive set of tests to be maintained in a separate
-file:</p>
+<p><tt class="xref py py-mod docutils literal"><span class="pre">unittest</span></tt> 模块不像 <tt class="xref py py-mod docutils literal"><span class="pre">doctest</span></tt>  模块那么容易使用，不过它可以在一个独立的文件里提供一个更全面的测试集</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">unittest</span>
 
 <span class="k">class</span> <span class="nc">TestStatisticalFunctions</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
@@ -290,27 +251,14 @@ file:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="batteries-included">
-<span id="tut-batteries-included"></span><h2>10.12. Batteries Included<a class="headerlink" href="#batteries-included" title="Permalink to this headline">¶</a></h2>
-<p>Python has a &#8220;batteries included&#8221; philosophy.  This is best seen through the
-sophisticated and robust capabilities of its larger packages. For example:</p>
+<div class="section" id="tut-batteries-included">
+<span id="id13"></span><h2>10.12. 电池已备<a class="headerlink" href="#tut-batteries-included" title="Permalink to this headline">¶</a></h2>
+<p>Python 体现了“batteries included”哲学 。Python 可以通过更大的包的来得到应付各种复杂情况的强大能力，从这一点我们可以看出该思想的应用。例如：</p>
 <ul class="simple">
-<li>The <tt class="xref py py-mod docutils literal"><span class="pre">xmlrpclib</span></tt> and <tt class="xref py py-mod docutils literal"><span class="pre">SimpleXMLRPCServer</span></tt> modules make implementing
-remote procedure calls into an almost trivial task.  Despite the modules
-names, no direct knowledge or handling of XML is needed.</li>
-<li>The <tt class="xref py py-mod docutils literal"><span class="pre">email</span></tt> package is a library for managing email messages, including
-MIME and other RFC 2822-based message documents. Unlike <tt class="xref py py-mod docutils literal"><span class="pre">smtplib</span></tt> and
-<tt class="xref py py-mod docutils literal"><span class="pre">poplib</span></tt> which actually send and receive messages, the email package has
-a complete toolset for building or decoding complex message structures
-(including attachments) and for implementing internet encoding and header
-protocols.</li>
-<li>The <tt class="xref py py-mod docutils literal"><span class="pre">xml.dom</span></tt> and <tt class="xref py py-mod docutils literal"><span class="pre">xml.sax</span></tt> packages provide robust support for
-parsing this popular data interchange format. Likewise, the <tt class="xref py py-mod docutils literal"><span class="pre">csv</span></tt> module
-supports direct reads and writes in a common database format. Together, these
-modules and packages greatly simplify data interchange between Python
-applications and other tools.</li>
-<li>Internationalization is supported by a number of modules including
-<tt class="xref py py-mod docutils literal"><span class="pre">gettext</span></tt>, <tt class="xref py py-mod docutils literal"><span class="pre">locale</span></tt>, and the <tt class="xref py py-mod docutils literal"><span class="pre">codecs</span></tt> package.</li>
+<li><tt class="xref py py-mod docutils literal"><span class="pre">xmlrpclib</span></tt> 和 <tt class="xref py py-mod docutils literal"><span class="pre">SimpleXMLRPCServer</span></tt> 模块实现了在琐碎的任务中调用远程过程。尽管有这样的名字，其实用户不需要直接处理 XML ，也不需要这方面的知识。</li>
+<li><tt class="xref py py-mod docutils literal"><span class="pre">email</span></tt> 包是一个邮件消息管理库，可以处理 MIME 或其它基于 RFC 2822 的消息文档。不同于实际发送和接收消息的 <tt class="xref py py-mod docutils literal"><span class="pre">smtplib</span></tt> 和 <tt class="xref py py-mod docutils literal"><span class="pre">poplib</span></tt> 模块，email 包有一个用于构建或解析复杂消息结构（包括附件）以及实现互联网编码和头协议的完整工具集。</li>
+<li><tt class="xref py py-mod docutils literal"><span class="pre">xml.dom</span></tt> 和 <tt class="xref py py-mod docutils literal"><span class="pre">xml.sax</span></tt> 包为流行的信息交换格式提供了强大的支持。同样， <tt class="xref py py-mod docutils literal"><span class="pre">csv</span></tt>  模块支持在通用数据库格式中直接读写。综合起来，这些模块和包大大简化了 Python 应用程序和其它工具之间的数据交换。</li>
+<li>国际化由 <tt class="xref py py-mod docutils literal"><span class="pre">gettext</span></tt> ， <tt class="xref py py-mod docutils literal"><span class="pre">locale</span></tt> 和 <tt class="xref py py-mod docutils literal"><span class="pre">codecs</span></tt> 包支持。</li>
 </ul>
 </div>
 </div>
@@ -323,29 +271,29 @@ applications and other tools.</li>
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">10. Brief Tour of the Standard Library</a><ul>
-<li><a class="reference internal" href="#operating-system-interface">10.1. Operating System Interface</a></li>
-<li><a class="reference internal" href="#file-wildcards">10.2. File Wildcards</a></li>
-<li><a class="reference internal" href="#command-line-arguments">10.3. Command Line Arguments</a></li>
-<li><a class="reference internal" href="#error-output-redirection-and-program-termination">10.4. Error Output Redirection and Program Termination</a></li>
-<li><a class="reference internal" href="#string-pattern-matching">10.5. String Pattern Matching</a></li>
-<li><a class="reference internal" href="#mathematics">10.6. Mathematics</a></li>
-<li><a class="reference internal" href="#internet-access">10.7. Internet Access</a></li>
-<li><a class="reference internal" href="#dates-and-times">10.8. Dates and Times</a></li>
-<li><a class="reference internal" href="#data-compression">10.9. Data Compression</a></li>
-<li><a class="reference internal" href="#performance-measurement">10.10. Performance Measurement</a></li>
-<li><a class="reference internal" href="#quality-control">10.11. Quality Control</a></li>
-<li><a class="reference internal" href="#batteries-included">10.12. Batteries Included</a></li>
+<li><a class="reference internal" href="#">10. 标准库概览</a><ul>
+<li><a class="reference internal" href="#tut-os-interface">10.1. 操作系统接口</a></li>
+<li><a class="reference internal" href="#tut-file-wildcards">10.2. 文件通配符</a></li>
+<li><a class="reference internal" href="#tut-command-line-arguments">10.3. 命令行参数</a></li>
+<li><a class="reference internal" href="#tut-stderr">10.4. 错误输出重定向和程序终止</a></li>
+<li><a class="reference internal" href="#tut-string-pattern-matching">10.5. 字符串正则匹配</a></li>
+<li><a class="reference internal" href="#tut-mathematics">10.6. 数学</a></li>
+<li><a class="reference internal" href="#tut-internet-access">10.7. 互联网访问</a></li>
+<li><a class="reference internal" href="#tut-dates-and-times">10.8. 日期和时间</a></li>
+<li><a class="reference internal" href="#tut-data-compression">10.9. 数据压缩</a></li>
+<li><a class="reference internal" href="#tut-performance-measurement">10.10. 性能度量</a></li>
+<li><a class="reference internal" href="#tut-quality-control">10.11. 质量控制</a></li>
+<li><a class="reference internal" href="#tut-batteries-included">10.12. 电池已备</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="classes.html"
-                        title="previous chapter">9. Classes</a></p>
+                        title="previous chapter">9. 类</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="stdlib2.html"
-                        title="next chapter">11. Brief Tour of the Standard Library &#8211; Part II</a></p>
+                        title="next chapter">11. 标准库浏览 &#8211; Part II</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/stdlib.txt"
@@ -363,6 +311,53 @@ applications and other tools.</li>
     Enter search terms or a module, class or function name.
     </p>
 </div>
+
+<div id="google">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3421553373953599";
+/* 首页侧边 */
+google_ad_slot = "3551838308";
+google_ad_width = 200;
+google_ad_height = 200;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="stdlib2.html" title="11. 标准库浏览 – Part II"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="classes.html" title="9. 类"
+             >previous</a> |</li>
+        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright Translate by march.liu, Reorganize byD.D 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9adc7a1c86496c8e2bc61c4f8fc92d30' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</div>
+  </body>
+</html>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>

@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>4. 深入流程控制 &mdash; python 2.7 tutorial 2.7 documentation</title>
+    <title>4. 深入流程控制 &mdash; python tutorial 2.7 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="python 2.7 tutorial 2.7 documentation" href="index.html" />
+    <link rel="top" title="python tutorial 2.7 documentation" href="index.html" />
     <link rel="next" title="5. 数据结构" href="datastructures.html" />
-    <link rel="prev" title="3. Python??Ҫ????" href="introduction.html" /> 
+    <link rel="prev" title="3. Python概要介绍" href="introduction.html" /> 
   </head>
   <body>
     <div class="related">
@@ -40,9 +40,9 @@
           <a href="datastructures.html" title="5. 数据结构"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="introduction.html" title="3. Python??Ҫ????"
+          <a href="introduction.html" title="3. Python概要介绍"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">python 2.7 tutorial 2.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -72,7 +72,7 @@
 <span class="go">More</span>
 </pre></div>
 </div>
-<p>可能会有零到多个 <tt class="xref std std-keyword docutils literal"><span class="pre">elif</span></tt> 部分，<tt class="xref std std-keyword docutils literal"><span class="pre">else</span></tt> 是可选的。关键字 &#8216;<tt class="xref std std-keyword docutils literal"><span class="pre">elif</span></tt>&#8216; 是 “else if” 的缩写，这个可以有效避免过深的缩进。 <tt class="xref std std-keyword docutils literal"><span class="pre">if</span></tt> ... <tt class="xref std std-keyword docutils literal"><span class="pre">elif</span></tt> ... <tt class="xref std std-keyword docutils literal"><span class="pre">elif</span></tt> ... 序列用于替代其它语言中的 <tt class="docutils literal"><span class="pre">switch</span></tt> 或 <tt class="docutils literal"><span class="pre">case</span></tt> 语句。</p>
+<p>可能会有零到多个 <tt class="xref std std-keyword docutils literal"><span class="pre">elif</span></tt> 部分，<tt class="xref std std-keyword docutils literal"><span class="pre">else</span></tt> 是可选的。关键字 &#8216;<tt class="xref std std-keyword docutils literal"><span class="pre">elif</span></tt>&#8216; 是 &#8216;else if&#8217; 的缩写，这个可以有效避免过深的缩进。 <tt class="xref std std-keyword docutils literal"><span class="pre">if</span></tt> ... <tt class="xref std std-keyword docutils literal"><span class="pre">elif</span></tt> ... <tt class="xref std std-keyword docutils literal"><span class="pre">elif</span></tt> ... 序列用于替代其它语言中的 <tt class="docutils literal"><span class="pre">switch</span></tt> 或 <tt class="docutils literal"><span class="pre">case</span></tt> 语句。</p>
 </div>
 <div class="section" id="for">
 <span id="tut-for"></span><h2>4.2. <tt class="xref std std-keyword docutils literal"><span class="pre">for</span></tt> 语句<a class="headerlink" href="#for" title="Permalink to this headline">¶</a></h2>
@@ -123,7 +123,7 @@
 <span class="go">4 lamb</span>
 </pre></div>
 </div>
-<p>不过，这种场合可以方便的使用 <tt class="xref py py-func docutils literal"><span class="pre">enumerate()</span></tt> ，请参见 <a class="reference internal" href="datastructures.html#tut-loopidioms"><em>Looping Techniques</em></a>。</p>
+<p>不过，这种场合可以方便的使用 <tt class="xref py py-func docutils literal"><span class="pre">enumerate()</span></tt> ，请参见 <a class="reference internal" href="datastructures.html#tut-loopidioms"><em>循环技巧</em></a>。</p>
 </div>
 <div class="section" id="break-continue-else">
 <span id="tut-break"></span><h2>4.4. <tt class="xref std std-keyword docutils literal"><span class="pre">break</span></tt> 和 <tt class="xref std std-keyword docutils literal"><span class="pre">continue</span></tt> 语句, 以及循环中的 <tt class="xref std std-keyword docutils literal"><span class="pre">else</span></tt> 子句<a class="headerlink" href="#break-continue-else" title="Permalink to this headline">¶</a></h2>
@@ -224,7 +224,7 @@
 <p>和以前一样，这个例子演示了一些新的 Python 功能：</p>
 <ul class="simple">
 <li><tt class="xref std std-keyword docutils literal"><span class="pre">return</span></tt> 语句从函数中返回一个值，不带表达式的 <tt class="xref std std-keyword docutils literal"><span class="pre">return</span></tt> 返回 <tt class="docutils literal"><span class="pre">None</span></tt> 。过程结束后也会返回 <tt class="docutils literal"><span class="pre">None</span></tt> 。</li>
-<li>语句 <tt class="docutils literal"><span class="pre">result.append(b)</span></tt> 称为链表对象 <tt class="docutils literal"><span class="pre">result</span></tt> 的一个 <em>方法</em> （ method ）。方法是一个“属于”某个对象的函数，它被命名为 <tt class="docutils literal"><span class="pre">obj.methodename</span></tt> ，这里的 <tt class="docutils literal"><span class="pre">obj</span></tt> 是某个对象（可能是一个表达式）， <tt class="docutils literal"><span class="pre">methodename</span></tt> 是某个在该对象类型定义中的方法的命名。不同的类型定义不同的方法。不同类型可能有同样名字的方法，但不会混淆。（当你定义自己的对象类型和方法时，可能会出现这种情况， <em>class</em> 的定义方法详见 <a class="reference internal" href="classes.html#tut-classes"><em>Classes</em></a> ）。示例中演示的 <tt class="xref py py-meth docutils literal"><span class="pre">append()</span></tt> 方法由链表对象定义，它向链表中加入一个新元素。在示例中它等同于 <tt class="docutils literal"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">result</span> <span class="pre">+</span> <span class="pre">[b]</span></tt> ，不过效率更高。</li>
+<li>语句 <tt class="docutils literal"><span class="pre">result.append(b)</span></tt> 称为链表对象 <tt class="docutils literal"><span class="pre">result</span></tt> 的一个 <em>方法</em> （ method ）。方法是一个“属于”某个对象的函数，它被命名为 <tt class="docutils literal"><span class="pre">obj.methodename</span></tt> ，这里的 <tt class="docutils literal"><span class="pre">obj</span></tt> 是某个对象（可能是一个表达式）， <tt class="docutils literal"><span class="pre">methodename</span></tt> 是某个在该对象类型定义中的方法的命名。不同的类型定义不同的方法。不同类型可能有同样名字的方法，但不会混淆。（当你定义自己的对象类型和方法时，可能会出现这种情况， <em>class</em> 的定义方法详见 <a class="reference internal" href="classes.html#tut-classes"><em>类</em></a> ）。示例中演示的 <tt class="xref py py-meth docutils literal"><span class="pre">append()</span></tt> 方法由链表对象定义，它向链表中加入一个新元素。在示例中它等同于 <tt class="docutils literal"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">result</span> <span class="pre">+</span> <span class="pre">[b]</span></tt> ，不过效率更高。</li>
 </ul>
 </div>
 <div class="section" id="tut-defining">
@@ -364,7 +364,7 @@ sketch : Cheese Shop Sketch</pre>
 </div>
 <div class="section" id="tut-arbitraryargs">
 <span id="id7"></span><h3>4.7.3. 可变参数列表<a class="headerlink" href="#tut-arbitraryargs" title="Permalink to this headline">¶</a></h3>
-<p id="index-2">最后，一个最不常用的选择是可以让函数调用可变个数的参数。这些参数被包装进一个元组（参见 <a class="reference internal" href="datastructures.html#tut-tuples"><em>Tuples and Sequences</em></a> ）。在这些可变个数的参数之前，可以有零到多个普通的参数。</p>
+<p id="index-2">最后，一个最不常用的选择是可以让函数调用可变个数的参数。这些参数被包装进一个元组（参见 <a class="reference internal" href="datastructures.html#tut-tuples"><em>元组和序列</em></a> ）。在这些可变个数的参数之前，可以有零到多个普通的参数。</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">write_multiple_items</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">separator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">separator</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
 </pre></div>
@@ -448,7 +448,7 @@ sketch : Cheese Shop Sketch</pre>
 <li><p class="first">把空格放到操作符两边，以及逗号后面，但是括号里侧不加空格： <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">f(1,</span> <span class="pre">2)</span> <span class="pre">+</span> <span class="pre">g(3,</span> <span class="pre">4)</span></tt> 。</p>
 </li>
 <li><p class="first">统一函数和类命名。</p>
-<p>推荐类名用 <tt class="docutils literal"><span class="pre">驼峰命名</span></tt>， 函数和方法名用 <tt class="docutils literal"><span class="pre">小写_和_下划线</span></tt>。总是用 <tt class="docutils literal"><span class="pre">self</span></tt> 作为方法的第一个参数（关于类和方法的知识详见 <a class="reference internal" href="classes.html#tut-firstclasses"><em>A First Look at Classes</em></a> ）。</p>
+<p>推荐类名用 <tt class="docutils literal"><span class="pre">驼峰命名</span></tt>， 函数和方法名用 <tt class="docutils literal"><span class="pre">小写_和_下划线</span></tt>。总是用 <tt class="docutils literal"><span class="pre">self</span></tt> 作为方法的第一个参数（关于类和方法的知识详见 <a class="reference internal" href="classes.html#tut-firstclasses"><em>初识类</em></a> ）。</p>
 </li>
 <li><p class="first">在国际化环境中不要随意使用自己喜欢的编码，　纯 ASCII 文本总是工作的最好。</p>
 </li>
@@ -494,7 +494,7 @@ sketch : Cheese Shop Sketch</pre>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="introduction.html"
-                        title="previous chapter">3. Python??Ҫ????</a></p>
+                        title="previous chapter">3. Python概要介绍</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="datastructures.html"
                         title="next chapter">5. 数据结构</a></p>
@@ -515,6 +515,21 @@ sketch : Cheese Shop Sketch</pre>
     Enter search terms or a module, class or function name.
     </p>
 </div>
+
+<div id="google">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3421553373953599";
+/* 首页侧边 */
+google_ad_slot = "3551838308";
+google_ad_width = 200;
+google_ad_height = 200;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
@@ -530,14 +545,20 @@ sketch : Cheese Shop Sketch</pre>
           <a href="datastructures.html" title="5. 数据结构"
              >next</a> |</li>
         <li class="right" >
-          <a href="introduction.html" title="3. Python??Ҫ????"
+          <a href="introduction.html" title="3. Python概要介绍"
              >previous</a> |</li>
-        <li><a href="index.html">python 2.7 tutorial 2.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2013, D.D.
+        &copy; Copyright Translate by march.liu, Reorganize byD.D 2013.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
-    </div>
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9adc7a1c86496c8e2bc61c4f8fc92d30' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</div>
   </body>
 </html>
