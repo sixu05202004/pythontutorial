@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,14 +6,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>14. 浮点数算法：争议和限制 &mdash; python tutorial 2.7 documentation</title>
+    <title>14. 浮点数算法：争议和限制 &mdash; Python tutorial 2.7 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
+        URL_ROOT:    './',
         VERSION:     '2.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -25,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="python tutorial 2.7 documentation" href="index.html" />
+    <link rel="top" title="Python tutorial 2.7 documentation" href="index.html" />
     <link rel="prev" title="13. 交互式输入行编辑历史回溯" href="interactive.html" /> 
   </head>
   <body>
@@ -38,7 +36,7 @@
         <li class="right" >
           <a href="interactive.html" title="13. 交互式输入行编辑历史回溯"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Python tutorial 2.7 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -81,7 +79,7 @@
 </pre></div>
 </div>
 <p>非常接近，但是不完全等于, 1/10.</p>
-<p>这是很容易忘记，存储的值是一个近似的原小数，由于浮体的方式，显示在提示符的解释。 Python中只打印一个小数近似的真实机器所存储的二进制近似的十进制值。如果Python
+<p>这是很容易忘记，存储的值是一个近似的原小数，由于浮体的方式，显示在提示符的解释。 Python 中只打印一个小数近似的真实机器所存储的二进制近似的十进制值。如果 Python
 要打印存储的二进制近似真实的十进制值0.1，那就要显示</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mf">0.1</span>
 <span class="go">0.1000000000000000055511151231257827021181583404541015625</span>
@@ -92,12 +90,12 @@
 <span class="go">0.30000000000000004</span>
 </pre></div>
 </div>
-<p>需要注意的是这在二进制浮点数是非常自然的：它不是 Python 的bug，也不是你的代码的 bug。你会看到只要你的硬件支持浮点数算法，所有的语言都会有这个现象（尽管有些语言可能默认或完全不 <em>显示</em> 这个差异）</p>
-<p>由于小数2.675是2.67和2.68的正中间，你可能期望的结果（二进制近似）2.68。这不是，因为当十进制字符串“2.675”转换为二进制浮点数，再换成一个二进制近似，其精确值</p>
+<p>需要注意的是这在二进制浮点数是非常自然的：它不是 Python 的 bug，也不是你的代码的 bug。你会看到只要你的硬件支持浮点数算法，所有的语言都会有这个现象（尽管有些语言可能默认或完全不 <em>显示</em> 这个差异）</p>
+<p>由于小数 2.675 是 2.67 和 2.68 的正中间，你可能期望的结果（二进制近似）2.68。这不是，因为当十进制字符串 “2.675” 转换为二进制浮点数，再换成一个二进制近似，其精确值</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mf">2.67499999999999982236431605997495353221893310546875</span>
 </pre></div>
 </div>
-<p>这个问题在于存储“０.１”的浮点值已经达到1/10的最佳精度了，所以尝试截断它不能改善：它已经尽可能的好了。 另一个影响是因为　0.1 不能精确的表达 1/10，对10个 0.1 的值求和不能精确的得到 1.0，即</p>
+<p>这个问题在于存储 “0.1” 的浮点值已经达到 1/10 的最佳精度了，所以尝试截断它不能改善：它已经尽可能的好了。 另一个影响是因为　0.1 不能精确的表达 1/10，对10个 0.1 的值求和不能精确的得到 1.0，即</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">sum</span> <span class="o">+=</span> <span class="mf">0.1</span>
@@ -106,12 +104,12 @@
 <span class="go">0.9999999999999999</span>
 </pre></div>
 </div>
-<p>浮点数据算法产生了很多诸如此类的惊奇。在“表现错误”一节中，这个 “0.1”问题详细表达了精度问问题。更完整的其它常见的惊奇请参见 <a class="reference external" href="http://www.lahey.com/float.htm">浮点数危害</a> 。 最后我要说，“没有简单的答案”。还是不要过度的敌视浮点数！</p>
+<p>浮点数据算法产生了很多诸如此类的惊奇。在“表现错误”一节中，这个 “0.1” 问题详细表达了精度问问题。更完整的其它常见的惊奇请参见 <a class="reference external" href="http://www.lahey.com/float.htm">浮点数危害</a> 。 最后我要说，“没有简单的答案”。还是不要过度的敌视浮点数！</p>
 <p>Python 浮点数操作的错误来自于浮点数硬件，大多数机器上同类的问题每次计算误差不超过 2**53 分之一。对于大多数任务这已经足够让人满意了。但是你要在心中记住这不是十进制算法，每个浮点数计算可能会带来一个新的精度错误。</p>
-<p>问题已经存在了，对于大多数偶发的浮点数错误，你应该比对你期待的最终显示结果是否符合你的期待。 <tt class="xref py py-func docutils literal"><span class="pre">str()</span></tt> 通常够用了，完全的控制参见 formatstrings 中 <tt class="xref py py-meth docutils literal"><span class="pre">str.format()</span></tt> 方法的格式化方式。</p>
+<p>问题已经存在了，对于大多数偶发的浮点数错误，你应该比对你期待的最终显示结果是否符合你的期待。 <tt class="xref py py-func docutils literal"><span class="pre">str()</span></tt> 通常够用了，完全的控制参见字符串格式化中 <tt class="xref py py-meth docutils literal"><span class="pre">str.format()</span></tt> 方法的格式化方式。</p>
 <div class="section" id="tut-fp-error">
 <span id="id3"></span><h2>14.1. 表达错误<a class="headerlink" href="#tut-fp-error" title="Permalink to this headline">¶</a></h2>
-<p>这一节详细说明“0.1”示例，教你怎样自己去精确的分析此类案例。假设这里你已经对浮点数表示有基本的了解。</p>
+<p>这一节详细说明 “0.1” 示例，教你怎样自己去精确的分析此类案例。假设这里你已经对浮点数表示有基本的了解。</p>
 <p><em class="dfn">Representation error</em>  提及事实上有些（实际是大多数）十进制小数不能精确的表示为二进制小数。这是 Python （或 Perl，C，C++，Java，Fortran 以及其它很多）语言往往不能按你期待的样子显示十进制数值的根本原因</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span>
 <span class="go">0.30000000000000004</span>
@@ -184,6 +182,7 @@
     <li><a href="_sources/floatingpoint.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
+
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -196,22 +195,11 @@
     Enter search terms or a module, class or function name.
     </p>
 </div>
-
-<div id="google">
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-3421553373953599";
-/* 首页侧边 */
-google_ad_slot = "3551838308";
-google_ad_width = 200;
-google_ad_height = 200;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-</div>
-
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+just for test!
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -225,94 +213,28 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
         <li class="right" >
           <a href="interactive.html" title="13. 交互式输入行编辑历史回溯"
              >previous</a> |</li>
-        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Python tutorial 2.7 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright Translate by march.liu, Reorganize byD.D 2013.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+<div style="right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3421553373953599";
+/* 评论上方 */
+google_ad_slot = "2110492886";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
 
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9adc7a1c86496c8e2bc61c4f8fc92d30' type='text/javascript'%3E%3C/script%3E"));
 </script>
 
-</div>
-  </body>
-</html>
-="o">.</span><span class="mi">1</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="mi">56</span>
-<span class="go">7205759403792794.0</span>
-</pre></div>
-</div>
-<p>If we multiply that fraction by 10**30, we can see the (truncated) value of
-its 30 most significant decimal digits:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">7205759403792794</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">30</span> <span class="o">//</span> <span class="mi">2</span><span class="o">**</span><span class="mi">56</span>
-<span class="go">100000000000000005551115123125L</span>
-</pre></div>
-</div>
-<p>meaning that the exact number stored in the computer is approximately equal to
-the decimal value 0.100000000000000005551115123125.  In versions prior to
-Python 2.7 and Python 3.1, Python rounded this value to 17 significant digits,
-giving &#8216;0.10000000000000001&#8217;.  In current versions, Python displays a value
-based on the shortest decimal fraction that rounds correctly back to the true
-binary value, resulting simply in &#8216;0.1&#8217;.</p>
-</div>
-</div>
 
-
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">14. Floating Point Arithmetic:  Issues and Limitations</a><ul>
-<li><a class="reference internal" href="#representation-error">14.1. Representation Error</a></li>
-</ul>
-</li>
-</ul>
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="interactive.html"
-                        title="previous chapter">13. Interactive Input Editing and History Substitution</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/floatingpoint.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="interactive.html" title="13. Interactive Input Editing and History Substitution"
-             >previous</a> |</li>
-        <li><a href="index.html">python 2.7 tutorial 2.7 documentation</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer">
-        &copy; Copyright 2013, D.D.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
-    </div>
   </body>
 </html>

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,14 +6,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>1. 开胃菜 &mdash; python tutorial 2.7 documentation</title>
+    <title>1. 开胃菜 &mdash; Python tutorial 2.7 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
+        URL_ROOT:    './',
         VERSION:     '2.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -25,8 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="python tutorial 2.7 documentation" href="index.html" />
-    <link rel="next" title="2. 使用Python解释器" href="interpreter.html" />
+    <link rel="top" title="Python tutorial 2.7 documentation" href="index.html" />
+    <link rel="next" title="2. 使用 Python 解释器" href="interpreter.html" />
     <link rel="prev" title="Python 入门指南" href="index.html" /> 
   </head>
   <body>
@@ -37,12 +35,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="interpreter.html" title="2. 使用Python解释器"
+          <a href="interpreter.html" title="2. 使用 Python 解释器"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Python 入门指南"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Python tutorial 2.7 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -53,24 +51,24 @@
             
   <div class="section" id="tut-intro">
 <span id="id1"></span><h1>1. 开胃菜<a class="headerlink" href="#tut-intro" title="Permalink to this headline">¶</a></h1>
-<p>如果你在计算机上做很多工作，你希望看到许多的工作或者任务自动地完成。例如，您可能会在大量的文本文件中进行查找替换，或者通过复杂的方式重命名和重新组织一大堆的图片文件，也许你想编写一个小型的自定义数据库（定制数据库）。或专门的GUI应用程序，或一个简单的游戏。</p>
-<p>如果你是一个专业的软件开发人员，你想要使用一些C/ C + + / Java库工作，但是发现常规的编写/编译/测试/重新编译周期太慢。也许你正在为这些库编写一个测试套件，然而会发现这是一项乏味的工作（任务）。或者，也许你已经编写带有一个扩展语言的应用程序，你不希望为了你的应用程序去设计和实现一种全新的语言。</p>
-<p>Python正是你所需要的。（Python就是为你而生的）</p>
-<p>你可以写一个UNIX shell脚本或Windows批处理文件完成任务，然而shell脚本更擅长于移动文件和修改文本数据，而不适合图形界面应用程序或游戏。你可以写一个C / C + + / Java的程序，但是就算一个简单的方案草案，你也需要花费大量的时间。Python是更易于使用，可在Windows，Mac OS X和Unix操作系统上使用，并会帮助你更快速地完成工作。</p>
-<p>Python简单易用，但它是一个真正的编程语言，比shell脚本或批处理文件提供了更多的结构和对大型程序的支持。另一方面，Python比起C提供了更多的错误检查，同时作为一门 <em>高级语言</em>，它具有高级的内置数据类型，比如灵活的数组和字典。由于python提供了更为通用的数据类型，比起Awk甚至Perl，她适合更宽广的问题领域。同样在做许多其他的事情上，Python 也不会比别的编程语言更复杂。</p>
-<p>Python允许你将自己的程序分成不同的模块，可以在其他Python程序中重用这些模块。它配备了一个标准模块，你可以自由使用这些标准模块作为程序的基本结构，或者作为例子开始学习Python编程。这些模块提供了类似文件I / O，系统调用，网络编程，甚至像Tk的用户图形界面工具包</p>
-<p>Python是一种解释性语言，她可以在程序开发期节省相当多的时间，因为她不需要编译和链接。Python解释器可以交互地使用，这使得很容易体验python语言的特性，以便于编写发布用的程序，或者进行自下而上的开发。它也是一个方便的桌面计算器。</p>
-<p>Python让程序可以写得很健壮和具有可读性，用Python编写的程序通常比C，C + +或Java要短得多程序，其原因如下：</p>
+<p>如果你要用计算机做很多工作，最后你会发现有一些任务你更希望用自动化的方式进行处理。 比如，你想要在大量的文本文件中执行查找/替换，或者以复杂的方式对大量的图片进行重命名和整理。 也许你想要编写一个小型的自定义数据库、一个特殊的 GUI 应用程序或一个简单的小游戏。</p>
+<p>如果你是一名专业的软件开发者，可能你必须使用几种 C/C++/JAVA 类库，并且发现通常编写/编译/测试/重新编译的周期是如此漫长。 也许你正在为这些类库编写测试用例，但是发现这是一个让人烦躁的工作。 又或者你已经完成了一个可以使用扩展语言的程序，但你并不想为此重新设计并实现一套全新的语言。</p>
+<p>那么 Python 正是你所需要的语言。</p>
+<p>虽然你能够通过编写 Unix shell 脚本或 Windows 批处理文件来处理其中的某些任务，但 Shell 脚本更适合移动文件或修改文本数据，并不适合编写 GUI 应用程序或游戏； 虽然你能够使用 C/C++/JAVA 编写程序，但即使编写一个简单的 first-draft 程序也有可能耗费大量的开发时间。 相比之下，Python 更易于使用，无论在 Windows、Mac OS X或Unix 操作系统上它都会帮助你更快的完成任务。</p>
+<p>虽然 Python 易于使用，但它却是一门完整的编程语言；与 Shell 脚本或批处理文件相比，它为编写大型程序提供了更多的结构和支持。 另一方面，Python 提供了比 C 更多的错误检查，并且作为一门 <em>高级语言</em> ，它内置支持高级的数据结构类型，例如：灵活的数组和字典。 因其更多的通用数据类型，Python 比 Awk 甚至 Perl 都适用于更的多问题领域，至少大多数事情在 Python 中与其他语言同样简单。</p>
+<p>Python 允许你将程序分割为不同的模块，以便在其他的 Python 程序中重用。 Python 内置提供了大量的标准模块，你可以将其用作程序的基础，或者作为学习 Python 编程的示例。 这些模块提供了诸如文件 I/O、系统调用、sockets 支持，甚至类似 Tk 的用户图形界面（GUI）工具包接口。</p>
+<p>Python 是一门解释型语言，因为无需编译和链接，你可以在程序开发中节省宝贵的时间。 Python 解释器可以交互的使用，这使得试验语言的特性、编写临时程序或在自底向上的程序开发中测试方法非常容易。 你甚至还可以把它当做一个桌面计算器。</p>
+<p>Python 让程序编写的紧凑和可读。 用 Python 编写的程序通常比同样的 C、C++或Java 程序更短小，这是因为以下几个原因：</p>
 <ul class="simple">
-<li>高级的数据类型使你在一个语句中可以表达出复杂的操作;</li>
-<li>语句的组织是通过缩进而不是开始和结束括号;</li>
-<li>不需要变量或参数的声明。</li>
+<li>高级数据结构使你可以在一条语句中表达复杂的操作；</li>
+<li>语句组使用缩进代替开始和结束大括号来组织；</li>
+<li>变量或参数无需声明。</li>
 </ul>
-<p>Python是 <em>可扩展的</em>：如果你知道用C写程序就很容易为解释器添加一个新的内置函数或模块，也能以最快速度执行关键操作（优化），或者使 Python程序能够链接到所需的二进制架构上（比如某个专用的商业图形库）。一旦你真正迷上了python，你可以将python解释器联接到用C写的应用上，使得解释器作为这个应用的扩展或命令行语言。</p>
-<p>顺便说下，这个语言的名字来源于英国广播公司的节目&#8221;Monty Python的飞行马戏团&#8221;，与爬行动物（蟒蛇）无关。在文档中引用 Monty Python典故不仅是允许的，而且还是很鼓励的！</p>
-<p>现在了解了python所有令人兴奋的东西，也许你希望试用她了。学习语言的最佳途径是使用它，如你所读到的，本教程将引领你使用python解释器。</p>
-<p>在下一章中将直接解释解释器的使用。这没有什么高深的信息，不过有助于我们练习后面展示的例子。</p>
-<p>本教程的其余部分通过实例介绍python语言特性和系统功能。开始用简单的表达式，语句和数据类型，进一步是功能和模块，最后是诸如异常和自定义类这样的高级内容。</p>
+<p>Python 是 <em>可扩展</em> 的：如果你会 C 语言编程便可以轻易的为解释器添加内置函数或模块，或者为了对性能瓶颈作优化，或者将 Python 程序与只有二进制形式的库（比如某个专业的商业图形库）连接起来。 一旦你真正掌握了它，你可以将 Python 解释器集成进某个 C 应用程序，并把它当做那个程序的扩展或命令行语言。</p>
+<p>顺便说一句，这个语言的名字来自于 BBC 的 “Monty Python’s Flying Cirecus” 节目，和爬行类动物没有任何关系。 在文档中引用 Monty Python 的典故不仅可行，而且值得鼓励！</p>
+<p>现在你已经为 Python 兴奋不已了吧，大概想要领略一些更多的细节！ 学习一门语言最好的方法就是使用它，本指南推荐你边读边使用 Python 解释器练习。</p>
+<p>下一节中，我们将解释 Python 解释器的用法。 这是很简单的一件事情，但它有助于试验后面的例子。</p>
+<p>本手册剩下的部分将通过示例介绍 Python 语言及系统的诸多特性，开始是简单的语法、数据类型和表达式，接着介绍函数与模块，最后涉及异常和自定义类这样的高级内容。</p>
 </div>
 
 
@@ -84,12 +82,13 @@
                         title="previous chapter">Python 入门指南</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="interpreter.html"
-                        title="next chapter">2. 使用Python解释器</a></p>
+                        title="next chapter">2. 使用 Python 解释器</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/appetite.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
+
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -102,22 +101,11 @@
     Enter search terms or a module, class or function name.
     </p>
 </div>
-
-<div id="google">
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-3421553373953599";
-/* 首页侧边 */
-google_ad_slot = "3551838308";
-google_ad_width = 200;
-google_ad_height = 200;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-</div>
-
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+just for test!
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -129,23 +117,33 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="interpreter.html" title="2. 使用Python解释器"
+          <a href="interpreter.html" title="2. 使用 Python 解释器"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Python 入门指南"
              >previous</a> |</li>
-        <li><a href="index.html">python tutorial 2.7 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Python tutorial 2.7 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright Translate by march.liu, Reorganize byD.D 2013.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
-    
+<div style="right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3421553373953599";
+/* 评论上方 */
+google_ad_slot = "2110492886";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
 
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9adc7a1c86496c8e2bc61c4f8fc92d30' type='text/javascript'%3E%3C/script%3E"));
 </script>
-</div>
+
+
   </body>
 </html>
