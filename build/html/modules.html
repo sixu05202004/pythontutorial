@@ -118,7 +118,8 @@
 <div class="section" id="tut-modulesasscripts">
 <span id="id4"></span><h3>6.1.1. 作为脚本来执行模块<a class="headerlink" href="#tut-modulesasscripts" title="Permalink to this headline">¶</a></h3>
 <p>当你使用以下方式运行 Python 模块时，模块中的代码便会被执行:</p>
-<div class="highlight-python"><pre>python fibo.py &lt;arguments&gt;</pre>
+<div class="highlight-python"><div class="highlight"><pre>python fibo.py &lt;arguments&gt;
+</pre></div>
 </div>
 <p>模块中的代码会被执行，就像导入它一样，不过此时 <tt class="docutils literal"><span class="pre">__name__</span></tt> 被设置为 <tt class="docutils literal"><span class="pre">&quot;__main__&quot;</span></tt> 。这相当于，如果你在模块后加入如下代码:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
@@ -127,8 +128,9 @@
 </pre></div>
 </div>
 <p>就可以让此文件像作为模块导入时一样作为脚本执行。此代码只有在模块作为 “main” 文件执行时才被调用:</p>
-<div class="highlight-python"><pre>$ python fibo.py 50
-1 1 2 3 5 8 13 21 34</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ python fibo.py 50
+1 1 2 3 5 8 13 21 34
+</pre></div>
 </div>
 <p>如果模块被导入，不会执行这段代码:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fibo</span>
@@ -161,7 +163,7 @@
 </li>
 <li><p class="first">通过脚本名在命令行运行脚本时，不会将为该脚本创建的二进制代码写入 <tt class="file docutils literal"><span class="pre">.pyc</span></tt> 或 <tt class="file docutils literal"><span class="pre">.pyo</span></tt> 文件。当然，把脚本的主要代码移进一个模块里，然后用一个小的启动脚本导入这个模块，就可以提高脚本的启动速度。也可以直接在命令行中指定一个 <tt class="file docutils literal"><span class="pre">.pyc</span></tt> 或 <tt class="file docutils literal"><span class="pre">.pyo</span></tt> 文件。</p>
 </li>
-<li><p class="first">对于同一个模块（这里指例程 spam.py －－译者），可以只有 <tt class="file docutils literal"><span class="pre">spam.pyc</span></tt> 文件（或者 <tt class="file docutils literal"><span class="pre">spam.pyc</span></tt> ，在使用 <em class="xref std std-option">-O</em> 参数时）而没有 <tt class="file docutils literal"><span class="pre">spam.py</span></tt>  文件。这样可以打包发布比较难于逆向工程的 Python 代码库。</p>
+<li><p class="first">对于同一个模块（这里指例程 spam.py －－译者），可以只有 <tt class="file docutils literal"><span class="pre">spam.pyc</span></tt> 文件（或者 <tt class="file docutils literal"><span class="pre">spam.pyo</span></tt> ，在使用 <em class="xref std std-option">-O</em> 参数时）而没有 <tt class="file docutils literal"><span class="pre">spam.py</span></tt>  文件。这样可以打包发布比较难于逆向工程的 Python 代码库。</p>
 </li>
 <li id="index-4"><p class="first"><tt class="xref py py-mod docutils literal"><span class="pre">compileall</span></tt> 模块 可以为指定目录中的所有模块创建 <tt class="file docutils literal"><span class="pre">.pyc</span></tt> 文件（或者使用 <em class="xref std std-option">-O</em> 参数创建 <tt class="file docutils literal"><span class="pre">.pyo</span></tt> 文件）。</p>
 </li>
@@ -304,13 +306,13 @@
 <p>相反，使用类似 <tt class="docutils literal"><span class="pre">import</span> <span class="pre">item.subitem.subsubitem</span></tt> 这样的语法时，这些子项必须是包，最后的子项可以是包或模块，但不能是前面子项中定义的类、函数或变量。</p>
 <div class="section" id="tut-pkg-import-star">
 <span id="id8"></span><h3>6.4.1. 从 * 导入包<a class="headerlink" href="#tut-pkg-import-star" title="Permalink to this headline">¶</a></h3>
-<p id="index-9">那么当用户写下 <tt class="docutils literal"><span class="pre">from</span> <span class="pre">sound.Effects</span> <span class="pre">import</span> <span class="pre">*</span></tt> 时会发生什么事？理想中，总是希望在文件系统中找出包中所有的子模块，然后导入它们。这可能会花掉委有长时间，并且出现期待之外的边界效应，导出了希望只能显式导入的包。</p>
+<p id="index-9">那么当用户写下 <tt class="docutils literal"><span class="pre">from</span> <span class="pre">sound.effects</span> <span class="pre">import</span> <span class="pre">*</span></tt> 时会发生什么事？理想中，总是希望在文件系统中找出包中所有的子模块，然后导入它们。这可能会花掉很长时间，并且出现期待之外的边界效应，导出了希望只能显式导入的包。</p>
 <p>对于包的作者来说唯一的解决方案就是给提供一个明确的包索引。 <tt class="xref std std-keyword docutils literal"><span class="pre">import</span></tt>  语句按如下条件进行转换：执行 <tt class="docutils literal"><span class="pre">from</span> <span class="pre">package</span> <span class="pre">import</span> <span class="pre">*</span></tt> 时，如果包中的 <tt class="file docutils literal"><span class="pre">__init__.py</span></tt> 代码定义了一个名为 <tt class="docutils literal"><span class="pre">__all__</span></tt> 的列表，就会按照列表中给出的模块名进行导入。新版本的包发布时作者可以任意更新这个列表。如果包作者不想 import * 的时候导入他们的包中所有模块，那么也可能会决定不支持它（import <a href="#id9"><span class="problematic" id="id10">*</span></a>）。例如， <tt class="file docutils literal"><span class="pre">sounds/effects/__init__.py</span></tt> 这个文件可能包括如下代码:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;echo&quot;</span><span class="p">,</span> <span class="s">&quot;surround&quot;</span><span class="p">,</span> <span class="s">&quot;reverse&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>这意味着 <tt class="docutils literal"><span class="pre">from</span> <span class="pre">Sound.Effects</span> <span class="pre">import</span> <span class="pre">*</span></tt> 语句会从 <tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt> 包中导入以上三个已命名的子模块。</p>
-<p>如果没有定义 <tt class="docutils literal"><span class="pre">__all__</span></tt> ， <tt class="docutils literal"><span class="pre">from</span> <span class="pre">Sound.Effects</span> <span class="pre">import</span> <span class="pre">*</span></tt> 语句 <em>不会</em> 从 <tt class="xref py py-mod docutils literal"><span class="pre">sound.effects</span></tt> 包中导入所有的子模块。无论包中定义多少命名，只能确定的是导入了 <tt class="xref py py-mod docutils literal"><span class="pre">sound.effects</span></tt>  包（可能会运行 <tt class="file docutils literal"><span class="pre">__init__.py</span></tt> 中的初始化代码）以及包中定义的所有命名会随之导入。这样就从 <tt class="file docutils literal"><span class="pre">__init__.py</span></tt> 中导入了每一个命名（以及明确导入的子模块）。同样也包括了前述的 <tt class="xref std std-keyword docutils literal"><span class="pre">import</span></tt> 语句从包中明确导入的子模块，考虑以下代码:</p>
+<p>这意味着 <tt class="docutils literal"><span class="pre">from</span> <span class="pre">sound.effects</span> <span class="pre">import</span> <span class="pre">*</span></tt> 语句会从 <tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt> 包中导入以上三个已命名的子模块。</p>
+<p>如果没有定义 <tt class="docutils literal"><span class="pre">__all__</span></tt> ， <tt class="docutils literal"><span class="pre">from</span> <span class="pre">sound.effects</span> <span class="pre">import</span> <span class="pre">*</span></tt> 语句 <em>不会</em> 从 <tt class="xref py py-mod docutils literal"><span class="pre">sound.effects</span></tt> 包中导入所有的子模块。无论包中定义多少命名，只能确定的是导入了 <tt class="xref py py-mod docutils literal"><span class="pre">sound.effects</span></tt>  包（可能会运行 <tt class="file docutils literal"><span class="pre">__init__.py</span></tt> 中的初始化代码）以及包中定义的所有命名会随之导入。这样就从 <tt class="file docutils literal"><span class="pre">__init__.py</span></tt> 中导入了每一个命名（以及明确导入的子模块）。同样也包括了前述的 <tt class="xref std std-keyword docutils literal"><span class="pre">import</span></tt> 语句从包中明确导入的子模块，考虑以下代码:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">sound.effects.echo</span>
 <span class="kn">import</span> <span class="nn">sound.effects.surround</span>
 <span class="kn">from</span> <span class="nn">sound.effects</span> <span class="kn">import</span> <span class="o">*</span>
@@ -322,7 +324,7 @@
 </div>
 <div class="section" id="id11">
 <h3>6.4.2. 包内引用<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
-<p>如果包中使用了子包结构（就像示例中的 <tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt>  包），可以按绝对位置从相邻的包中引入子模块。例如，如果 <tt class="xref py py-mod docutils literal"><span class="pre">sound.filters.vocoder</span></tt> 包需要使用 <tt class="xref py py-mod docutils literal"><span class="pre">sound.effects</span></tt> 包中的 <tt class="xref py py-mod docutils literal"><span class="pre">echo</span></tt> 模块，它可以 <tt class="docutils literal"><span class="pre">from</span> <span class="pre">Sound.Effects</span> <span class="pre">import</span> <span class="pre">echo</span></tt> 。</p>
+<p>如果包中使用了子包结构（就像示例中的 <tt class="xref py py-mod docutils literal"><span class="pre">sound</span></tt>  包），可以按绝对位置从相邻的包中引入子模块。例如，如果 <tt class="xref py py-mod docutils literal"><span class="pre">sound.filters.vocoder</span></tt> 包需要使用 <tt class="xref py py-mod docutils literal"><span class="pre">sound.effects</span></tt> 包中的 <tt class="xref py py-mod docutils literal"><span class="pre">echo</span></tt> 模块，它可以 <tt class="docutils literal"><span class="pre">from</span> <span class="pre">sound.effects</span> <span class="pre">import</span> <span class="pre">echo</span></tt> 。</p>
 <p>你可以用这样的形式 <tt class="docutils literal"><span class="pre">from</span> <span class="pre">module</span> <span class="pre">import</span> <span class="pre">name</span></tt> 来写显式的相对位置导入。那些显式相对导入用点号标明关联导入当前和上级包。以 <tt class="xref py py-mod docutils literal"><span class="pre">surround</span></tt> 模块为例，你可以这样用:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">echo</span>
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">formats</span>

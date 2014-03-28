@@ -125,7 +125,7 @@ Python 简介
    >>> round(_, 2)
    113.06
 
-此变量对于用户是只读的。不要尝试给它赋值 —— 你只会创建一个独立的同名局部变量，它屏蔽了系统内置变量的魔术效果.
+此变量对于用户是只读的。不要尝试给它赋值 —— 你只会创建一个独立的同名局部变量，它屏蔽了系统内置变量的魔术效果。
 
 
 .. _tut-strings:
@@ -167,7 +167,7 @@ Python 解释器按照字符串被输入的方式打印字符串结果：为了�
    several lines of text just as you would do in C.
        Note that whitespace at the beginning of the line is significant.
 
-另外，字符串可以标识在一对儿三引号中： ``"""`` 或 ``'''`` 。三引号中，不需要行属转义，它们已经包含在字符串中::
+另外，字符串可以标识在一对三引号中： ``"""`` 或 ``'''`` 。三引号中，不需要行属转义，它们已经包含在字符串中::
 
    print """\
    Usage: thingy [OPTIONS]
@@ -294,7 +294,7 @@ Python 能够优雅地处理那些没有意义的切片索引：一个过大的�
      File "<stdin>", line 1, in ?
    IndexError: string index out of range
 
-有个办法可以很容易的记住切片的工作方式：切片时的索引是在两个字符 *之间* 。左边第一个字符的索引为0，，而长度为 *n*  的字符串其最后一个字符的右界索引为 *n* 。例如::
+有个办法可以很容易地记住切片的工作方式：切片时的索引是在两个字符 *之间* 。左边第一个字符的索引为0，，而长度为 *n*  的字符串其最后一个字符的右界索引为 *n* 。例如::
 
     +---+---+---+---+---+
     | H | e | l | p | A |
@@ -347,7 +347,7 @@ Unicode 的先进之处在于为每一种现代或古代使用的文字系统中
 
 如果你需要大量输入反斜杠，原始模式非常有用，这在正则表达式中几乎是必须的。
 
-所为这些编码标准的一部分，Python 提供了基于已知编码来创建 Unicode 字符串的整套方法
+作为这些编码标准的一部分，Python 提供了基于已知编码来创建 Unicode 字符串的整套方法。
 
 
 .. index:: builtin: unicode
@@ -365,12 +365,12 @@ Unicode 的先进之处在于为每一种现代或古代使用的文字系统中
      File "<stdin>", line 1, in ?
    UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-2: ordinal not in range(128)
 
-为了将一个 Unicode 字符串转换为一个使用特定编码的 8 位字符串， Unicode 对象提供一个 :func:`encode` 方法，它接受编码名作为参数。编码名应该小写。
+为了将一个 Unicode 字符串转换为一个使用特定编码的 8 位字符串， Unicode 对象提供一个 :func:`encode` 方法，它接受编码名作为参数。编码名应该小写。::
 
    >>> u"盲枚眉".encode('utf-8')
    '\xc3\xa4\xc3\xb6\xc3\xbc'
 
-如果有一个其它编码的数据，希望可以从中生成一个 Unicode 字符串，你可以使用 :func:`unicode` 函数，它接受编码名作为第二参数。
+如果有一个其它编码的数据，希望可以从中生成一个 Unicode 字符串，你可以使用 :func:`unicode` 函数，它接受编码名作为第二参数。::
 
    >>> unicode('\xc3\xa4\xc3\xb6\xc3\xbc', 'utf-8')
    u'\xe4\xf6\xfc'

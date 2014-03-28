@@ -64,16 +64,19 @@
 <div class="section" id="tut-keybindings">
 <span id="id4"></span><h2>13.3. 快捷键绑定<a class="headerlink" href="#tut-keybindings" title="Permalink to this headline">¶</a></h2>
 <p>Readline 库的快捷键绑定和其它一些参数可以通过名为 <tt class="file docutils literal"><span class="pre">~/.inputrc</span></tt>  的初始化文件的替换命名来定制。快捷键绑定如下形式</p>
-<div class="highlight-python"><pre>key-name: function-name</pre>
+<div class="highlight-python"><div class="highlight"><pre>key-name: function-name
+</pre></div>
 </div>
 <p>或者</p>
-<div class="highlight-python"><pre>"string": function-name</pre>
+<div class="highlight-python"><div class="highlight"><pre>&quot;string&quot;: function-name
+</pre></div>
 </div>
 <p>选项可以如下设置</p>
-<div class="highlight-python"><pre>set option-name value</pre>
+<div class="highlight-python"><div class="highlight"><pre>set option-name value
+</pre></div>
 </div>
 <p>例如</p>
-<div class="highlight-python"><pre># I prefer vi-style editing:
+<div class="highlight-python"><div class="highlight"><pre># I prefer vi-style editing:
 set editing-mode vi
 
 # Edit using a single line:
@@ -81,14 +84,17 @@ set horizontal-scroll-mode On
 
 # Rebind some keys:
 Meta-h: backward-kill-word
-"\C-u": universal-argument
-"\C-x\C-r": re-read-init-file</pre>
+&quot;\C-u&quot;: universal-argument
+&quot;\C-x\C-r&quot;: re-read-init-file
+</pre></div>
 </div>
 <p>需要注意的是 Python 中默认 <tt class="kbd docutils literal"><span class="pre">Tab</span></tt> 绑定为插入一个 <tt class="kbd docutils literal"><span class="pre">Tab</span></tt> 字符而不是 Readline 库的默认文件名完成函数，如果你想用这个，可以将以下内容插入</p>
-<div class="highlight-python"><pre>Tab: complete</pre>
+<div class="highlight-python"><div class="highlight"><pre>Tab: complete
+</pre></div>
 </div>
 <p>到你的 <tt class="file docutils literal"><span class="pre">~/.inputrc</span></tt> 中来覆盖它。（当然，如果你真的把 <tt class="kbd docutils literal"><span class="pre">Tab</span></tt>  设置成这样，就很难在后继行中插入缩进。）</p>
-<div class="highlight-python"><pre>.. index::</pre>
+<div class="highlight-python"><div class="highlight"><pre>.. index::
+</pre></div>
 </div>
 <blockquote>
 <div>module: rlcompleter

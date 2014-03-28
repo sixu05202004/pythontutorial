@@ -56,7 +56,7 @@
 <p>（在讨论类时，没有足够的得到共识的术语，我会偶尔从 Smalltalk 和 C++ 借用一些。我比较喜欢用 Modula-3 的用语，因为比起 C++， Python 的面向对象语法更像它，但是我想很少有读者听过这个。）</p>
 <div class="section" id="tut-object">
 <span id="id2"></span><h2>9.1. 术语相关<a class="headerlink" href="#tut-object" title="Permalink to this headline">¶</a></h2>
-<p>对象具有特性，并且多个名称（在多个作用于中）可以绑定在同一个对象上。 这在其它语言中被称为别名。 在对 Python 的第一印象中这通常会被忽略，并且当处理不可变基础类型（数字，字符串，元组）时可以被放心的忽略。 但是，在调用列表、字典这类可变对象，或者大多数程序外部类型（文件，窗体等）描述实体时，别名对 Python 代码的语义便具有（有意而为！）影响。 这通常有助于程序的优化，因为在某些方面别名表现的就像是指针。 例如，你可以轻易的传递一个对象，因为通过继承只是传递一个指针。 并且如果一个方法修改了一个作为参数传递的对象，调用者可以接收这一变化——这消除了两种不同的参数传递机制的需要，像 Pascal 语言。</p>
+<p>对象具有特性，并且多个名称（在多个作用域中）可以绑定在同一个对象上。 这在其它语言中被称为别名。 在对 Python 的第一印象中这通常会被忽略，并且当处理不可变基础类型（数字，字符串，元组）时可以被放心的忽略。 但是，在调用列表、字典这类可变对象，或者大多数程序外部类型（文件，窗体等）描述实体时，别名对 Python 代码的语义便具有（有意而为！）影响。 这通常有助于程序的优化，因为在某些方面别名表现的就像是指针。 例如，你可以轻易的传递一个对象，因为通过继承只是传递一个指针。 并且如果一个方法修改了一个作为参数传递的对象，调用者可以接收这一变化——这消除了两种不同的参数传递机制的需要，像 Pascal 语言。</p>
 </div>
 <div class="section" id="python">
 <span id="tut-scopes"></span><h2>9.2. Python 作用域和命名空间<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
@@ -86,12 +86,13 @@
 <div class="section" id="tut-classdefinition">
 <span id="id5"></span><h3>9.3.1. 类定义语法<a class="headerlink" href="#tut-classdefinition" title="Permalink to this headline">¶</a></h3>
 <p>类定义最简单的形式如下:</p>
-<div class="highlight-python"><pre>class ClassName:
+<div class="highlight-python"><div class="highlight"><pre>class ClassName:
     &lt;statement-1&gt;
     .
     .
     .
-    &lt;statement-N&gt;</pre>
+    &lt;statement-N&gt;
+</pre></div>
 </div>
 <p>类的定义就像函数定义（ <tt class="xref std std-keyword docutils literal"><span class="pre">def</span></tt> 语句），要先执行才能生效。（你当然可以把它放进 <tt class="xref std std-keyword docutils literal"><span class="pre">if</span></tt> 语句的某一分支，或者一个函数的内部。）</p>
 <p>习惯上，类定义语句的内容通常是函数定义，不过其它语句也可以，有时会很有用——后面我们再回过头来讨论。类中的函数定义通常包括了一个特殊形式的参数列表，用于方法调用约定——同样我们在后面讨论这些。</p>
@@ -205,15 +206,17 @@
 <div class="section" id="tut-inheritance">
 <span id="id10"></span><h2>9.5. 继承<a class="headerlink" href="#tut-inheritance" title="Permalink to this headline">¶</a></h2>
 <p>当然，如果一种语言不支持继承就，“类”就没有什么意义。派生类的定义如下所示:</p>
-<div class="highlight-python"><pre>class DerivedClassName(BaseClassName):
+<div class="highlight-python"><div class="highlight"><pre>class DerivedClassName(BaseClassName):
     &lt;statement-1&gt;
     .
     .
     .
-    &lt;statement-N&gt;</pre>
+    &lt;statement-N&gt;
+</pre></div>
 </div>
 <p>命名 <tt class="xref py py-class docutils literal"><span class="pre">BaseClassName</span></tt> （示例中的基类名）必须与派生类定义在一个作用域内。除了类，还可以用表达式，基类定义在另一个模块中时这一点非常有用:</p>
-<div class="highlight-python"><pre>class DerivedClassName(modname.BaseClassName):</pre>
+<div class="highlight-python"><div class="highlight"><pre>class DerivedClassName(modname.BaseClassName):
+</pre></div>
 </div>
 <p>派生类定义的执行过程和基类是一样的。构造派生类对象时，就记住了基类。这在解析属性引用的时候尤其有用：如果在类中找不到请求调用的属性，就搜索基类。如果基类是由别的类派生而来，这个规则会递归的应用上去。</p>
 <p>派生类的实例化没有什么特殊之处： <tt class="docutils literal"><span class="pre">DerivedClassName()</span></tt> （示列中的派生类）创建一个新的类实例。方法引用按如下规则解析：搜索对应的类属性，必要时沿基类链逐级搜索，如果找到了函数对象这个方法引用就是合法的。</p>
@@ -227,12 +230,13 @@
 <div class="section" id="tut-multiple">
 <span id="id11"></span><h3>9.5.1. 多继承<a class="headerlink" href="#tut-multiple" title="Permalink to this headline">¶</a></h3>
 <p>Python 同样有限的支持多继承形式。多继承的类定义形如下例:</p>
-<div class="highlight-python"><pre>class DerivedClassName(Base1, Base2, Base3):
+<div class="highlight-python"><div class="highlight"><pre>class DerivedClassName(Base1, Base2, Base3):
     &lt;statement-1&gt;
     .
     .
     .
-    &lt;statement-N&gt;</pre>
+    &lt;statement-N&gt;
+</pre></div>
 </div>
 <p>在大多数情况下，在最简单的情况下，你能想到的搜索属性从父类继承的深度优先，左到右，而不是搜索两次在同一个类层次结构中，其中有一个重叠。因此，如果在 <tt class="xref py py-class docutils literal"><span class="pre">DerivedClassName</span></tt> （示例中的派生类）中没有找到某个属性，就会搜索 <tt class="xref py py-class docutils literal"><span class="pre">Base1</span></tt> ，然后（递归的）搜索其基类，如果最终没有找到，就搜索 <tt class="xref py py-class docutils literal"><span class="pre">Base2</span></tt> ，以此类推。</p>
 <p>实际上，<tt class="xref py py-func docutils literal"><span class="pre">super()</span></tt> 可以动态的改变解析顺序。这个方式可见于其它的一些多继承语言，类似 call-next-method，比单继承语言中的 super 更强大 。</p>

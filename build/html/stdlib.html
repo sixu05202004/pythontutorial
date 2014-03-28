@@ -148,8 +148,8 @@
 <div class="section" id="tut-internet-access">
 <span id="id7"></span><h2>10.7. 互联网访问<a class="headerlink" href="#tut-internet-access" title="Permalink to this headline">¶</a></h2>
 <p>有几个模块用于访问互联网以及处理网络通信协议。其中最简单的两个是用于处理从 urls 接收的数据的 <tt class="xref py py-mod docutils literal"><span class="pre">urllib2</span></tt> 以及用于发送电子邮件的 <tt class="xref py py-mod docutils literal"><span class="pre">smtplib</span></tt></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://tycho.usno.navy.mil/cgi-bin/timer.pl&#39;</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib2</span><span class="gp">&gt;&gt;&gt; </span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://tycho.usno.navy.mil/cgi-bin/timer.pl&#39;</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>  <span class="c"># Decoding the binary data to text.</span>
 <span class="gp">... </span>    <span class="k">if</span> <span class="s">&#39;EST&#39;</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">or</span> <span class="s">&#39;EDT&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>  <span class="c"># look for Eastern Time</span>
 <span class="gp">... </span>        <span class="k">print</span> <span class="n">line</span>

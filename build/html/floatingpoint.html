@@ -71,7 +71,8 @@
 </div>
 <p>诸如此类。如果你写多少位，这个结果永远不是精确的 1/3 ，但是可以无限接近 1/3 。</p>
 <p>同样，无论在二进制中写多少位，十进制数 0.1 都不能精确表达为二进制小数。二进制来表达 1/10 是一个无限循环小数</p>
-<div class="highlight-python"><pre>0.0001100110011001100110011001100110011001100110011...</pre>
+<div class="highlight-python"><div class="highlight"><pre>0.0001100110011001100110011001100110011001100110011...
+</pre></div>
 </div>
 <p>在任意无限位数值中中止，你可以得到一个近似。</p>
 <p>在一个典型的机器上运行Python，一共有53位的精度来表示一个浮点数，所以当你输入十进制的 <tt class="docutils literal"><span class="pre">0.1</span></tt> 的时候，看到是一个二进制的小数</p>
@@ -116,10 +117,12 @@
 </pre></div>
 </div>
 <p>这 是为什么？ 1/10 不能精确的表示为二进制小数。大多数今天的机器（2000年十一月）使用 IEEE-754 浮点数算法，大多数平台上 Python 将浮点数映射为 IEEE-754 “双精度浮点数”。754 双精度包含 53 位精度，所以计算机努力将输入的 0.1 转为 J/2**N 最接近的二进制小数。<em>J</em> 是一个 53 位的整数。改写</p>
-<div class="highlight-python"><pre>1 / 10 ~= J / (2**N)</pre>
+<div class="highlight-python"><div class="highlight"><pre>1 / 10 ~= J / (2**N)
+</pre></div>
 </div>
 <p>为</p>
-<div class="highlight-python"><pre>J ~= 2**N / 10</pre>
+<div class="highlight-python"><div class="highlight"><pre>J ~= 2**N / 10
+</pre></div>
 </div>
 <p>J 重现时正是 53 位（是 &gt;= 2**52 而非 &lt; 2**53 ）， N 的最佳值是 56</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span><span class="o">**</span><span class="mi">52</span>
