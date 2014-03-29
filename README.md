@@ -7,4 +7,6 @@ python 2.7 tutorial中文版
 
 中文地址：http://www.pythondoc.com/pythontutorial27/index.html
 
-**注意** 请移除 _templates 下的 layout.html，使用 sphinx 生成 html 格式，不然会带有一些不必要的信息！
+**source** 文件夹下为 rst 格式的文档；
+
+**html** 文件夹下为使用 Sphinx 生成的 html 格式的文档；
