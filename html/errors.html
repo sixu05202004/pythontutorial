@@ -288,7 +288,7 @@
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">?</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">3</span>, in <span class="n">divide</span>
-<span class="gr">TypeError: unsupported operand type(s) for /</span>: <span class="n">&#39;str&#39; and &#39;str&#39;</span>
+<span class="gr">TypeError</span>: <span class="n">unsupported operand type(s) for /: &#39;str&#39; and &#39;str&#39;</span>
 </pre></div>
 </div>
 <p>如你所见， <tt class="xref std std-keyword docutils literal"><span class="pre">finally</span></tt> 子句在任何情况下都会执 行。 <tt class="xref py py-exc docutils literal"><span class="pre">TypeError</span></tt> 在两个字符串相除的时候抛出，未被 except 子句捕获，因此在 <tt class="xref std std-keyword docutils literal"><span class="pre">finally</span></tt> 子句执行完毕后重新抛出。</p>

@@ -369,16 +369,6 @@ sketch : Cheese Shop Sketch
     <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">separator</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>通常，这些 <tt class="docutils literal"><span class="pre">可变</span></tt> 参数是参数列表中的最后一个， 因为它们将把所有的剩余输入参数传递给函数。任何出现在 <tt class="docutils literal"><span class="pre">*args</span></tt> 后的参数是关键字参数，这意味着，他们只能被用作关键字，而不是位置参数。</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">concat</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">):</span>
-<span class="gp">... </span>   <span class="k">return</span> <span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">concat</span><span class="p">(</span><span class="s">&quot;earth&quot;</span><span class="p">,</span> <span class="s">&quot;mars&quot;</span><span class="p">,</span> <span class="s">&quot;venus&quot;</span><span class="p">)</span>
-<span class="go">&#39;earth/mars/venus&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">concat</span><span class="p">(</span><span class="s">&quot;earth&quot;</span><span class="p">,</span> <span class="s">&quot;mars&quot;</span><span class="p">,</span> <span class="s">&quot;venus&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;.&quot;</span><span class="p">)</span>
-<span class="go">&#39;earth.mars.venus&#39;</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="tut-unpacking-arguments">
 <span id="id7"></span><h3>4.7.4. 参数列表的分拆<a class="headerlink" href="#tut-unpacking-arguments" title="Permalink to this headline">¶</a></h3>

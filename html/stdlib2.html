@@ -111,14 +111,14 @@
 </pre></div>
 </div>
 <p>当一个占位符在字典或关键字参数中没有被提供时， <tt class="xref py py-meth docutils literal"><span class="pre">substitute()</span></tt> 方法就会抛出一个 <tt class="xref py py-exc docutils literal"><span class="pre">KeyError</span></tt> 异常。 对于邮件合并风格的应用程序，用户提供的数据可能并不完整，这时使用 <tt class="xref py py-meth docutils literal"><span class="pre">safe_substitute()</span></tt> 方法可能更适合 — 如果数据不完整，它就不会改变占位符:</p>
-<div class="highlight-python"><div class="highlight"><pre>&gt;&gt;&gt; t = Template(&#39;Return the $item to $owner.&#39;)
-&gt;&gt;&gt; d = dict(item=&#39;unladen swallow&#39;)
-&gt;&gt;&gt; t.substitute(d)
-Traceback (most recent call last):
-  . . .
-KeyError: &#39;owner&#39;
-&gt;&gt;&gt; t.safe_substitute(d)
-&#39;Return the unladen swallow to $owner.&#39;
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s">&#39;Return the $item to $owner.&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="s">&#39;unladen swallow&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="gr">  . . .</span>
+<span class="gr">KeyError</span>: <span class="n">&#39;owner&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">safe_substitute</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">&#39;Return the unladen swallow to $owner.&#39;</span>
 </pre></div>
 </div>
 <p>模板子类可以指定一个自定义分隔符。 例如，图像查看器的批量重命名工具可能选择使用百分号作为占位符，像当前日期，图片序列号或文件格式:</p>

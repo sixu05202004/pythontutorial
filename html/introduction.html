@@ -368,7 +368,7 @@ several lines of text much as you would do in C.
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="s">u&quot;盲枚眉&quot;</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
   File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">?</span>
-<span class="gr">UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode characters in position 0-2</span>: <span class="n">ordinal not in range(128)</span>
+<span class="gr">UnicodeEncodeError</span>: <span class="n">&#39;ascii&#39; codec can&#39;t encode characters in position 0-2: ordinal not in range(128)</span>
 </pre></div>
 </div>
 <p>为了将一个 Unicode 字符串转换为一个使用特定编码的 8 位字符串， Unicode 对象提供一个 <tt class="xref py py-func docutils literal"><span class="pre">encode()</span></tt> 方法，它接受编码名作为参数。编码名应该小写。:</p>
