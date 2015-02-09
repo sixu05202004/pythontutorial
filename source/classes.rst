@@ -232,7 +232,7 @@ Python 的一个特别之处在于 —— 如果没有使用 :keyword:`global` �
 继承
 ===========
 
-当然，如果一种语言不支持继承就，“类”就没有什么意义。派生类的定义如下所示::
+当然，如果一种语言不支持继承，“类”就没有什么意义。派生类的定义如下所示::
 
    class DerivedClassName(BaseClassName):
        <statement-1>
