@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='_static/fonts/googleapis' rel='stylesheet' type='text/css'>
 
   
   
@@ -32,7 +32,7 @@
         <link rel="prev" title="13. 交互式输入行编辑历史回溯" href="interactive.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -73,11 +73,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">4. 深入 Python 流程控制</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#if">4.1. <code class="docutils literal"><span class="pre">if</span></code> 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#for">4.2. <code class="docutils literal"><span class="pre">for</span></code> 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#range">4.3. <code class="docutils literal"><span class="pre">range()</span></code> 函数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#break-continue-else">4.4. <code class="docutils literal"><span class="pre">break</span></code> 和 <code class="docutils literal"><span class="pre">continue</span></code> 语句, 以及循环中的 <code class="docutils literal"><span class="pre">else</span></code> 子句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#pass">4.5. <code class="docutils literal"><span class="pre">pass</span></code> 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#if">4.1. <tt class="docutils literal"><span class="pre">if</span></tt> 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#for">4.2. <tt class="docutils literal"><span class="pre">for</span></tt> 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#range">4.3. <tt class="docutils literal"><span class="pre">range()</span></tt> 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#break-continue-else">4.4. <tt class="docutils literal"><span class="pre">break</span></tt> 和 <tt class="docutils literal"><span class="pre">continue</span></tt> 语句, 以及循环中的 <tt class="docutils literal"><span class="pre">else</span></tt> 子句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#pass">4.5. <tt class="docutils literal"><span class="pre">pass</span></tt> 语句</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-functions">4.6. 定义函数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-defining">4.7. 深入 Python 函数定义</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-codingstyle">4.8. 插曲：编码风格</a></li>
@@ -85,7 +85,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="datastructures.html">5. 数据结构</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-morelists">5.1. 关于列表更多的内容</a></li>
-<li class="toctree-l2"><a class="reference internal" href="datastructures.html#del">5.2. <code class="docutils literal"><span class="pre">del</span></code> 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datastructures.html#del">5.2. <tt class="docutils literal"><span class="pre">del</span></tt> 语句</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-tuples">5.3. 元组和序列</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-sets">5.4. 集合</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-dictionaries">5.5. 字典</a></li>
@@ -97,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="modules.html">6. 模块</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="modules.html#tut-moremodules">6.1. 深入模块</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html#tut-standardmodules">6.2. 标准模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#dir">6.3. <code class="docutils literal"><span class="pre">dir()</span></code> 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#dir">6.3. <tt class="docutils literal"><span class="pre">dir()</span></tt> 函数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html#tut-packages">6.4. 包</a></li>
 </ul>
 </li>
@@ -258,7 +258,7 @@
 </pre></div>
 </div>
 <p>在任意无限位数值中中止，你可以得到一个近似值。</p>
-<p>在一个典型的机器上运行 Python，一共有 53 位的精度来表示一个浮点数，所以当你输入十进制的 <code class="docutils literal"><span class="pre">0.1</span></code> 的时候，看到是一个二进制的小数:</p>
+<p>在一个典型的机器上运行 Python，一共有 53 位的精度来表示一个浮点数，所以当你输入十进制的 <tt class="docutils literal"><span class="pre">0.1</span></tt> 的时候，看到是一个二进制的小数:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mf">0.00011001100110011001100110011001100110011001100110011010</span>
 </pre></div>
 </div>
@@ -290,7 +290,7 @@
 </div>
 <p>浮点数据算法产生了很多诸如此类的怪异现象。在 “表现错误” 一节中，这个 “0.1” 问题详细表达了精度问题。更完整的其它常见的怪异现象请参见 <a class="reference external" href="http://www.lahey.com/float.htm">浮点数危害</a> 。 最后我要说，“没有简单的答案”。还是不要过度的敌视浮点数！</p>
 <p>Python 浮点数操作的错误来自于浮点数硬件，大多数机器上同类的问题每次计算误差不超过 2**53 分之一。对于大多数任务这已经足够让人满意了。但是你要在心中记住这不是十进制算法，每个浮点数计算可能会带来一个新的精度错误。</p>
-<p>问题已经存在了，对于大多数偶发的浮点数错误，你应该比对最终显示结果是否符合你的期待。<code class="xref py py-func docutils literal"><span class="pre">str()</span></code> 通常够用了，完全的控制参见字符串格式化中 <code class="xref py py-meth docutils literal"><span class="pre">str.format()</span></code> 方法的格式化方式。</p>
+<p>问题已经存在了，对于大多数偶发的浮点数错误，你应该比对最终显示结果是否符合你的期待。<tt class="xref py py-func docutils literal"><span class="pre">str()</span></tt> 通常够用了，完全的控制参见字符串格式化中 <tt class="xref py py-meth docutils literal"><span class="pre">str.format()</span></tt> 方法的格式化方式。</p>
 <div class="section" id="tut-fp-error">
 <span id="id3"></span><h2>14.1. 表达错误<a class="headerlink" href="#tut-fp-error" title="Permalink to this headline">¶</a></h2>
 <p>这一节详细说明 “0.1” 示例，教你怎样自己去精确地分析此类案例。假设这里你已经对浮点数表示有基本的了解。</p>
@@ -362,7 +362,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2013, D.D.
+        <a href="http://www.miibeian.gov.cn/">京ICP备14002119号-1</a>&nbsp;&nbsp; | &copy; Copyright 2013, D.D.
     </p>
   </div>
 
