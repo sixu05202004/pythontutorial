@@ -18,7 +18,7 @@
 
 其它 Python 资源：
 
-* http://www.python.org: Python 官方网站。它包含代码、文档和 Web 上与 Python 有关的页面链接该网站镜  像于全世界的几处其它问题，类似欧洲、日本和澳大利亚。镜像可能会比主站快，这取决于你的地理位置。
+* http://www.python.org: Python 官方网站。它包含代码、文档和 Web 上与 Python 有关的页面链接。该网站镜像于世界各地，类似欧洲、日本和澳大利亚。镜像可能会比主站快，这取决于你的地理位置。
 
 * http://docs.python.org: 快速访问 Python 的文档。
 

@@ -172,7 +172,7 @@ Python 带有一个标准模块库，并发布有独立的文档，名为 Python
 
 这两个变量只在解释器的交互模式下有意义。 
 
-变量 ``sys.path`` 是解释器模块搜索路径的字符串列表。它由环境变量 :envvar:`PYTHONPATH` 初始化，如果没有设定 :envvar:`PYTHONPATH` ，就由内置的默认值初始化。你可以用标准的字符串操作修改它::
+变量 ``sys.path`` 是解释器模块搜索路径的字符串列表。它由环境变量 :envvar:`PYTHONPATH` 初始化，如果没有设定 :envvar:`PYTHONPATH` ，就由内置的默认值初始化。你可以用标准的列表操作修改它::
 
    >>> import sys
    >>> sys.path.append('/ufs/guido/lib/python')
@@ -183,7 +183,7 @@ Python 带有一个标准模块库，并发布有独立的文档，名为 Python
 :func:`dir` 函数
 ========================
 
-内置函数 :func:`dir` 用于按模块名搜索模块定义，它返回一个字符串类型的存储列表::
+内置函数 :func:`dir` 用于按模块名搜索模块定义，它返回一个排好序的字符串类型的存储列表::
 
    >>> import fibo, sys
    >>> dir(fibo)
@@ -200,7 +200,7 @@ Python 带有一个标准模块库，并发布有独立的文档，名为 Python
     'setprofile', 'setrecursionlimit', 'settrace', 'stderr', 'stdin', 'stdout',
     'version', 'version_info', 'warnoptions']
 
-无参数调用时，:func:`dir` 函数返回当前定义的命名::
+无参数调用时，:func:`dir` 函数返回当前定义的命名列表::
 
    >>> a = [1, 2, 3, 4, 5]
    >>> import fibo
