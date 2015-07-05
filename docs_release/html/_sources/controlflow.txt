@@ -4,15 +4,15 @@
 深入 Python 流程控制
 ***********************
 
-除了前面介绍的 :keyword:`while` 语句，Python 还从其它语言借鉴了一些流程控制功能，并有所改变。
+除了前面介绍的 `while <https://docs.python.org/2.7/reference/compound_stmts.html#while>`_ 语句，Python 还从其它语言借鉴了一些流程控制功能，并有所改变。
 
 
 .. _tut-if:
 
-:keyword:`if` 语句
-========================
+`if <https://docs.python.org/2.7/reference/compound_stmts.html#if>`_ 语句
+==========================================================================
 
-也许最有名的是 :keyword:`if` 语句。例如::
+也许最有名的是 `if <https://docs.python.org/2.7/reference/compound_stmts.html#if>`_ 语句。例如::
 
     >>> x = int(raw_input("Please enter an integer: "))
     Please enter an integer: 42
@@ -29,45 +29,45 @@
     More
 
 
-可能会有零到多个 :keyword:`elif` 部分，:keyword:`else` 是可选的。关键字 :keyword:`elif` 是  "else if" 的缩写，这个可以有效避免过深的缩进。:keyword:`if` ... :keyword:`elif` ... :keyword:`elif` ... 序列用于替代其它语言中的 ``switch`` 或 ``case`` 语句。
+可能会有零到多个 `elif <https://docs.python.org/2.7/reference/compound_stmts.html#elif>`_ 部分，`else <https://docs.python.org/2.7/reference/compound_stmts.html#else>`_ 是可选的。关键字 `elif <https://docs.python.org/2.7/reference/compound_stmts.html#elif>`_ 是  "else if" 的缩写，这个可以有效避免过深的缩进。`if <https://docs.python.org/2.7/reference/compound_stmts.html#if>`_ ... `elif <https://docs.python.org/2.7/reference/compound_stmts.html#elif>`_ ... `elif <https://docs.python.org/2.7/reference/compound_stmts.html#elif>`_ ... 序列用于替代其它语言中的 ``switch`` 或 ``case`` 语句。
 
 
 .. _tut-for:
 
-:keyword:`for` 语句
-=========================
+`for <https://docs.python.org/2.7/reference/compound_stmts.html#for>`_ 语句
+==============================================================================
 
 .. index::
    statement: for
 
-Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常的循环可能会依据一个等差数值步进过程(如 Pascal)，或由用户来定义迭代步骤和中止条件(如 C )，Python 的 :keyword:`for`  语句依据任意序列(链表或字符串)中的子项，按它们在序列中的顺序来进行迭代。例如(没有暗指)::
+Python 中的 `for <https://docs.python.org/2.7/reference/compound_stmts.html#for>`_ 语句和 C 或 Pascal 中的略有不同。通常的循环可能会依据一个等差数值步进过程(如 Pascal)，或由用户来定义迭代步骤和中止条件(如 C )，Python 的 `for <https://docs.python.org/2.7/reference/compound_stmts.html#for>`_  语句依据任意序列(链表或字符串)中的子项，按它们在序列中的顺序来进行迭代。例如(没有暗指)::
 
-    >>> # Measure some strings:
-    ... a = ['cat', 'window', 'defenestrate']
-    >>> for x in a:
-    ...     print x, len(x)
-    ...
-    cat 3
-    window 6
-    defenestrate 12
+   >>> # Measure some strings:
+   ... words = ['cat', 'window', 'defenestrate']
+   >>> for w in words:
+   ...     print w, len(w)
+   ...
+   cat 3
+   window 6
+   defenestrate 12
 
 
 在迭代过程中修改迭代序列不安全(只有在使用链表这样的可变序列时才会有这样的情况)。如果你想要修改你迭代的序列(例如：复制选择项)，你可以迭代它的复本。使用切割标识就可以很方便地做到这一点::
 
-    >>> for x in a[:]: # make a slice copy of the entire list
-    ...    if len(x) > 6: a.insert(0, x)
-    ...
-    >>> a
-    ['defenestrate', 'cat', 'window', 'defenestrate']
-
+   >>> for w in words[:]:  # Loop over a slice copy of the entire list.
+   ...     if len(w) > 6:
+   ...         words.insert(0, w)
+   ...
+   >>> words
+   ['defenestrate', 'cat', 'window', 'defenestrate']
 
 
 .. _tut-range:
 
-:func:`range` 函数
-==========================
+`range() <https://docs.python.org/2.7/library/functions.html#range>`_ 函数
+===========================================================================
 
-如果你需要一个数值序列，内置函数 :func:`range` 会很方便，它生成一个等差级数链表::
+如果你需要一个数值序列，内置函数 `range() <https://docs.python.org/2.7/library/functions.html#range>`_ 会很方便，它生成一个等差级数链表::
 
       >>> range(10)
       [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -82,7 +82,7 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
       [-10, -40, -70]
 
 
-需要迭代链表索引的话，如下所示结合使用 :func:`range` 和 :func:`len`::
+需要迭代链表索引的话，如下所示结合使用 `range() <https://docs.python.org/2.7/library/functions.html#range>`_ 和 `len() <https://docs.python.org/2.7/library/functions.html#len>`_::
 
     >>> a = ['Mary', 'had', 'a', 'little', 'lamb']
     >>> for i in range(len(a)):
@@ -95,19 +95,22 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
     4 lamb
 
 
-不过，这种场合可以方便地使用 :func:`enumerate`，请参见 :ref:`tut-loopidioms`。
+不过，这种场合可以方便地使用 `enumerate() <https://docs.python.org/2.7/library/functions.html#enumerate>`_，请参见 :ref:`tut-loopidioms`。
 
 
 .. _tut-break:
 
-:keyword:`break` 和 :keyword:`continue` 语句, 以及循环中的 :keyword:`else` 子句
+`break`_ 和 `continue`_ 语句, 以及循环中的 `else`_ 子句
 =========================================================================================
 
-:keyword:`break` 语句和 C 中的类似，用于跳出最近的一级 :keyword:`for` 或 :keyword:`while` 循环。
+.. _break: https://docs.python.org/2.7/reference/simple_stmts.html#break
+.. _continue: https://docs.python.org/2.7/reference/simple_stmts.html#continue
+.. _else: https://docs.python.org/2.7/reference/compound_stmts.html#else
 
-:keyword:`continue` 语句是从 C 中借鉴来的，它表示循环继续执行下一次迭代。
 
-循环可以有一个 ``else`` 子句；它在循环迭代完整个列表 (对于 :keyword:`for`) 后或执行条件为 false (对于 :keyword:`while`) 时执行，但循环被 :keyword:`break` 中止的情况下不会执行。以下搜索素数的示例程序演示了这个子句::
+`break <https://docs.python.org/2.7/reference/simple_stmts.html#break>`_ 语句和 C 中的类似，用于跳出最近的一级 `for <https://docs.python.org/2.7/reference/compound_stmts.html#for>`_ 或 `while <https://docs.python.org/2.7/reference/compound_stmts.html#while>`_ 循环。
+
+循环可以有一个 ``else`` 子句；它在循环迭代完整个列表 (对于 `for <https://docs.python.org/2.7/reference/compound_stmts.html#for>`_) 后或执行条件为 false (对于 `while <https://docs.python.org/2.7/reference/compound_stmts.html#while>`_) 时执行，但循环被 `break <https://docs.python.org/2.7/reference/simple_stmts.html#break>`_ 中止的情况下不会执行。以下搜索素数的示例程序演示了这个子句::
 
     >>> for n in range(2, 10):
     ...     for x in range(2, n):
@@ -128,15 +131,33 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
     9 equals 3 * 3
 
 
-(Yes, 这是正确的代码。看仔细:  ``else`` 语句是属于 :keyword:`for` 循环之中, **不是**  :keyword:`if` 语句。)
+(Yes, 这是正确的代码。看仔细:  ``else`` 语句是属于 `for <https://docs.python.org/2.7/reference/compound_stmts.html#for>`_ 循环之中, **不是**  `if <https://docs.python.org/2.7/reference/compound_stmts.html#if>`_ 语句。)
+
+与循环一起使用时，``else`` 子句与 `try <https://docs.python.org/2.7/reference/compound_stmts.html#try>`_ 语句的 ``else`` 子句比与 `if <https://docs.python.org/2.7/reference/compound_stmts.html#if>`_ 语句的具有更多的共同点：`try <https://docs.python.org/2.7/reference/compound_stmts.html#try>`_ 语句的 ``else`` 子句在未出现异常时运行，循环的 ``else`` 子句在未出现 ``break`` 时运行。更多关于 `try <https://docs.python.org/2.7/reference/compound_stmts.html#try>`_ 语句和异常的内容，请参见 :ref:`tut-handling`。
+
+`continue <https://docs.python.org/2.7/reference/simple_stmts.html#continue>`_ 语句是从 C 中借鉴来的，它表示循环继续执行下一次迭代::
+
+    >>> for num in range(2, 10):
+    ...     if num % 2 == 0:
+    ...         print "Found an even number", num
+    ...         continue
+    ...     print "Found a number", num
+    Found an even number 2
+    Found a number 3
+    Found an even number 4
+    Found a number 5
+    Found an even number 6
+    Found a number 7
+    Found an even number 8
+    Found a number 9
 
 
 .. _tut-pass:
 
-:keyword:`pass` 语句
-==========================
+`pass <https://docs.python.org/2.7/reference/simple_stmts.html#pass>`_ 语句
+============================================================================
 
-:keyword:`pass` 语句什么也不做。它用于那些语法上必须要有什么语句，但程序什么也不做的场合，例如::
+`pass <https://docs.python.org/2.7/reference/simple_stmts.html#pass>`_ 语句什么也不做。它用于那些语法上必须要有什么语句，但程序什么也不做的场合，例如::
 
     >>> while True:
     ...     pass  # Busy-wait for keyboard interrupt (Ctrl+C)
@@ -150,7 +171,7 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
     ...
 
 
-另一方面，:keyword:`pass` 可以在创建新代码时用来做函数或控制体的占位符。可以让你在更抽象的级别上思考。:keyword:`pass` 可以默默地被忽视::
+另一方面，`pass <https://docs.python.org/2.7/reference/simple_stmts.html#pass>`_ 可以在创建新代码时用来做函数或控制体的占位符。可以让你在更抽象的级别上思考。`pass <https://docs.python.org/2.7/reference/simple_stmts.html#pass>`_ 可以默默地被忽视::
 
     >>> def initlog(*args):
     ...     pass   # Remember to implement this!
@@ -180,11 +201,11 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
    single: docstrings
    single: strings, documentation
 
-关键字 :keyword:`def` 引入了一个函数 *定义* 。在其后必须跟有函数名和包括形式参数的圆括号。函数体语句从下一行开始，必须是缩进的。 
+关键字 `def <https://docs.python.org/2.7/reference/compound_stmts.html#def>`_ 引入了一个函数 *定义* 。在其后必须跟有函数名和包括形式参数的圆括号。函数体语句从下一行开始，必须是缩进的。 
 
 函数体的第一行语句可以是可选的字符串文本，这个字符串是函数的文档字符串，或者称为 :dfn:`docstring` 。(更多关于 docstrings 的信息请参考 :ref:`tut-docstrings` ) 有些工具通过 docstrings 自动生成在线的或可打印的文档，或者让用户通过代码交互浏览；在你的代码中包含 docstrings 是一个好的实践，让它成为习惯吧。
 
-函数 *调用* 会为函数局部变量生成一个新的符号表。确切地说，所有函数中的变量赋值都是将值存储在局部符号表。变量引用首先在局部符号表中查找，然后是包含函数的局部符号表，然后是全局符号表，最后是内置名字表。因此，全局变量不能在函数中直接赋值 (除非用 :keyword:`global` 语句命名)，尽管他们可以被引用。 
+函数 *调用* 会为函数局部变量生成一个新的符号表。确切地说，所有函数中的变量赋值都是将值存储在局部符号表。变量引用首先在局部符号表中查找，然后是包含函数的局部符号表，然后是全局符号表，最后是内置名字表。因此，全局变量不能在函数中直接赋值 (除非用 `global <https://docs.python.org/2.7/reference/simple_stmts.html#global>`_ 语句命名)，尽管他们可以被引用。 
 
 函数引用的实际参数在函数调用时引入局部符号表，因此，实参总是 *传值调用* (这里的 *值* 总是一个对象引用，而不是该对象的值)。[#]_  一个函数被另一个函数调用时，一个新的局部符号表在调用过程中被创建。 
 
@@ -197,7 +218,7 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
     0 1 1 2 3 5 8 13 21 34 55 89
 
 
-如果你使用过其他语言，你可能会反对说：``fib`` 不是一个函数，而是一个方法，因为它并不返回任何值。事实上，没有 :keyword:`return` 语句的函数确实会返回一个值，虽然是一个相当令人厌烦的值(指 None )。这个值被称为 ``None`` (这是一个内建名称)。如果 ``None`` 值是唯一被书写的值，那么在写的时候通常会被解释器忽略(即不输出任何内容)。如果你确实想看到这个值的输出内容，请使用 :keyword:`print`::
+如果你使用过其他语言，你可能会反对说：``fib`` 不是一个函数，而是一个方法，因为它并不返回任何值。事实上，没有 `return <https://docs.python.org/2.7/reference/simple_stmts.html#return>`_ 语句的函数确实会返回一个值，虽然是一个相当令人厌烦的值(指 None )。这个值被称为 ``None`` (这是一个内建名称)。如果 ``None`` 值是唯一被书写的值，那么在写的时候通常会被解释器忽略(即不输出任何内容)。如果你确实想看到这个值的输出内容，请使用 `print <https://docs.python.org/2.7/reference/simple_stmts.html#print>`_::
 
     >>> fib(0)
     >>> print fib(0)
@@ -220,11 +241,15 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
     [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
 
-和以前一样，这个例子演示了一些新的 Python 功能:
+和以前一样，这个例子演示了一些新的 Python 功能：
 
-* :keyword:`return` 语句从函数中返回一个值，不带表达式的 :keyword:`return` 返回 ``None`` 。过程结束后也会返回 ``None`` 。
+* `return <https://docs.python.org/2.7/reference/simple_stmts.html#return>`_ 语句从函数中返回一个值。
+  
+  不带表达式的 `return <https://docs.python.org/2.7/reference/simple_stmts.html#return>`_ 返回 ``None`` 。过程结束后也会返回 ``None`` 。
 
-* 语句 ``result.append(b)`` 称为链表对象 ``result`` 的一个 *方法* (method)。方法是一个“属于”某个对象的函数，它被命名为 ``obj.methodename``，这里的 ``obj`` 是某个对象(可能是一个表达式)，``methodename`` 是某个在该对象类型定义中的方法的命名。不同的类型定义不同的方法。不同类型可能有同样名字的方法，但不会混淆(当你定义自己的对象类型和方法时，可能会出现这种情况，*class* 的定义方法详见 :ref:`tut-classes` )。示例中演示的 :meth:`append` 方法由链表对象定义，它向链表中加入一个新元素。在示例中它等同于 ``result = result + [b]`` ，不过效率更高。
+* 语句 ``result.append(b)`` 称为链表对象 ``result`` 的一个 *方法* (method)。
+
+  方法是一个“属于”某个对象的函数，它被命名为 ``obj.methodename``，这里的 ``obj`` 是某个对象(可能是一个表达式)，``methodename`` 是某个在该对象类型定义中的方法的命名。不同的类型定义不同的方法。不同类型可能有同样名字的方法，但不会混淆(当你定义自己的对象类型和方法时，可能会出现这种情况，*class* 的定义方法详见 :ref:`tut-classes` )。示例中演示的 :meth:`append` 方法由链表对象定义，它向链表中加入一个新元素。在示例中它等同于 ``result = result + [b]`` ，不过效率更高。
 
 
 .. _tut-defining:
@@ -255,16 +280,21 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
             print complaint
 
 
-这个函数可以通过几种不同的方式调用:
+这个函数可以通过几种不同的方式调用：
 
 * 只给出必要的参数:
+ 
   ``ask_ok('Do you really want to quit?')``
+
 * 给出一个可选的参数:
+
   ``ask_ok('OK to overwrite the file?', 2)``
+
 * 或者给出所有的参数:
+
   ``ask_ok('OK to overwrite the file?', 2, 'Come on, only yes or no!')``
 
-这个例子还介绍了 :keyword:`in` 关键字。它测定序列中是否包含某个确定的值。 
+这个例子还介绍了 `in <https://docs.python.org/2.7/reference/expressions.html#in>`_ 关键字。它测定序列中是否包含某个确定的值。 
 
 默认值在函数 *定义* 作用域被解析，如下所示::
 
@@ -311,7 +341,7 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
 关键字参数 
 -----------------
 
-函数可以通过 :term:`关键字参数 <keyword argument>` 的形式来调用，形如 ``keyword = value``。例如，以下的函数::
+函数可以通过 `关键字参数 <https://docs.python.org/2.7/glossary.html#term-keyword-argument>`_ 的形式来调用，形如 ``keyword = value``。例如，以下的函数::
 
     def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
         print "-- This parrot wouldn't", action,
@@ -337,8 +367,7 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
     parrot(110, voltage=220)     # duplicate value for the same argument
     parrot(actor='John Cleese')  # unknown keyword argument
 
-
-通常，参数列表中的每一个关键字都必须来自于形式参数，每个参数都有对应的关键字。形式参数有没有默认值并不重要。实际参数不能一次赋多个值 —— 形式参数不能在同一次调用中同时使用位置和关键字绑定值。这里有一个例子演示了在这种约束下所出现的失败情况::
+在函数调用中，关键字的参数必须跟随在位置参数的后面。传递的所有关键字参数必须与函数接受的某个参数相匹配（例如 ``actor`` 不是 ``parrot`` 函数的有效参数），它们的顺序并不重要。这也包括非可选参数（例如 ``parrot(voltage=1000)`` 也是有效的）。任何参数都不可以多次赋值。下面的示例由于这种限制将失败::
 
     >>> def function(a):
     ...     pass
@@ -349,7 +378,7 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
     TypeError: function() got multiple values for keyword argument 'a'
 
 
-引入一个形如 ``**name`` 的参数时，它接收一个字典(参见 :ref:`typesmapping` )，该字典包含了所有未出现在形式参数列表中的关键字参数。这里可能还会组合使用一个形如 ``*name`` (下一小节详细介绍)的形式参数，它接收一个元组(下一节中会详细介绍)，包含了所有没有出现在形式参数列表中的参数值。( ``*name`` 必须在 ``**name`` 之前出现)例如，我们这样定义一个函数::
+引入一个形如 ``**name`` 的参数时，它接收一个字典(参见 `Mapping Types — dict <https://docs.python.org/2.7/library/stdtypes.html#typesmapping>`_ )，该字典包含了所有未出现在形式参数列表中的关键字参数。这里可能还会组合使用一个形如 ``*name`` (下一小节详细介绍)的形式参数，它接收一个元组(下一节中会详细介绍)，包含了所有没有出现在形式参数列表中的参数值。( ``*name`` 必须在 ``**name`` 之前出现)例如，我们这样定义一个函数::
 
     def cheeseshop(kind, *arguments, **keywords):
         print "-- Do you have any", kind, "?"
@@ -382,9 +411,7 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
     shopkeeper : Michael Palin
     sketch : Cheese Shop Sketch
 
-
-注意在打印 ``关键字`` 参数字典的内容前先调用 sort() 方法。否则的话，打印参数时的顺序是未定义的。
-
+注意在打印关键字参数之前，通过对关键字字典 ``keys()`` 方法的结果进行排序，生成了关键字参数名的列表；如果不这样做，打印出来的参数的顺序是未定义的。
 
 .. _tut-arbitraryargs:
 
@@ -405,7 +432,7 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
 参数列表的分拆
 ------------------------
 
-另有一种相反的情况: 当你要传递的参数已经是一个列表，但要调用的函数却接受分开一个个的参数值。这时候你要把已有的列表拆开来。例如内建函数 :func:`range` 需要独立的 *start* ，*stop* 参数。 你可以在调用函数时加一个 ``*`` 操作符来自动把参数列表拆开::
+另有一种相反的情况: 当你要传递的参数已经是一个列表，但要调用的函数却接受分开一个个的参数值。这时候你要把已有的列表拆开来。例如内建函数 `range() <https://docs.python.org/2.7/library/functions.html#range>`_ 需要独立的 *start* ，*stop* 参数。 你可以在调用函数时加一个 ``*`` 操作符来自动把参数列表拆开::
 
    >>> list(range(3, 6))            # normal call with separate arguments
    [3, 4, 5]
@@ -433,7 +460,7 @@ Python 中的 :keyword:`for` 语句和 C 或 Pascal 中的略有不同。通常�
 Lambda 形式
 ------------
 
-出于实际需要，有几种通常在函数式编程语言例如 Lisp 中出现的功能加入到了 Python 中。通过 :keyword:`lambda` 关键字，可以创建短小的匿名函数。这里有一个函数返回它的两个参数的和：``lambda a, b: a+b``。Lambda 形式可以用于任何需要的函数对象。出于语法限制，它们只能有一个单独的表达式。语义上讲，它们只是普通函数定义中的一个语法技巧。类似于嵌套函数定义，lambda 形式可以从外部作用域引用变量::
+出于实际需要，有几种通常在函数式编程语言例如 Lisp 中出现的功能加入到了 Python 中。通过 `lambda <https://docs.python.org/2.7/reference/expressions.html#lambda>`_ 关键字，可以创建短小的匿名函数。这里有一个函数返回它的两个参数的和：``lambda a, b: a+b``。Lambda 形式可以用于任何需要的函数对象。出于语法限制，它们只能有一个单独的表达式。语义上讲，它们只是普通函数定义中的一个语法技巧。类似于嵌套函数定义，lambda 形式可以从外部作用域引用变量::
 
    >>> def make_incrementor(n):
    ...     return lambda x: x + n
@@ -443,6 +470,13 @@ Lambda 形式
    42
    >>> f(1)
    43
+
+上面的示例使用 lambda 表达式返回一个函数。另一个用途是将一个小函数作为参数传递::
+
+   >>> pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+   >>> pairs.sort(key=lambda pair: pair[1])
+   >>> pairs
+   [(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]
 
 
 .. _tut-docstrings:

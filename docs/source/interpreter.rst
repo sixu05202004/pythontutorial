@@ -32,6 +32,7 @@ Python 解释器有些操作类似 Unix shell：当使用终端设备(tty)作为
 
 使用脚本文件时，经常会运行脚本然后进入交互模式。这也可以通过在脚本之前加上 :option:`-i` 参数来实现。
 
+所有的命令行参数详细描述在 `命令行和环境 <https://docs.python.org/3.6/using/cmdline.html#using-on-general>`_ 。
 
 .. _tut-argpassing:
 
@@ -59,13 +60,15 @@ Python 解释器有些操作类似 Unix shell：当使用终端设备(tty)作为
 
 .. XXX update for new releases
 
-输入多行结构时需要从属提示符了，例如，下面这个 :keyword:`if` 语句::
+输入多行结构时需要从属提示符了，例如，下面这个 `if <https://docs.python.org/2.7/reference/compound_stmts.html#if>`_ 语句::
 
    >>> the_world_is_flat = 1
    >>> if the_world_is_flat:
    ...     print "Be careful not to fall off!"
    ...
    Be careful not to fall off!
+
+关于交互魔术更多的信息，请见 :ref:`tut-interacting`。
 
 
 .. _tut-interp:
@@ -74,90 +77,25 @@ Python 解释器有些操作类似 Unix shell：当使用终端设备(tty)作为
 ===================================
 
 
-.. _tut-error:
-
-错误处理
---------------
-
-有错误发生时，解释器会打印一个错误信息和栈跟踪器。在交互模式下，它返回主提示符，如果从文件输入执行，它在打印栈跟踪器后以非零状态退出。(异常可以由 :keyword:`try` 语句中的 :keyword:`except` 子句来控制，这样就不会出现上文中的错误信息) 有一些非常致命的错误会导致非零状态下退出，这通常由内部矛盾和内存溢出造成。所有的错误信息都写入标准错误流；命令中执行的普通输出写入标准输出。
-
-在主提示符或从属提示符中输入中断符 (通常是 Control-C 或者 DEL) 就会取消当前输入，回到主命令行。[#]_ 执行命令时输入一个中断符会抛出一个 :exc:`KeyboardInterrupt` 异常，它可以被 :keyword:`try` 语句截获。
-
-
-.. _tut-scripts:
-
-执行 Python 脚本
--------------------------
-
-BSD 类的 Unix 系统中，Python 脚本可以像 Shell 脚本那样直接执行。只要在脚本文件开头写一行命令，指定文件和模式::
-
-   #! /usr/bin/env python
-
-(首先要确认 Python 解释器在用户的 :envvar:`PATH` 中) ``#!``  必须是文件的前两个字符，在某些平台上，第一行必须以 Unix 风格的行结束符 (``'\n'``)结束，不能用 Windows (``'\r\n'``) 的结束符。注意，``'#'`` 是 Python 中是行注释的起始符。 
-
-脚本可以通过 :program:`chmod` 命令指定执行模式和权限::
-
-   $ chmod +x myscript.py
-
-Windows 系统上没有“执行模式”。Python 安装程序自动将 ``.py`` 文件关联到 ``python.exe`` ，所以在 Python 文件图标上双击，它就会作为脚本执行。同样 ``.pyw``  也做了这样的关联，通常它执行时不会显示控制台窗口。
-
-
 .. _tut-source-encoding:
 
 源程序编码
 --------------------
 
-默认情况下，Python 源文件是 UTF-8 编码。在此编码下，全世界大多数语言的字符可以同时用于字符串、标识符和注释中 — 尽管 Python 标准库仅使用 ASCII 字符做为标识符，这只是任何可移植代码应该遵守的约定。如果要正确的显示所有的字符，你的编辑器必须能识别出文件是 UTF-8 编码，并且它使用的字体能支持文件中所有的字符。
-
-你也可以为源文件指定不同的字符编码。为此，在 ``#!`` 行 (首行) 后插入至少一行特殊的注释行来定义源文件的编码。::
+在Python源文件中可以使用非 ASCII 编码。最好的方法是在 ``#!`` 行的后面再增加一行特殊的注释来定义源文件的编码::
 
    # -*- coding: encoding -*-
 
-通过此声明，源文件中所有的东西都会被当做用 *encoding* 指代的 UTF-8 编码对待。在 Python 库参考手册 :mod:`codecs` 一节中你可以找到一张可用的编码列表。
 
-例如，如果你的编辑器不支持 UTF-8 编码的文件，但支持像 Windows-1252 的其他一些编码，你可以定义::
+通过此声明，源文件中所有的东西都会被当做用 *encoding* 指代的 UTF-8 编码对待。在 Python 库参考手册 `codecs <https://docs.python.org/2.7/library/codecs.html#module-codecs>`_ 一节中你可以找到一张可用的编码列表。
 
-   # -*- coding: cp-1252 -*-
+例如，若要写入包含欧元货币符号的 Unicode 字面量，可以使用 ISO-8859-15 编码，其欧元符号的值为 164 。此脚本中，以 ISO-8859-15 编码，保存时将打印的值 8364 (Unicode 代码点相应的欧元符号），然后退出::
 
-这样就可以在源文件中使用 Windows-1252 字符集中的所有字符了。这个特殊的编码注释必须在文件中的 *第一或第二* 行定义。
+   # -*- coding: iso-8859-15 -*-
 
+   currency = u"€"
+   print ord(currency)
 
-.. _tut-startup:
+如果你的编辑器支持保存为带有 ``UTF-8`` *字节顺序标记* (也叫做 BOM ) 的 UTF-8 格式的文件，你可以使用这种功能而不用编码声明。IDLE 如果设置了 ``Options/General/Default Source Encoding/UTF-8`` 也支持此功能。注意，这种标记方法在旧的 Python 版本中（2.2 及更早）是不能识别的，同样也不能被能够处理 ``#!`` （只在 Unix 系统上使用）行的操作系统识别。
 
-交互执行文件
-----------------------------
-
-使用 Python 解释器的时候，我们可能需要在每次解释器启动时执行一些命令。你可以在一个文件中包含你想要执行的命令，设定一个名为 :envvar:`PYTHONSTARTUP` 的环境变量来指定这个文件。这类似于 Unix shell 的 :file:`.profile` 文件。 
-
-这个文件在交互会话期是只读的，当 Python 从脚本中解读文件或以终端 :file:`/dev/tty` 做为外部命令源时则不会如此 (尽管它们的行为很像是处在交互会话期) 它与解释器执行的命令处在同一个命名空间，所以由它定义或引用的一切可以在解释器中不受限制地使用。你也可以在这个文件中改变 ``sys.ps1`` 和 ``sys.ps2``  指令。 
-
-如果你想要在当前目录中执行附加的启动文件，可以在全局启动文件中加入类似以下的代码：``if os.path.isfile('.pythonrc.py'): execfile('.pythonrc.py')``。如果你想要在某个脚本中使用启动文件，必须要在脚本中写入这样的语句::
-
-   import os
-   filename = os.environ.get('PYTHONSTARTUP')
-   if filename and os.path.isfile(filename):
-       exec(open(filename).read())
-
-
-.. _tut-customize:
-
-本地化模块
--------------------------
-
-Python 提供了两个钩子 (方法) 来本地化: :mod:`sitecustomize` 和
-:mod:`usercustomize`。为了见识它们，你首先需要找到你的 site-packages 的目录。启动 python 执行下面的代码::
-
-   >>> import site
-   >>> site.getusersitepackages()
-   '/home/user/.local/lib/python2.7/site-packages'
-
-现在你可以在 site-packages 的目录下创建 :file:`usercustomize.py` 文件，内容就悉听尊便了。这个文件将会影响 python 的每次调用，除非启动的时候加入 :option:`-s` 选项禁止自动导入。
-
-:mod:`sitecustomize` 的工作方式一样，但是是由电脑的管理账户创建以及在 :mod:`usercustomize` 之前导入。具体可以参见 :mod:`site` 。
-
-
-.. rubric:: Footnotes
-
-.. [#] GNU Readline包的一个问题可能禁止此功能。
-
-
+通过使用 UTF-8 编码（无论是BOM方式或者是编码声明方式），世界上大多数语言的字符可以在字符串字面量和注释中同时使用。在标识符中使用非 ASCII 字符是不支持的。若要正确显示所有这些字符，您的编辑器必须认识该文件是 UTF-8 编码，并且它必须使用支持文件中所有字符的字体。

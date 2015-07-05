@@ -56,10 +56,10 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
    返回 *x* 在链表中出现的次数。
 
 
-.. method:: list.sort()
+.. method:: list.sort(cmp=None, key=None, reverse=False)
    :noindex:
 
-   对链表中的元素就地进行排序。
+   对链表中的元素就地进行排序（参数可以用来自定义排序方法，参考 `sorted() <https://docs.python.org/2.7/library/functions.html#sorted>`_ 的更详细的解释）。
 
 
 .. method:: list.reverse()
@@ -87,8 +87,12 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
    >>> a.sort()
    >>> a
    [-1, 1, 66.25, 333, 333, 1234.5]
+   >>> a.pop()
+   1234.5
+   >>> a
+   [-1, 1, 66.25, 333, 333]
 
-也许大家会发现像 ``insert``， ``remove`` 或者 ``sort`` 这些修改列表的方法没有打印返回值 --它们返回 ``None``。在 python 中对所有可变的数据类型这是统一的设计原则。
+也许大家会发现像 ``insert``， ``remove`` 或者 ``sort`` 这些修改列表的方法没有打印返回值 --它们返回 ``None``。[1]_  在 python 中对所有可变的数据类型这是统一的设计原则。
 
 
 .. _tut-lists-as-stacks:
@@ -127,7 +131,7 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
 
 你也可以把链表当做队列使用，队列作为特定的数据结构，最先进入的元素最先释放(先进先出)。不过，列表这样用效率不高。相对来说从列表末尾添加和弹出很快；在头部插入和弹出很慢(因为为了一个元素，要移动整个列表中的所有元素)。 
 
-要实现队列，使用 :class:`collections.deque`，它为在首尾两端快速插入和删除而设计。例如::
+要实现队列，使用 `collections.deque <https://docs.python.org/2.7/library/collections.html#collections.deque>`_，它为在首尾两端快速插入和删除而设计。例如::
 
    >>> from collections import deque
    >>> queue = deque(["Eric", "John", "Michael"])
@@ -146,14 +150,14 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
 函数式编程工具
 ----------------------------
 
-对于链表来讲，有三个内置函数非常有用: :func:`filter`，:func:`map` 以及 :func:`reduce`。
+对于链表来讲，有三个内置函数非常有用: `filter() <https://docs.python.org/2.7/library/functions.html#filter>`_，`map() <https://docs.python.org/2.7/library/functions.html#map>`_ 以及 `reduce() <https://docs.python.org/2.7/library/functions.html#reduce>`_。
 
-``filter(function, sequence)`` 返回一个 sequence(序列)，包括了给定序列中所有调用 ``function(item)`` 后返回值为 true 的元素(如果可能的话，会返回相同的类型)。如果该 *序列* (sequence)是一个 :class:`string` (字符串)或者 :class:`tuple` (元组)，返回值必定是同一类型，否则，它总是 :class:`list`。例如，以下程序可以计算部分素数::
+``filter(function, sequence)`` 返回一个 sequence(序列)，包括了给定序列中所有调用 ``function(item)`` 后返回值为 true 的元素(如果可能的话，会返回相同的类型)。如果该 *序列* (sequence)是一个 `str <https://docs.python.org/2.7/library/functions.html#str>`_, `unicode <https://docs.python.org/2.7/library/functions.html#unicode>`_ 或者 `tuple <https://docs.python.org/2.7/library/functions.html#tuple>`_，返回值必定是同一类型，否则，它总是 `list <https://docs.python.org/2.7/library/functions.html#list>`_。例如，以下程序可以计算一个被 3 或者 5 整除的序列::
 
-   >>> def f(x): return x % 2 != 0 and x % 3 != 0
+   >>> def f(x): return x % 3 == 0 or x % 5 == 0
    ...
    >>> filter(f, range(2, 25))
-   [5, 7, 11, 13, 17, 19, 23]
+   [3, 5, 6, 9, 10, 12, 15, 18, 20, 21, 24]
 
 ``map(function, sequence)`` 为每一个元素依次调用 ``function(item)`` 并将返回值组成一个链表返回。例如，以下程序计算立方::
 
@@ -190,7 +194,7 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
    >>> sum([])
    0
 
-不要像示例中这样定义 :func:`sum`：因为合计数值是一个通用的需求，早已有内置的 ``sum(sequence)`` 函数，非常好用。
+不要像示例中这样定义 `sum() <https://docs.python.org/2.7/library/functions.html#sum>`_：因为合计数值是一个通用的需求，早已有内置的 ``sum(sequence)`` 函数，非常好用。
 
 
 .. _tut-listcomps:
@@ -215,7 +219,7 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
 
 这也相当于 ``squares = map(lambda x: x**2, range(10))``，但是上面的方式显得简洁以及具有可读性。
 
-列表推导式由包含一个表达式的括号组成，表达式后面跟随一个 :keyword:`for` 子句，之后可以有零或多个 :keyword:`for` 或 :keyword:`if` 子句。结果是一个列表，由表达式依据其后面的 :keyword:`for` 和 :keyword:`if` 子句上下文计算而来的结果构成。
+列表推导式由包含一个表达式的括号组成，表达式后面跟随一个 `for <https://docs.python.org/2.7/reference/compound_stmts.html#for>`_ 子句，之后可以有零或多个 `for <https://docs.python.org/2.7/reference/compound_stmts.html#for>`_ 或 `if <https://docs.python.org/2.7/reference/compound_stmts.html#if>`_ 子句。结果是一个列表，由表达式依据其后面的 `for <https://docs.python.org/2.7/reference/compound_stmts.html#for>`_ 和 `if <https://docs.python.org/2.7/reference/compound_stmts.html#if>`_ 子句上下文计算而来的结果构成。
 
 例如，如下的列表推导式结合两个列表的元素，如果元素之间不相等的话::
 
@@ -233,9 +237,9 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
    >>> combs
    [(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
 
-值得注意的是在上面两个方法中的 :keyword:`for` 和 :keyword:`if` 语句的顺序。
+值得注意的是在上面两个方法中的 `for <https://docs.python.org/2.7/reference/compound_stmts.html#for>`_ 和 `if <https://docs.python.org/2.7/reference/compound_stmts.html#if>`_ 语句的顺序。
 
-如果想要得到一个元组，必须要加上括号::
+如果想要得到一个元组 (例如，上面例子中的 ``(x, y)``)，必须要加上括号::
 
    >>> vec = [-4, -2, 0, 2, 4]
    >>> # create a new list with the values doubled
@@ -290,7 +294,7 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
    >>> [[row[i] for row in matrix] for i in range(4)]
    [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
 
-像前面看到的，嵌套的列表推导式是对 :keyword:`for` 后面的内容进行求值，所以上例就等价于::
+像前面看到的，嵌套的列表推导式是对 `for <https://docs.python.org/2.7/reference/compound_stmts.html#for>`_ 后面的内容进行求值，所以上例就等价于::
 
    >>> transposed = []
    >>> for i in range(4):
@@ -312,7 +316,7 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
    >>> transposed
    [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
 
-在实际中，你应该更喜欢使用内置函数组成复杂流程语句。对此种情况 :func:`zip` 函数将会做的更好::
+在实际中，你应该更喜欢使用内置函数组成复杂流程语句。对此种情况 `zip() <https://docs.python.org/2.7/library/functions.html#zip>`_ 函数将会做的更好::
 
    >>> list(zip(*matrix))
    [(1, 5, 9), (2, 6, 10), (3, 7, 11), (4, 8, 12)]
@@ -321,10 +325,10 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
 
 .. _tut-del:
 
-:keyword:`del` 语句
-============================
+`del <https://docs.python.org/2.7/reference/simple_stmts.html#del>`_ 语句
+==================================================================================
 
-有个方法可以从列表中按给定的索引而不是值来删除一个子项：:keyword:`del` 语句。它不同于有返回值的 :meth:`pop` 方法。语句 :keyword:`del`  还可以从列表中删除切片或清空整个列表(我们以前介绍过一个方法是将空列表赋值给列表的切片)。例如::
+有个方法可以从列表中按给定的索引而不是值来删除一个子项：`del <https://docs.python.org/2.7/reference/simple_stmts.html#del>`_ 语句。它不同于有返回值的 :meth:`pop` 方法。语句 `del <https://docs.python.org/2.7/reference/simple_stmts.html#del>`_  还可以从列表中删除切片或清空整个列表(我们以前介绍过一个方法是将空列表赋值给列表的切片)。例如::
 
    >>> a = [-1, 1, 66.25, 333, 333, 1234.5]
    >>> del a[0]
@@ -337,11 +341,11 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
    >>> a
    []
 
-:keyword:`del` 也可以删除整个变量::
+`del <https://docs.python.org/2.7/reference/simple_stmts.html#del>`_ 也可以删除整个变量::
 
    >>> del a
 
-此后再引用命名 ``a`` 会引发错误(直到另一个值赋给它为止)。我们在后面的内容中可以看到 :keyword:`del` 的其它用法。
+此后再引用命名 ``a`` 会引发错误(直到另一个值赋给它为止)。我们在后面的内容中可以看到 `del <https://docs.python.org/2.7/reference/simple_stmts.html#del>`_ 的其它用法。
 
 
 .. _tut-tuples:
@@ -349,7 +353,7 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
 元组和序列
 ====================
 
-我们知道链表和字符串有很多通用的属性，例如索引和切割操作。它们是序列类型(参见 :ref:`typesseq` )中的两种。因为 Python 是一个在不断进化的语言，也可能会加入其它的序列类型，这里介绍另一种标准序列类型：*元组*。 
+我们知道链表和字符串有很多通用的属性，例如索引和切割操作。它们是序列类型(参见 `Sequence Types — str, unicode, list, tuple, bytearray, buffer, xrange <https://docs.python.org/2.7/library/stdtypes.html#typesseq>`_ )中的两种。因为 Python 是一个在不断进化的语言，也可能会加入其它的序列类型，这里介绍另一种标准序列类型：*元组*。 
 
 一个元组由数个逗号分隔的值组成，例如::
 
@@ -375,7 +379,7 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
 
 如你所见，元组在输出时总是有括号的，以便于正确表达嵌套结构。在输入时可以有或没有括号，不过经常括号都是必须的(如果元组是一个更大的表达式的一部分)。不能给元组的一个独立的元素赋值(尽管你可以通过联接和切割来模拟)。还可以创建包含可变对象的元组，例如链表。
 
-虽然元组和列表很类似，它们经常被用来在不同的情况和不同的用途。元组有很多用途。例如 (x, y) 坐标对，数据库中的员工记录等等。元组就像字符串，不可改变。
+虽然元组看起来类似于列表，它们经常用于不同的场景和不同的目的。元组是 `不可变的 <https://docs.python.org/2.7/glossary.html#term-immutable>`_，通常包含不同种类的元素并通过分拆（参阅本节后面的内容）或索引访问（如果是 `namedtuples <https://docs.python.org/2.7/library/collections.html#collections.namedtuple>`_，甚至可以通过属性）。列表是 `可变的 <https://docs.python.org/2.7/glossary.html#term-mutable>`_，它们的元素通常是相同的类型并通过迭代访问。
 
 一个特殊的问题是构造包含零个或一个元素的元组：为了适应这种情况，语法上有一些额外的改变。一对空的括号可以创建空元组；要创建一个单元素元组可以在值后面跟一个逗号(在括号中放入一个单值不够明确)。丑陋，但是有效。例如::
 
@@ -402,7 +406,7 @@ Python 的列表数据类型包含更多的方法。这里是所有的列表对�
 
 Python 还包含了一个数据类型 *set* (集合)。集合是一个无序不重复元素的集。基本功能包括关系测试和消除重复元素。集合对象还支持 union(联合)，intersection(交)，difference(差)和 sysmmetric difference(对称差集)等数学运算。 
 
-大括号或 :func:`set` 函数可以用来创建集合。注意：想要创建空集合，你必须使用 ``set()`` 而不是 ``{}``。后者用于创建空字典，我们在下一节中介绍的一种数据结构。
+大括号或 `set() <https://docs.python.org/2.7/library/stdtypes.html#set>`_ 函数可以用来创建集合。注意：想要创建空集合，你必须使用 ``set()`` 而不是 ``{}``。后者用于创建空字典，我们在下一节中介绍的一种数据结构。
 
 以下是一个简单的演示::
 
@@ -430,7 +434,7 @@ Python 还包含了一个数据类型 *set* (集合)。集合是一个无序不�
    >>> a ^ b                              # letters in a or b but not both
    set(['r', 'd', 'b', 'm', 'z', 'l'])
 
-类似 :ref:`for lists <tut-listcomps>`，这里有一种集合推导式语法::
+类似 :ref:`列表推导式 <tut-listcomps>`，这里有一种集合推导式语法::
 
    >>> a = {x for x in 'abracadabra' if x not in 'abc'}
    >>> a
@@ -443,13 +447,13 @@ Python 还包含了一个数据类型 *set* (集合)。集合是一个无序不�
 字典
 ============
 
-另一个非常有用的 Python 内建数据类型是 *字典* (参见 :ref:`typesmapping` )。字典在某些语言中可能称为 联合内存 (associative memories) 或 联合数组 (associative arrays)。序列是以连续的整数为索引，与此不同的是，字典以 *关键字* 为索引，关键字可以是任意不可变类型，通常用字符串或数值。如果元组中只包含字符串和数字，它可以作为关键字，如果它直接或间接地包含了可变对象，就不能当做关键字。不能用链表做关键字，因为链表可以用索引、切割或者 :meth:`append` 和 :meth:`extend` 等方法改变。 
+另一个非常有用的 Python 内建数据类型是 *字典* (参见 `Mapping Types — dict <https://docs.python.org/2.7/library/stdtypes.html#typesmapping>`_ )。字典在某些语言中可能称为 联合内存 (associative memories) 或 联合数组 (associative arrays)。序列是以连续的整数为索引，与此不同的是，字典以 *关键字* 为索引，关键字可以是任意不可变类型，通常用字符串或数值。如果元组中只包含字符串和数字，它可以作为关键字，如果它直接或间接地包含了可变对象，就不能当做关键字。不能用链表做关键字，因为链表可以用索引、切割或者 :meth:`append` 和 :meth:`extend` 等方法改变。 
 
 理解字典的最佳方式是把它看做无序的键：*值对* (key:value 对)集合，键必须是互不相同的(在同一个字典之内)。一对大括号创建一个空的字典：``{}``。初始化链表时，在大括号内放置一组逗号分隔的键：值对，这也是字典输出的方式。 
 
 字典的主要操作是依据键来存储和析取值。也可以用 ``del`` 来删除键：值对(key:value)。如果你用一个已经存在的关键字存储值，以前为该关键字分配的值就会被遗忘。试图从一个不存在的键中取值会导致错误。
 
-对一个字典执行 :meth:`keys` 将返回一个字典中所有关键字组成的无序列表(如果你想要排序，只需使用 :func:`sorted`)。使用 :keyword:`in` 关键字(指 Python 语法)可以检查字典中是否存在某个关键字(指字典)。
+对一个字典执行 :meth:`keys` 将返回一个字典中所有关键字组成的无序列表(如果你想要排序，只需使用 `sorted() <https://docs.python.org/2.7/library/functions.html#sorted>`_)。使用 `in <https://docs.python.org/2.7/reference/expressions.html#in>`_ 关键字(指 Python 语法)可以检查字典中是否存在某个关键字(指字典)。
 
 这里是使用字典的一个小示例::
 
@@ -468,7 +472,7 @@ Python 还包含了一个数据类型 *set* (集合)。集合是一个无序不�
    >>> 'guido' in tel
    True
 
-:func:`dict` 构造函数可以直接从 key-value 对中创建字典::
+`dict() <https://docs.python.org/2.7/library/stdtypes.html#dict>`_ 构造函数可以直接从 key-value 对中创建字典::
 
    >>> dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
    {'sape': 4139, 'jack': 4098, 'guido': 4127}
@@ -489,7 +493,7 @@ Python 还包含了一个数据类型 *set* (集合)。集合是一个无序不�
 循环技巧
 ==================
 
-在序列中循环时，索引位置和对应值可以使用 :func:`enumerate` 函数同时得到::
+在序列中循环时，索引位置和对应值可以使用 `enumerate() <https://docs.python.org/2.7/library/functions.html#enumerate>`_ 函数同时得到::
 
    >>> for i, v in enumerate(['tic', 'tac', 'toe']):
    ...     print(i, v)
@@ -498,7 +502,7 @@ Python 还包含了一个数据类型 *set* (集合)。集合是一个无序不�
    1 tac
    2 toe
 
-同时循环两个或更多的序列，可以使用 :func:`zip` 整体打包::
+同时循环两个或更多的序列，可以使用 `zip() <https://docs.python.org/2.7/library/functions.html#zip>`_ 整体打包::
 
    >>> questions = ['name', 'quest', 'favorite color']
    >>> answers = ['lancelot', 'the holy grail', 'blue']
@@ -509,7 +513,7 @@ Python 还包含了一个数据类型 *set* (集合)。集合是一个无序不�
    What is your quest?  It is the holy grail.
    What is your favorite color?  It is blue.
 
-需要逆向循环序列的话，先正向定位序列，然后调用 :func:`reversed` 函数::
+需要逆向循环序列的话，先正向定位序列，然后调用 `reversed() <https://docs.python.org/2.7/library/functions.html#reversed>`_ 函数::
 
    >>> for i in reversed(xrange(1, 10, 2)):
    ...     print(i)
@@ -520,7 +524,7 @@ Python 还包含了一个数据类型 *set* (集合)。集合是一个无序不�
    3
    1
 
-要按排序后的顺序循环序列的话，使用 :func:`sorted`  函数，它不改动原序列，而是生成一个新的已排序的序列::
+要按排序后的顺序循环序列的话，使用 `sorted() <https://docs.python.org/2.7/library/functions.html#sorted>`_  函数，它不改动原序列，而是生成一个新的已排序的序列::
 
    >>> basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
    >>> for f in sorted(set(basket)):
@@ -530,6 +534,25 @@ Python 还包含了一个数据类型 *set* (集合)。集合是一个无序不�
    banana
    orange
    pear
+
+遍历字典时，使用 ``iteritems()`` 方法可以同时得到键和对应的值。::
+
+   >>> knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+   >>> for k, v in knights.iteritems():
+   ...     print k, v
+   ...
+   gallahad the pure
+   robin the brave
+
+若要在循环内部修改正在遍历的序列（例如复制某些元素），建议您首先制作副本。在序列上循环不会隐式地创建副本。切片表示法使这尤其方便::
+
+   >>> words = ['cat', 'window', 'defenestrate']
+   >>> for w in words[:]:  # Loop over a slice copy of the entire list.
+   ...     if len(w) > 6:
+   ...         words.insert(0, w)
+   ...
+   >>> words
+   ['defenestrate', 'cat', 'window', 'defenestrate']
 
 
 .. _tut-conditions:
@@ -572,4 +595,9 @@ Python 还包含了一个数据类型 *set* (集合)。集合是一个无序不�
    (1, 2, 3)             == (1.0, 2.0, 3.0)
    (1, 2, ('aa', 'ab'))   < (1, 2, ('abc', 'a'), 4)
 
-需要注意的是如果通过 ``<`` 或者 ``>`` 比较的对象只要具有合适的比较方法就是合法的。比如，混合数值类型是通过它们的数值就行比较的，所以 0 是等于 0.0。否则解释器将会触发一个 :exc:`TypeError` 异常，而不是提供一个随意的结果。
+注意比较不同类型的对象也是合法的。比较的结果已经确定但是不一定合理： 类型按其名称进行排序。因此，列表始终小于字符串，字符串总是小于元组，等等。[#]_   不同数值类型按照它们的值比较，所以 0 等于 0.0，等等。
+
+
+.. rubric:: Footnotes
+
+.. [#] 不应该依赖不同类型对象的比较规则；它们在Python未来版本中可能发生变化。

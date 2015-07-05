@@ -10,7 +10,7 @@ Python 标准库概览
 操作系统接口
 ==========================
 
-:mod:`os` 模块提供了很多与操作系统交互的函数::
+`os <https://docs.python.org/2.7/library/os.html#module-os>`_ 模块提供了很多与操作系统交互的函数::
 
    >>> import os
    >>> os.getcwd()      # Return the current working directory
@@ -19,11 +19,11 @@ Python 标准库概览
    >>> os.system('mkdir today')   # Run the command mkdir in the system shell
    0
 
-应该用 ``import os`` 风格而非 ``from os import *``。这样可以保证随操作系统不同而有所变化的 :func:`os.open` 不会覆盖内置函数 :func:`open`
+应该用 ``import os`` 风格而非 ``from os import *``。这样可以保证随操作系统不同而有所变化的 `os.open() <https://docs.python.org/2.7/library/os.html#os.open>`_ 不会覆盖内置函数 `open() <https://docs.python.org/2.7/library/functions.html#open>`_
 
 .. index:: builtin: help
 
-在使用一些像 os 这样的大型模块时内置的 :func:`dir` 和 :func:`help` 函数非常有用::
+在使用一些像 `os <https://docs.python.org/2.7/library/os.html#module-os>`_ 这样的大型模块时内置的 `dir() <https://docs.python.org/2.7/library/functions.html#dir>`_ 和 `help() <https://docs.python.org/2.7/library/functions.html#help>`_ 函数非常有用::
 
    >>> import os
    >>> dir(os)
@@ -31,7 +31,7 @@ Python 标准库概览
    >>> help(os)
    <returns an extensive manual page created from the module's docstrings>
 
-针对日常的文件和目录管理任务，:mod:`shutil` 模块提供了一个易于使用的高级接口::
+针对日常的文件和目录管理任务，`shutil <https://docs.python.org/2.7/library/shutil.html#module-shutil>`_ 模块提供了一个易于使用的高级接口::
 
    >>> import shutil
    >>> shutil.copyfile('data.db', 'archive.db')
@@ -43,7 +43,7 @@ Python 标准库概览
 文件通配符
 ==============
 
-:mod:`glob` 模块提供了一个函数用于从目录通配符搜索中生成文件列表::
+`glob <https://docs.python.org/2.7/library/glob.html#module-glob>`_ 模块提供了一个函数用于从目录通配符搜索中生成文件列表::
 
    >>> import glob
    >>> glob.glob('*.py')
@@ -55,13 +55,13 @@ Python 标准库概览
 命令行参数
 ======================
 
-通用工具脚本经常调用命令行参数。这些命令行参数以链表形式存储于 :mod:`sys` 模块的 *argv*  变量。例如在命令行中执行 ``python demo.py one two three`` 后可以得到以下输出结果::
+通用工具脚本经常调用命令行参数。这些命令行参数以链表形式存储于 `sys <https://docs.python.org/2.7/library/sys.html#module-sys>`_ 模块的 *argv*  变量。例如在命令行中执行 ``python demo.py one two three`` 后可以得到以下输出结果::
 
    >>> import sys
    >>> print sys.argv
    ['demo.py', 'one', 'two', 'three']
 
-:mod:`getopt` 模块使用 Unix :func:`getopt` 函数处理 *sys.argv*。更多的复杂命令行处理由 :mod:`argparse` 模块提供。
+`getopt <https://docs.python.org/2.7/library/getopt.html#module-getopt>`_ 模块使用 Unix `getopt() <https://docs.python.org/2.7/library/getopt.html#module-getopt>`_ 函数处理 *sys.argv*。更多的复杂命令行处理由 `argparse <https://docs.python.org/2.7/library/argparse.html#module-argparse>`_ 模块提供。
 
 
 .. _tut-stderr:
@@ -69,7 +69,7 @@ Python 标准库概览
 错误输出重定向和程序终止
 ================================================
 
-:mod:`sys` 还有 *stdin*， *stdout* 和 *stderr* 属性，即使在 *stdout* 被重定向时，后者也可以用于显示警告和错误信息::
+`sys <https://docs.python.org/2.7/library/sys.html#module-sys>`_ 还有 *stdin*， *stdout* 和 *stderr* 属性，即使在 *stdout* 被重定向时，后者也可以用于显示警告和错误信息::
 
    >>> sys.stderr.write('Warning, log file not found starting a new one\n')
    Warning, log file not found starting a new one
@@ -82,7 +82,7 @@ Python 标准库概览
 字符串正则匹配
 =======================
 
-:mod:`re` 模块为高级字符串处理提供了正则表达式工具。对于复杂的匹配和处理，正则表达式提供了简洁、优化的解决方案::
+`re <https://docs.python.org/2.7/library/re.html#module-re>`_ 模块为高级字符串处理提供了正则表达式工具。对于复杂的匹配和处理，正则表达式提供了简洁、优化的解决方案::
 
    >>> import re
    >>> re.findall(r'\bf[a-z]*', 'which foot or hand fell fastest')
@@ -101,7 +101,7 @@ Python 标准库概览
 数学
 ===========
 
-:mod:`math` 模块为浮点运算提供了对底层 C 函数库的访问::
+`math <https://docs.python.org/2.7/library/math.html#module-math>`_ 模块为浮点运算提供了对底层 C 函数库的访问::
 
    >>> import math
    >>> math.cos(math.pi / 4.0)
@@ -109,7 +109,7 @@ Python 标准库概览
    >>> math.log(1024, 2)
    10.0
 
-:mod:`random` 提供了生成随机数的工具::
+`random <https://docs.python.org/2.7/library/random.html#module-random>`_ 提供了生成随机数的工具::
 
    >>> import random
    >>> random.choice(['apple', 'pear', 'banana'])
@@ -127,7 +127,7 @@ Python 标准库概览
 互联网访问
 ===============
 
-有几个模块用于访问互联网以及处理网络通信协议。其中最简单的两个是用于处理从 urls 接收的数据的 :mod:`urllib2` 以及用于发送电子邮件的 :mod:`smtplib`::
+有几个模块用于访问互联网以及处理网络通信协议。其中最简单的两个是用于处理从 urls 接收的数据的 `urllib2 <https://docs.python.org/2.7/library/urllib2.html#module-urllib2>`_ 以及用于发送电子邮件的 `smtplib <https://docs.python.org/2.7/library/smtplib.html#module-smtplib>`_::
 
    >>> from urllib2
    >>> for line in urllib2.urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl'):
@@ -155,7 +155,7 @@ Python 标准库概览
 日期和时间
 ===============
 
-:mod:`datetime` 模块为日期和时间处理同时提供了简单和复杂的方法。支持日期和时间算法的同时，实现的重点放在更有效的处理和格式化输出。该模块还支持时区处理::
+`datetime <https://docs.python.org/2.7/library/datetime.html#module-datetime>`_ 模块为日期和时间处理同时提供了简单和复杂的方法。支持日期和时间算法的同时，实现的重点放在更有效的处理和格式化输出。该模块还支持时区处理::
 
    >>> # dates are easily constructed and formatted
    >>> from datetime import date
@@ -177,8 +177,8 @@ Python 标准库概览
 数据压缩
 ================
 
-以下模块直接支持通用的数据打包和压缩格式：:mod:`zlib`，:mod:`gzip`，:mod:`bz2`，:mod:`zipfile` 以及 
-:mod:`tarfile`::
+以下模块直接支持通用的数据打包和压缩格式：`zlib <https://docs.python.org/2.7/library/zlib.html#module-zlib>`_，`gzip <https://docs.python.org/2.7/library/gzip.html#module-gzip>`_，`bz2 <https://docs.python.org/2.7/library/bz2.html#module-bz2>`_，`zipfile <https://docs.python.org/2.7/library/zipfile.html#module-zipfile>`_ 以及 
+`tarfile <https://docs.python.org/2.7/library/tarfile.html#module-tarfile>`_::
 
    >>> import zlib
    >>> s = b'witch which has which witches wrist watch'
@@ -200,7 +200,7 @@ Python 标准库概览
 
 有些用户对了解解决同一问题的不同方法之间的性能差异很感兴趣。Python 提供了一个度量工具，为这些问题提供了直接答案。
 
-例如，使用元组封装和拆封来交换元素看起来要比使用传统的方法要诱人的多。:mod:`timeit`  证明了后者更快一些::
+例如，使用元组封装和拆封来交换元素看起来要比使用传统的方法要诱人的多。`timeit <https://docs.python.org/2.7/library/timeit.html#module-timeit>`_  证明了后者更快一些::
 
    >>> from timeit import Timer
    >>> Timer('t=a; a=b; b=t', 'a=1; b=2').timeit()
@@ -208,7 +208,7 @@ Python 标准库概览
    >>> Timer('a,b = b,a', 'a=1; b=2').timeit()
    0.54962537085770791
 
-相对于 :mod:`timeit` 的细粒度，:mod:`profile` 和 :mod:`pstats`  模块提供了针对更大代码块的时间度量工具。
+相对于 `timeit <https://docs.python.org/2.7/library/timeit.html#module-timeit>`_ 的细粒度，`profile <https://docs.python.org/2.7/library/profile.html#module-profile>`_ 和 `pstats <https://docs.python.org/2.7/library/profile.html#module-pstats>`_  模块提供了针对更大代码块的时间度量工具。
 
 
 .. _tut-quality-control:
@@ -218,7 +218,7 @@ Python 标准库概览
 
 开发高质量软件的方法之一是为每一个函数开发测试代码，并且在开发过程中经常进行测试。 
 
-:mod:`doctest` 模块提供了一个工具，扫描模块并根据程序中内嵌的文档字符串执行测试。测试构造如同简单的将它的输出结果剪切并粘贴到文档字符串中。通过用户提供的例子，它发展了文档，允许 doctest 模块确认代码的结果是否与文档一致::
+`doctest <https://docs.python.org/2.7/library/doctest.html#module-doctest>`_ 模块提供了一个工具，扫描模块并根据程序中内嵌的文档字符串执行测试。测试构造如同简单的将它的输出结果剪切并粘贴到文档字符串中。通过用户提供的例子，它发展了文档，允许 doctest 模块确认代码的结果是否与文档一致::
 
    def average(values):
        """Computes the arithmetic mean of a list of numbers.
@@ -231,7 +231,7 @@ Python 标准库概览
    import doctest
    doctest.testmod()   # automatically validate the embedded tests
 
-:mod:`unittest` 模块不像 :mod:`doctest` 模块那么容易使用，不过它可以在一个独立的文件里提供一个更全面的测试集::
+`unittest <https://docs.python.org/2.7/library/unittest.html#module-unittest>`_ 模块不像 `doctest <https://docs.python.org/2.7/library/doctest.html#module-doctest>`_ 模块那么容易使用，不过它可以在一个独立的文件里提供一个更全面的测试集::
 
    import unittest
 
@@ -253,10 +253,16 @@ Python 标准库概览
 
 Python 展现了“瑞士军刀”的哲学。这可以通过它更大的包的高级和健壮的功能来得到最好的展现。例如:
 
-* :mod:`xmlrpc.client` 和 :mod:`xmlrpc.server` 模块让远程过程调用变得轻而易举。尽管模块有这样的名字，用户无需拥有XML的知识或处理XML。
+* `xmlrpclib <https://docs.python.org/2.7/library/xmlrpclib.html#module-xmlrpclib>`_ 和 `SimpleXMLRPCServer <https://docs.python.org/2.7/library/simplexmlrpcserver.html#module-SimpleXMLRPCServer>`_ 模块让远程过程调用变得轻而易举。
+  
+  尽管模块有这样的名字，用户无需拥有XML的知识或处理 XML。
 
-* :mod:`email` 包是一个管理邮件信息的库，包括MIME和其它基于 RFC2822 的信息文档。不同于实际发送和接收信息的 :mod:`smtplib` 和 :mod:`poplib` 模块，email 包包含一个构造或解析复杂消息结构(包括附件)及实现互联网编码和头协议的完整工具集。
+* `email <https://docs.python.org/2.7/library/email.html#module-email>`_ 包是一个管理邮件信息的库，包括MIME和其它基于 RFC2822 的信息文档。
+  
+  不同于实际发送和接收信息的 `smtplib <https://docs.python.org/2.7/library/smtplib.html#module-smtplib>`_ 和 `poplib <https://docs.python.org/2.7/library/poplib.html#module-poplib>`_ 模块，email 包包含一个构造或解析复杂消息结构(包括附件)及实现互联网编码和头协议的完整工具集。
 
-* :mod:`xml.dom` 和 :mod:`xml.sax` 包为流行的信息交换格式提供了强大的支持。同样，:mod:`csv`  模块支持在通用数据库格式中直接读写。综合起来，这些模块和包大大简化了 Python 应用程序和其它工具之间的数据交换。
+* `xml.dom <https://docs.python.org/2.7/library/xml.dom.html#module-xml.dom>`_ 和 `xml.sax <https://docs.python.org/2.7/library/xml.sax.html#module-xml.sax>`_ 包为流行的信息交换格式提供了强大的支持。
+  
+  同样，`csv <https://docs.python.org/2.7/library/csv.html#module-csv>`_  模块支持在通用数据库格式中直接读写。综合起来，这些模块和包大大简化了 Python 应用程序和其它工具之间的数据交换。
 
-* 国际化由 :mod:`gettext`， :mod:`locale` 和 :mod:`codecs` 包支持。
+* 国际化由 `gettext <https://docs.python.org/2.7/library/gettext.html#module-gettext>`_， `locale <https://docs.python.org/2.7/library/locale.html#module-locale>`_ 和 `codecs <https://docs.python.org/2.7/library/codecs.html#module-codecs>`_ 包支持。

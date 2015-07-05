@@ -29,6 +29,7 @@
 
   
     <link rel="top" title="Python tutorial 2.7.10 2.7.10 documentation" href="index.html"/>
+        <link rel="next" title="15. 附录" href="appendix.html"/>
         <link rel="prev" title="13. 交互式输入行编辑历史回溯" href="interactive.html"/> 
 
   
@@ -73,11 +74,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">4. 深入 Python 流程控制</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#if">4.1. <code class="docutils literal"><span class="pre">if</span></code> 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#for">4.2. <code class="docutils literal"><span class="pre">for</span></code> 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#range">4.3. <code class="docutils literal"><span class="pre">range()</span></code> 函数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#break-continue-else">4.4. <code class="docutils literal"><span class="pre">break</span></code> 和 <code class="docutils literal"><span class="pre">continue</span></code> 语句, 以及循环中的 <code class="docutils literal"><span class="pre">else</span></code> 子句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#pass">4.5. <code class="docutils literal"><span class="pre">pass</span></code> 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-if">4.1. if 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-for">4.2. for 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-range">4.3. range() 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#break-continue-else">4.4. break 和 continue 语句, 以及循环中的 else 子句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-pass">4.5. pass 语句</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-functions">4.6. 定义函数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-defining">4.7. 深入 Python 函数定义</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-codingstyle">4.8. 插曲：编码风格</a></li>
@@ -85,7 +86,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="datastructures.html">5. 数据结构</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-morelists">5.1. 关于列表更多的内容</a></li>
-<li class="toctree-l2"><a class="reference internal" href="datastructures.html#del">5.2. <code class="docutils literal"><span class="pre">del</span></code> 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-del">5.2. del 语句</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-tuples">5.3. 元组和序列</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-sets">5.4. 集合</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-dictionaries">5.5. 字典</a></li>
@@ -97,7 +98,7 @@
 <li class="toctree-l1"><a class="reference internal" href="modules.html">6. 模块</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="modules.html#tut-moremodules">6.1. 深入模块</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html#tut-standardmodules">6.2. 标准模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#dir">6.3. <code class="docutils literal"><span class="pre">dir()</span></code> 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#tut-dir">6.3. dir() 函数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html#tut-packages">6.4. 包</a></li>
 </ul>
 </li>
@@ -122,7 +123,7 @@
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-firstclasses">9.3. 初识类</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-remarks">9.4. 一些说明</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-inheritance">9.5. 继承</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classes.html#tut-private">9.6. 私有变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classes.html#tut-private">9.6. 私有变量和类本地引用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-odds">9.7. 补充</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-exceptionclasses">9.8. 异常也是类</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-iterators">9.9. 迭代器</a></li>
@@ -166,6 +167,10 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">14. 浮点数算法：争议和限制</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#tut-fp-error">14.1. 表达错误</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">15. 附录</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#tut-interac">15.1. 交互模式</a></li>
 </ul>
 </li>
 </ul>
@@ -244,14 +249,31 @@
 <span class="go">0.1000000000000000055511151231257827021181583404541015625</span>
 </pre></div>
 </div>
+<p>这么多位的数字对大多数人是没有用的，所以 Python 显示一个舍入的值:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mf">0.1</span>
+<span class="go">0.1</span>
+</pre></div>
+</div>
 <p>认识到这个幻觉的真相很重要：机器不能精确表达 1/10，你可以简单的截断显示真正的机器值。这里还有另一个惊奇之处。例如，下面:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span>
 <span class="go">0.30000000000000004</span>
 </pre></div>
 </div>
 <p>需要注意的是这在二进制浮点数是非常自然的：它不是 Python 的 bug，也不是你的代码的 bug。你会看到只要你的硬件支持浮点数算法，所有的语言都会有这个现象(尽管有些语言可能默认或完全不 <em>显示</em> 这个差异)。</p>
-<p>由于小数 2.675 是 2.67 和 2.68 的正中间，你可能期望的结果(二进制近似) 2.68。这不是，因为当十进制字符串 “2.675” 转换为二进制浮点数，再换成一个二进制近似，其精确值:</p>
+<p>还有其它意想不到的。例如，如果你舍入2.675到两位小数，你得到的是:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="mf">2.675</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">2.67</span>
+</pre></div>
+</div>
+<p>内置 <a class="reference external" href="https://docs.python.org/2.7/library/functions.html#round">round()</a> 函数的文档说它舍入到最接近的值。因为小数 2.675 正好是 2.67 和 2.68 的中间，你可能期望这里的结果是（二进制近似为) 2.68。但是不是的，因为当十进制字符串 2.675 转换为一个二进制浮点数时，它仍然被替换为一个二进制的近似值，其确切的值是:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="mf">2.67499999999999982236431605997495353221893310546875</span>
+</pre></div>
+</div>
+<p>因为这个近似值稍微接近 2.67 而不是 2.68，所以向下舍入。</p>
+<p>如果你的情况需要考虑十进制的中位数是如何被舍入的，你应该考虑使用 <a class="reference external" href="https://docs.python.org/2.7/library/decimal.html#module-decimal">decimal</a> 模块。顺便说一下，<a class="reference external" href="https://docs.python.org/2.7/library/decimal.html#module-decimal">decimal</a> 模块还提供了很好的方式可以“看到”任何 Python 浮点数的精确值:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Decimal</span><span class="p">(</span><span class="mf">2.675</span><span class="p">)</span>
+<span class="go">Decimal(&#39;2.67499999999999982236431605997495353221893310546875&#39;)</span>
 </pre></div>
 </div>
 <p>这个问题在于存储 “0.1” 的浮点值已经达到 1/10 的最佳精度了，所以尝试截断它不能改善：它已经尽可能的好了。另一个影响是因为 0.1 不能精确的表达 1/10，对 10 个 0.1 的值求和不能精确的得到 1.0，即:</p>
@@ -265,9 +287,9 @@
 </div>
 <p>浮点数据算法产生了很多诸如此类的怪异现象。在 “表现错误” 一节中，这个 “0.1” 问题详细表达了精度问题。更完整的其它常见的怪异现象请参见 <a class="reference external" href="http://www.lahey.com/float.htm">浮点数危害</a> 。 最后我要说，“没有简单的答案”。还是不要过度的敌视浮点数！</p>
 <p>Python 浮点数操作的错误来自于浮点数硬件，大多数机器上同类的问题每次计算误差不超过 2**53 分之一。对于大多数任务这已经足够让人满意了。但是你要在心中记住这不是十进制算法，每个浮点数计算可能会带来一个新的精度错误。</p>
-<p>问题已经存在了，对于大多数偶发的浮点数错误，你应该比对最终显示结果是否符合你的期待。<code class="xref py py-func docutils literal"><span class="pre">str()</span></code> 通常够用了，完全的控制参见字符串格式化中 <code class="xref py py-meth docutils literal"><span class="pre">str.format()</span></code> 方法的格式化方式。</p>
+<p>问题已经存在了，对于大多数偶发的浮点数错误，你应该比对最终显示结果是否符合你的期待。<a class="reference external" href="https://docs.python.org/2.7/library/functions.html#str">str()</a> 通常够用了，完全的控制参见 <a class="reference external" href="https://docs.python.org/2.7/library/string.html#formatstrings">字符串格式化</a> 中 <a class="reference external" href="https://docs.python.org/2.7/library/stdtypes.html#str.format">str.format</a> 方法的格式化方式。</p>
 <div class="section" id="tut-fp-error">
-<span id="id3"></span><h2>14.1. 表达错误<a class="headerlink" href="#tut-fp-error" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>14.1. 表达错误<a class="headerlink" href="#tut-fp-error" title="Permalink to this headline">¶</a></h2>
 <p>这一节详细说明 “0.1” 示例，教你怎样自己去精确地分析此类案例。假设这里你已经对浮点数表示有基本的了解。</p>
 <p><em class="dfn">Representation error</em> 提及事实上有些(实际是大多数)十进制小数不能精确的表示为二进制小数。这是 Python (或 Perl，C，C++，Java，Fortran 以及其它很多)语言往往不能按你期待的样子显示十进制数值的根本原因:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span>
@@ -282,7 +304,7 @@
 <div class="highlight-python"><div class="highlight"><pre>J ~= 2**N / 10
 </pre></div>
 </div>
-<p>J 重现时正是 53 位(是 &gt;= 2**52 而非 &lt; 2**53)，N 的最佳值是 56:</p>
+<p><em>J</em> 重现时正是 53 位(是 <code class="docutils literal"><span class="pre">&gt;=</span> <span class="pre">2**52</span></code> 而非 <code class="docutils literal"><span class="pre">&lt;</span> <span class="pre">2**53</span></code>)，<em>N</em> 的最佳值是 56:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span><span class="o">**</span><span class="mi">52</span>
 <span class="go">4503599627370496</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span><span class="o">**</span><span class="mi">53</span>
@@ -291,7 +313,7 @@
 <span class="go">7205759403792793</span>
 </pre></div>
 </div>
-<p>因此，56 是保持 J 精度的唯一 N 值。J 最好的近似值是整除的商:</p>
+<p>因此，56 是保持 J 精度的唯一 <em>N</em> 值。<em>J</em> 最好的近似值是整除的商:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">56</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span>
 <span class="go">6</span>
@@ -317,7 +339,7 @@
 <span class="go">100000000000000005551115123125L</span>
 </pre></div>
 </div>
-<p>这表示存储在计算机中的实际值近似等于十进制值 0.100000000000000005551115123125。Python 显示时取 17 位精度为 0。10000000000000001(是的，在任何符合754的平台上，都会由其C库转换为这个最佳近似——你的可能不一样！)。</p>
+<p>这表示存储在计算机中的实际值近似等于十进制值 0.100000000000000005551115123125。Python 显示时取 17 位精度为 0。10000000000000001(是的，在任何符合 754 的平台上，都会由其C库转换为这个最佳近似——你的可能不一样！)。</p>
 </div>
 </div>
 
@@ -326,6 +348,8 @@
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appendix.html" class="btn btn-neutral float-right" title="15. 附录">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="interactive.html" class="btn btn-neutral" title="13. 交互式输入行编辑历史回溯"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -73,11 +73,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">4. 深入 Python 流程控制</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#if">4.1. <code class="docutils literal"><span class="pre">if</span></code> 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#for">4.2. <code class="docutils literal"><span class="pre">for</span></code> 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#range">4.3. <code class="docutils literal"><span class="pre">range()</span></code> 函数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#break-continue-else">4.4. <code class="docutils literal"><span class="pre">break</span></code> 和 <code class="docutils literal"><span class="pre">continue</span></code> 语句, 以及循环中的 <code class="docutils literal"><span class="pre">else</span></code> 子句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#pass">4.5. <code class="docutils literal"><span class="pre">pass</span></code> 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-if">4.1. if 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-for">4.2. for 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-range">4.3. range() 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#break-continue-else">4.4. break 和 continue 语句, 以及循环中的 else 子句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-pass">4.5. pass 语句</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-functions">4.6. 定义函数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-defining">4.7. 深入 Python 函数定义</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-codingstyle">4.8. 插曲：编码风格</a></li>
@@ -85,7 +85,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="datastructures.html">5. 数据结构</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-morelists">5.1. 关于列表更多的内容</a></li>
-<li class="toctree-l2"><a class="reference internal" href="datastructures.html#del">5.2. <code class="docutils literal"><span class="pre">del</span></code> 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-del">5.2. del 语句</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-tuples">5.3. 元组和序列</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-sets">5.4. 集合</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-dictionaries">5.5. 字典</a></li>
@@ -97,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="modules.html">6. 模块</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="modules.html#tut-moremodules">6.1. 深入模块</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html#tut-standardmodules">6.2. 标准模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#dir">6.3. <code class="docutils literal"><span class="pre">dir()</span></code> 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#tut-dir">6.3. dir() 函数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html#tut-packages">6.4. 包</a></li>
 </ul>
 </li>
@@ -122,7 +122,7 @@
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-firstclasses">9.3. 初识类</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-remarks">9.4. 一些说明</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-inheritance">9.5. 继承</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classes.html#tut-private">9.6. 私有变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classes.html#tut-private">9.6. 私有变量和类本地引用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-odds">9.7. 补充</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-exceptionclasses">9.8. 异常也是类</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-iterators">9.9. 迭代器</a></li>
@@ -166,6 +166,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="floatingpoint.html">14. 浮点数算法：争议和限制</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="floatingpoint.html#tut-fp-error">14.1. 表达错误</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">15. 附录</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#tut-interac">15.1. 交互模式</a></li>
 </ul>
 </li>
 </ul>
@@ -211,7 +215,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Release:</th><td class="field-body">2.7.10</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Date:</th><td class="field-body">July 02, 2015</td>
+<tr class="field-even field"><th class="field-name">Date:</th><td class="field-body">July 05, 2015</td>
 </tr>
 </tbody>
 </table>
@@ -233,11 +237,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="interpreter.html#tut-interp">2.2. 解释器及其环境</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="interpreter.html#tut-error">2.2.1. 错误处理</a></li>
-<li class="toctree-l3"><a class="reference internal" href="interpreter.html#tut-scripts">2.2.2. 执行 Python 脚本</a></li>
-<li class="toctree-l3"><a class="reference internal" href="interpreter.html#tut-source-encoding">2.2.3. 源程序编码</a></li>
-<li class="toctree-l3"><a class="reference internal" href="interpreter.html#tut-startup">2.2.4. 交互执行文件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="interpreter.html#tut-customize">2.2.5. 本地化模块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interpreter.html#tut-source-encoding">2.2.1. 源程序编码</a></li>
 </ul>
 </li>
 </ul>
@@ -254,11 +254,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controlflow.html">4. 深入 Python 流程控制</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#if">4.1. <code class="docutils literal"><span class="pre">if</span></code> 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#for">4.2. <code class="docutils literal"><span class="pre">for</span></code> 语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#range">4.3. <code class="docutils literal"><span class="pre">range()</span></code> 函数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#break-continue-else">4.4. <code class="docutils literal"><span class="pre">break</span></code> 和 <code class="docutils literal"><span class="pre">continue</span></code> 语句, 以及循环中的 <code class="docutils literal"><span class="pre">else</span></code> 子句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlflow.html#pass">4.5. <code class="docutils literal"><span class="pre">pass</span></code> 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-if">4.1. if 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-for">4.2. for 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-range">4.3. range() 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#break-continue-else">4.4. break 和 continue 语句, 以及循环中的 else 子句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-pass">4.5. pass 语句</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-functions">4.6. 定义函数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controlflow.html#tut-defining">4.7. 深入 Python 函数定义</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="controlflow.html#tut-defaultargs">4.7.1. 默认参数值</a></li>
@@ -278,12 +278,12 @@
 <li class="toctree-l3"><a class="reference internal" href="datastructures.html#tut-lists-as-queues">5.1.2. 把链表当作队列使用</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datastructures.html#tut-functional">5.1.3. 函数式编程工具</a></li>
 <li class="toctree-l3"><a class="reference internal" href="datastructures.html#tut-listcomps">5.1.4. 列表推导式</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="datastructures.html#id7">5.1.4.1. 嵌套的列表推导式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datastructures.html#id13">5.1.4.1. 嵌套的列表推导式</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="datastructures.html#del">5.2. <code class="docutils literal"><span class="pre">del</span></code> 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-del">5.2. del 语句</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-tuples">5.3. 元组和序列</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-sets">5.4. 集合</a></li>
 <li class="toctree-l2"><a class="reference internal" href="datastructures.html#tut-dictionaries">5.5. 字典</a></li>
@@ -300,23 +300,23 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html#tut-standardmodules">6.2. 标准模块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#dir">6.3. <code class="docutils literal"><span class="pre">dir()</span></code> 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#tut-dir">6.3. dir() 函数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules.html#tut-packages">6.4. 包</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="modules.html#tut-pkg-import-star">6.4.1. 从 * 导入包</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#id11">6.4.2. 包内引用</a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules.html#id12">6.4.3. 多重目录中的包</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#id25">6.4.2. 包内引用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#id26">6.4.3. 多重目录中的包</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="inputoutput.html">7. 输入和输出</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="inputoutput.html#tut-formatting">7.1. 格式化输出</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="inputoutput.html#id3">7.1.1. 旧式的字符串格式化</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inputoutput.html#id15">7.1.1. 旧式的字符串格式化</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="inputoutput.html#tut-files">7.2. 文件读写</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="inputoutput.html#tut-filemethods">7.2.1. 文件对象方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="inputoutput.html#pickle">7.2.2. <code class="docutils literal"><span class="pre">pickle</span></code> 模块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inputoutput.html#tut-json">7.2.2. 使用 json 存储结构化数据</a></li>
 </ul>
 </li>
 </ul>
@@ -339,6 +339,7 @@
 <li class="toctree-l3"><a class="reference internal" href="classes.html#tut-classobjects">9.3.2. 类对象</a></li>
 <li class="toctree-l3"><a class="reference internal" href="classes.html#tut-instanceobjects">9.3.3. 实例对象</a></li>
 <li class="toctree-l3"><a class="reference internal" href="classes.html#tut-methodobjects">9.3.4. 方法对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classes.html#tut-class-and-instance-variables">9.3.5. 类和实例变量</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-remarks">9.4. 一些说明</a></li>
@@ -346,7 +347,7 @@
 <li class="toctree-l3"><a class="reference internal" href="classes.html#tut-multiple">9.5.1. 多继承</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="classes.html#tut-private">9.6. 私有变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classes.html#tut-private">9.6. 私有变量和类本地引用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-odds">9.7. 补充</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-exceptionclasses">9.8. 异常也是类</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classes.html#tut-iterators">9.9. 迭代器</a></li>
@@ -390,6 +391,16 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="floatingpoint.html">14. 浮点数算法：争议和限制</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="floatingpoint.html#tut-fp-error">14.1. 表达错误</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">15. 附录</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#tut-interac">15.1. 交互模式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#tut-error">15.1.1. 错误处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#python">15.1.2. 执行 Python 脚本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#tut-startup">15.1.3. 交互执行文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appendix.html#tut-customize">15.1.4. 定制模块</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

@@ -5,7 +5,7 @@
 交互式输入行编辑历史回溯
 **************************************************
 
-有些版本的 Python 解释器支持输入行编辑和历史回溯，类似 Korn shell 和 GNU bash shell 的功能。这是通过 `GNU Readline`_ 库实现的。它支持 Emacs 风格和 vi 风格的编辑。这个库有它自己的文档，在此不重复了。不过，基本的东西很容易演示。交互式编辑和历史查阅在 Unix 和 Cygwin 版中是可选项。 
+有些版本的 Python 解释器支持输入行编辑和历史回溯，类似 Korn shell 和 GNU bash shell 的功能。这是通过 `GNU Readline <http://tiswww.case.edu/php/chet/readline/rltop.html>`_ 库实现的。它支持 Emacs 风格和 vi 风格的编辑。这个库有它自己的文档，在此不重复了。不过，基本的东西很容易演示。交互式编辑和历史查阅在 Unix 和 Cygwin 版中是可选项。 
 
 本章 *不是* 马克哈密尔顿的 PythonWin 包和随 Python 发布的基于 TK 的 IDLE 环境的文档。NT 系统和其它 DOS、Windows 系统上的 DOS 窗中的命令行历史回调，属于另一个话题。
 
@@ -71,9 +71,9 @@ Readline 库的快捷键绑定和其它一些参数可以通过名为 :file:`~/.
    import rlcompleter, readline
    readline.parse_and_bind('tab: complete')
 
-这个操作将 :kbd:`Tab` 绑定到完成函数，故按 Tab 键两次会给出建议的完成内容；它查找　Python 命名、当前的局部变量、有效的模块名。对于类似 ``string.a`` 这样的文件名，它会解析 ``'.'`` 相关的表达式，从返回的结果对象中获取属性，以提供完成建议。需要注意的是，如果对象的 :meth:`__getattr__` 方法是此表达式的一部分，这可能会执行应用程序定义代码。 
+这个操作将 :kbd:`Tab` 绑定到完成函数，故按 Tab 键两次会给出建议的完成内容；它查找　Python 命名、当前的局部变量、有效的模块名。对于类似 ``string.a`` 这样的文件名，它会解析 ``'.'`` 相关的表达式，从返回的结果对象中获取属性，以提供完成建议。需要注意的是，如果对象的 `__getattr__() <https://docs.python.org/2.7/reference/datamodel.html#object.__getattr__>`_ 方法是此表达式的一部分，这可能会执行应用程序定义代码。 
 
-更有用的初始化文件可能是下面这个例子这样的。要注意一旦创建的名字没用了，它会删掉它们；因为初始化文件作为解释命令与之在同一个命名空间执行，在交互环境中删除命名带来了边际效应。可能你发现了它体贴的保留了一些导入模块，类似 :mod:`os` ，在解释器的大多数使用场合中都会用到它们::
+更有用的初始化文件可能是下面这个例子这样的。要注意一旦创建的名字没用了，它会删掉它们；因为初始化文件作为解释命令与之在同一个命名空间执行，在交互环境中删除命名带来了边际效应。可能你发现了它体贴的保留了一些导入模块，类似 `os <https://docs.python.org/2.7/library/os.html#module-os>`_ ，在解释器的大多数使用场合中都会用到它们::
 
    # Add auto-completion and a stored history file of commands to your Python
    # interactive interpreter. Requires Python 2.0+, readline. Autocomplete is
@@ -112,8 +112,7 @@ Readline 库的快捷键绑定和其它一些参数可以通过名为 :file:`~/.
 
 .. rubric:: Footnotes
 
-.. [#] 启动交互解释器时，Python 可以执行 :envvar:`PYTHONSTARTUP` 环境变量所指定的文件内容。
+.. [#] 启动交互解释器时，Python 可以执行 `PYTHONSTARTUP <https://docs.python.org/2.7/using/cmdline.html#envvar-PYTHONSTARTUP>`_ 环境变量所指定的文件内容。若还要定制化非交互式的 Python，请参阅 `定制化模块 <https://docs.python.org/2.7/tutorial/appendix.html#tut-customize>`_。
 
-.. _GNU Readline: http://tiswww.case.edu/php/chet/readline/rltop.html
 .. _IPython: http://ipython.scipy.org/
 .. _bpython: http://www.bpython-interpreter.org/
