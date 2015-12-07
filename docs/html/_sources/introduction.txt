@@ -329,7 +329,7 @@ Python字符串不可以被更改 --- 它们是 **不可变** 的。因此，赋
       字符串和Unicode字符串都支持大量的方法用于基本的转换和查找。
 
    `String Formatting <https://docs.python.org/2.7/library/string.html#new-string-formatting>`_
-      这里描述了使用 `str.format() <http://python.usyiyi.cn/python_278/library/stdtypes.html#str.format>`_ 进行字符串格式化的信息。
+      这里描述了使用 `str.format() <https://docs.python.org/2.7/library/stdtypes.html#str.format>`_ 进行字符串格式化的信息。
 
    `String Formatting Operations <https://docs.python.org/2.7/library/stdtypes.html#string-formatting>`_
       这里描述了旧式的字符串格式化操作，它们在字符串和Unicode字符串是 ``%`` 操作符的左操作数时调用。
