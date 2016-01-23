@@ -129,7 +129,7 @@ Python 标准库概览
 
 有几个模块用于访问互联网以及处理网络通信协议。其中最简单的两个是用于处理从 urls 接收的数据的 `urllib2 <https://docs.python.org/2.7/library/urllib2.html#module-urllib2>`_ 以及用于发送电子邮件的 `smtplib <https://docs.python.org/2.7/library/smtplib.html#module-smtplib>`_::
 
-   >>> from urllib2
+   >>> import urllib2
    >>> for line in urllib2.urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl'):
    ...     line = line.decode('utf-8')  # Decoding the binary data to text.
    ...     if 'EST' in line or 'EDT' in line:  # look for Eastern Time
