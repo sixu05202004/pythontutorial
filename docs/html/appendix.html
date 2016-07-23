@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>15. 附录 &mdash; Python tutorial 2.7.11 2.7.11 documentation</title>
+  <title>15. 附录 &mdash; Python tutorial 2.7.12 2.7.12 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
   
 
   
-    <link rel="top" title="Python tutorial 2.7.11 2.7.11 documentation" href="index.html"/>
+    <link rel="top" title="Python tutorial 2.7.12 2.7.12 documentation" href="index.html"/>
         <link rel="prev" title="14. 浮点数算法：争议和限制" href="floatingpoint.html"/> 
 
   
@@ -44,7 +44,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
         
-          <a href="index.html" class="fa fa-home"> Python tutorial 2.7.11</a>
+          <a href="index.html" class="fa fa-home"> Python tutorial 2.7.12</a>
         
         
 <div role="search">
@@ -168,7 +168,7 @@
 <li class="toctree-l2"><a class="reference internal" href="floatingpoint.html#tut-fp-error">14.1. 表达错误</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">15. 附录</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">15. 附录</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#tut-interac">15.1. 交互模式</a></li>
 </ul>
 </li>
@@ -185,7 +185,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Python tutorial 2.7.11</a>
+        <a href="index.html">Python tutorial 2.7.12</a>
       </nav>
 
 
@@ -219,12 +219,12 @@
 <div class="section" id="python">
 <span id="tut-scripts"></span><h3>15.1.2. 执行 Python 脚本<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <p>BSD 类的 Unix 系统中，Python 脚本可以像 Shell 脚本那样直接执行。只要在脚本文件开头写一行命令，指定文件和模式:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#! /usr/bin/env python</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#! /usr/bin/env python</span>
 </pre></div>
 </div>
 <p>(首先要确认 Python 解释器在用户的 <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal"><span class="pre">PATH</span></code> 中) <code class="docutils literal"><span class="pre">#!</span></code>  必须是文件的前两个字符，在某些平台上，第一行必须以 Unix 风格的行结束符 (<code class="docutils literal"><span class="pre">'\n'</span></code>)结束，不能用 Windows (<code class="docutils literal"><span class="pre">'\r\n'</span></code>) 的结束符。注意，<code class="docutils literal"><span class="pre">'#'</span></code> 是 Python 中是行注释的起始符。</p>
 <p>脚本可以通过 <strong class="program">chmod</strong> 命令指定执行模式和权限。</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>chmod +x myscript.py
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ chmod +x myscript.py
 </pre></div>
 </div>
 <p>Windows 系统上没有“执行模式”。Python 安装程序自动将 <code class="docutils literal"><span class="pre">.py</span></code> 文件关联到 <code class="docutils literal"><span class="pre">python.exe</span></code> ，所以在 Python 文件图标上双击，它就会作为脚本执行。同样 <code class="docutils literal"><span class="pre">.pyw</span></code>  也做了这样的关联，通常它执行时不会显示控制台窗口。</p>
@@ -234,12 +234,12 @@
 <p>使用 Python 解释器的时候，我们可能需要在每次解释器启动时执行一些命令。你可以在一个文件中包含你想要执行的命令，设定一个名为 <a class="reference external" href="https://docs.python.org/2.7/using/cmdline.html#envvar-PYTHONSTARTUP">PYTHONSTARTUP</a> 的环境变量来指定这个文件。这类似于 Unix shell 的 <code class="file docutils literal"><span class="pre">.profile</span></code> 文件。</p>
 <p>这个文件在交互会话期是只读的，当 Python 从脚本中解读文件或以终端 <code class="file docutils literal"><span class="pre">/dev/tty</span></code> 做为外部命令源时则不会如此 (尽管它们的行为很像是处在交互会话期) 它与解释器执行的命令处在同一个命名空间，所以由它定义或引用的一切可以在解释器中不受限制地使用。你也可以在这个文件中改变 <code class="docutils literal"><span class="pre">sys.ps1</span></code> 和 <code class="docutils literal"><span class="pre">sys.ps2</span></code>  指令。</p>
 <p>如果你想要在当前目录中执行附加的启动文件，可以在全局启动文件中加入类似以下的代码：<code class="docutils literal"><span class="pre">if</span> <span class="pre">os.path.isfile('.pythonrc.py'):</span> <span class="pre">execfile('.pythonrc.py')</span></code>。如果你想要在某个脚本中使用启动文件，必须要在脚本中写入这样的语句:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;PYTHONSTARTUP&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;PYTHONSTARTUP&#39;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">filename</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">fobj</span><span class="p">:</span>
        <span class="n">startup_file</span> <span class="o">=</span> <span class="n">fobj</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="k">exec</span><span class="p">(</span><span class="n">startup_file</span><span class="p">)</span>
+    <span class="n">exec</span><span class="p">(</span><span class="n">startup_file</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -247,7 +247,7 @@
 <span id="id7"></span><h3>15.1.4. 定制模块<a class="headerlink" href="#tut-customize" title="Permalink to this headline">¶</a></h3>
 <p>Python 提供了两个钩子 (方法) 来本地化: <code class="xref py py-mod docutils literal"><span class="pre">sitecustomize</span></code> 和
 <code class="xref py py-mod docutils literal"><span class="pre">usercustomize</span></code>。为了见识它们，你首先需要找到你的 site-packages 的目录。启动 python 执行下面的代码:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">site</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">site</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">getusersitepackages</span><span class="p">()</span>
 <span class="go">&#39;/home/user/.local/lib/python2.7/site-packages&#39;</span>
 </pre></div>
@@ -302,7 +302,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2.7.11',
+            VERSION:'2.7.12',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

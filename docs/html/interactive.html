@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>13. 交互式输入行编辑历史回溯 &mdash; Python tutorial 2.7.11 2.7.11 documentation</title>
+  <title>13. 交互式输入行编辑历史回溯 &mdash; Python tutorial 2.7.12 2.7.12 documentation</title>
   
 
   
@@ -28,7 +28,7 @@
   
 
   
-    <link rel="top" title="Python tutorial 2.7.11 2.7.11 documentation" href="index.html"/>
+    <link rel="top" title="Python tutorial 2.7.12 2.7.12 documentation" href="index.html"/>
         <link rel="next" title="14. 浮点数算法：争议和限制" href="floatingpoint.html"/>
         <link rel="prev" title="12. 接下来？" href="whatnow.html"/> 
 
@@ -45,7 +45,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
         
-          <a href="index.html" class="fa fa-home"> Python tutorial 2.7.11</a>
+          <a href="index.html" class="fa fa-home"> Python tutorial 2.7.12</a>
         
         
 <div role="search">
@@ -158,7 +158,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="whatnow.html">12. 接下来？</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">13. 交互式输入行编辑历史回溯</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">13. 交互式输入行编辑历史回溯</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#tut-lineediting">13.1. 行编辑</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tut-history">13.2. 历史回溯</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tut-keybindings">13.3. 快捷键绑定</a></li>
@@ -186,7 +186,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Python tutorial 2.7.11</a>
+        <a href="index.html">Python tutorial 2.7.12</a>
       </nav>
 
 
@@ -223,55 +223,55 @@
 <div class="section" id="tut-keybindings">
 <span id="id4"></span><h2>13.3. 快捷键绑定<a class="headerlink" href="#tut-keybindings" title="Permalink to this headline">¶</a></h2>
 <p>Readline 库的快捷键绑定和其它一些参数可以通过名为 <code class="file docutils literal"><span class="pre">~/.inputrc</span></code> 的初始化文件的替换命名来定制。快捷键绑定如下形式:</p>
-<div class="highlight-python"><div class="highlight"><pre>key-name: function-name
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">key</span><span class="o">-</span><span class="n">name</span><span class="p">:</span> <span class="n">function</span><span class="o">-</span><span class="n">name</span>
 </pre></div>
 </div>
 <p>或者:</p>
-<div class="highlight-python"><div class="highlight"><pre>&quot;string&quot;: function-name
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;string&quot;</span><span class="p">:</span> <span class="n">function</span><span class="o">-</span><span class="n">name</span>
 </pre></div>
 </div>
 <p>选项可以如下设置:</p>
-<div class="highlight-python"><div class="highlight"><pre>set option-name value
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="n">option</span><span class="o">-</span><span class="n">name</span> <span class="n">value</span>
 </pre></div>
 </div>
 <p>例如:</p>
-<div class="highlight-python"><div class="highlight"><pre># I prefer vi-style editing:
-set editing-mode vi
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># I prefer vi-style editing:</span>
+<span class="nb">set</span> <span class="n">editing</span><span class="o">-</span><span class="n">mode</span> <span class="n">vi</span>
 
-# Edit using a single line:
-set horizontal-scroll-mode On
+<span class="c1"># Edit using a single line:</span>
+<span class="nb">set</span> <span class="n">horizontal</span><span class="o">-</span><span class="n">scroll</span><span class="o">-</span><span class="n">mode</span> <span class="n">On</span>
 
-# Rebind some keys:
-Meta-h: backward-kill-word
-&quot;\C-u&quot;: universal-argument
-&quot;\C-x\C-r&quot;: re-read-init-file
+<span class="c1"># Rebind some keys:</span>
+<span class="n">Meta</span><span class="o">-</span><span class="n">h</span><span class="p">:</span> <span class="n">backward</span><span class="o">-</span><span class="n">kill</span><span class="o">-</span><span class="n">word</span>
+<span class="s2">&quot;\C-u&quot;</span><span class="p">:</span> <span class="n">universal</span><span class="o">-</span><span class="n">argument</span>
+<span class="s2">&quot;\C-x\C-r&quot;</span><span class="p">:</span> <span class="n">re</span><span class="o">-</span><span class="n">read</span><span class="o">-</span><span class="n">init</span><span class="o">-</span><span class="n">file</span>
 </pre></div>
 </div>
 <p>需要注意的是 Python 中默认 <code class="kbd docutils literal"><span class="pre">Tab</span></code> 绑定为插入一个 <code class="kbd docutils literal"><span class="pre">Tab</span></code> 字符而不是 Readline 库的默认文件名完成函数，如果你想用这个，可以将以下内容插入:</p>
-<div class="highlight-python"><div class="highlight"><pre>Tab: complete
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Tab</span><span class="p">:</span> <span class="n">complete</span>
 </pre></div>
 </div>
 <p>到你的 <code class="file docutils literal"><span class="pre">~/.inputrc</span></code> 中来覆盖它(当然，如果你真的把 <code class="kbd docutils literal"><span class="pre">Tab</span></code> 设置成这样，就很难在后继行中插入缩进。)。</p>
 <p id="index-0">自动完成变量和模块名也可以激活生效。要使之在解释器交互模式中可用，在你的启动文件中加入下面内容: <a class="footnote-reference" href="#id7" id="id5">[1]</a></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">rlcompleter</span><span class="o">,</span> <span class="nn">readline</span>
-<span class="n">readline</span><span class="o">.</span><span class="n">parse_and_bind</span><span class="p">(</span><span class="s">&#39;tab: complete&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rlcompleter</span><span class="o">,</span> <span class="nn">readline</span>
+<span class="n">readline</span><span class="o">.</span><span class="n">parse_and_bind</span><span class="p">(</span><span class="s1">&#39;tab: complete&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>这个操作将 <code class="kbd docutils literal"><span class="pre">Tab</span></code> 绑定到完成函数，故按 Tab 键两次会给出建议的完成内容；它查找　Python 命名、当前的局部变量、有效的模块名。对于类似 <code class="docutils literal"><span class="pre">string.a</span></code> 这样的文件名，它会解析 <code class="docutils literal"><span class="pre">'.'</span></code> 相关的表达式，从返回的结果对象中获取属性，以提供完成建议。需要注意的是，如果对象的 <a class="reference external" href="https://docs.python.org/2.7/reference/datamodel.html#object.__getattr__">__getattr__()</a> 方法是此表达式的一部分，这可能会执行应用程序定义代码。</p>
 <p>更有用的初始化文件可能是下面这个例子这样的。要注意一旦创建的名字没用了，它会删掉它们；因为初始化文件作为解释命令与之在同一个命名空间执行，在交互环境中删除命名带来了边际效应。可能你发现了它体贴的保留了一些导入模块，类似 <a class="reference external" href="https://docs.python.org/2.7/library/os.html#module-os">os</a> ，在解释器的大多数使用场合中都会用到它们:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Add auto-completion and a stored history file of commands to your Python</span>
-<span class="c"># interactive interpreter. Requires Python 2.0+, readline. Autocomplete is</span>
-<span class="c"># bound to the Esc key by default (you can change it - see readline docs).</span>
-<span class="c">#</span>
-<span class="c"># Store the file in ~/.pystartup, and set an environment variable to point</span>
-<span class="c"># to it:  &quot;export PYTHONSTARTUP=~/.pystartup&quot; in bash.</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Add auto-completion and a stored history file of commands to your Python</span>
+<span class="c1"># interactive interpreter. Requires Python 2.0+, readline. Autocomplete is</span>
+<span class="c1"># bound to the Esc key by default (you can change it - see readline docs).</span>
+<span class="c1">#</span>
+<span class="c1"># Store the file in ~/.pystartup, and set an environment variable to point</span>
+<span class="c1"># to it:  &quot;export PYTHONSTARTUP=~/.pystartup&quot; in bash.</span>
 
 <span class="kn">import</span> <span class="nn">atexit</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">readline</span>
 <span class="kn">import</span> <span class="nn">rlcompleter</span>
 
-<span class="n">historyPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s">&quot;~/.pyhistory&quot;</span><span class="p">)</span>
+<span class="n">historyPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~/.pyhistory&quot;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">save_history</span><span class="p">(</span><span class="n">historyPath</span><span class="o">=</span><span class="n">historyPath</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">readline</span>
@@ -338,7 +338,7 @@ Meta-h: backward-kill-word
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2.7.11',
+            VERSION:'2.7.12',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
