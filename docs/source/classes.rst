@@ -496,7 +496,7 @@ Python 同样有限的支持多继承形式。多继承的类定义形如下例:
            self.index = len(data)
        def __iter__(self):
            return self
-       def __next__(self):
+       def next(self):
            if self.index == 0:
                raise StopIteration
            self.index = self.index - 1
