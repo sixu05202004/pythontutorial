@@ -92,7 +92,7 @@
    ... except (RuntimeError, TypeError, NameError):
    ...     pass
 
-注意，此元组周围的括号是必需的，因为 ``except ValueError, e:`` 是旧式的写法，在现代 Python 中通常写成 ``except ValueError, e:`` （如下所述）。为了保持向后兼容性，旧式语法仍然是支持的。这意味着 ``except RuntimeError, TypeError`` 不等同于 ``except (RuntimeError, TypeError):`` 而等同于 ``except RuntimeError as
+注意，此元组周围的括号是必需的，因为 ``except ValueError, e:`` 是旧式的写法，在现代 Python 中通常写成 ``except ValueError as e:`` （如下所述）。为了保持向后兼容性，旧式语法仍然是支持的。这意味着 ``except RuntimeError, TypeError`` 不等同于 ``except (RuntimeError, TypeError):`` 而等同于 ``except RuntimeError as
 TypeError:`` , 这应该不是你想要的。
 
 最后一个 except 子句可以省略异常名称，以作为通配符使用。你需要慎用此法，因为它会轻易隐藏一个实际的程序错误！可以使用这种方法打印一条错误信息，然后重新抛出异常(允许调用者处理这个异常)::
